@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>日志备份</title>
+<link href="../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../js/lib/jquery.min.js" type="text/javascript"></script>
+<!--check start-->
+<link rel="stylesheet" href="../js/lib/jQuery_check/css/validationEngine.jquery.css" type="text/css"/>
+<script src="../js/lib/jQuery_che../js/lib/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/lib/jQuery_che../js/lib/languages/jquery.validationEngine-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+<!--check end-->
+<!--日历-->
+<script language="javascript" type="text/javascript" src="../js/lib/My97DatePicker/WdatePicker.js"></script>
+
+<script type="text/javascript">
+;(function ($) {
+    $(function ()
+    {   
+        var dialog =    top.getDialog();
+        dialog.DOM.wrap.on('ok', function (e) {
+            e.preventDefault();
+            $("#form_id").submit();
+        });
+        $("#form_id").validationEngine({
+			promptPosition:'centerRight: 0, -4',scroll: false , binded: false ,'custom_error_messages': {
+			// Custom Error Messages for Validation Types
+			'required': {
+				'message': '* 该项必须填写！'
+			}
+			},
+        });
+	        
+    }); 
+})(jQuery);
+</script>
+<!--select end-->
+</head>
+
+<body>
+<div class="all openWin" >
+<form action="" method="post" id="form_id">
+<h1>日志保留设置</h1>
+<div class="jbxx sj">
+<h3 style="font-weight:normal">日志保留天数：<input name="" type="text" value=""   class="validate[required] text"  style="width:80px;"/> 天 </label></h3>
+<h3>日志满操作方式</h3>
+<div class="sj">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="date_add_table">
+        <tr>
+            <td width="10%" ><font class="red">*</font> <label><input name="shishi" type="radio" value="" /> 覆盖 </label></td>
+            <td >
+               磁盘限额: <input type="text" name="textfield" id="select" class="validate[required] text text_width"/> mb
+              <font class="gray">剩余的磁盘空间，小于磁盘限额，产生的日志将自动覆盖原先的日志</font>
+            </td>
+        </tr>
+        <tr>
+            <td width="10%" >&nbsp;&nbsp;&nbsp;<label><input name="shishi" type="radio" value="" /> 丢弃 </label></td>
+            <td >
+            </td>
+        </tr>
+   </table>
+</div>
+<h3>日志满/磁盘限额邮件提醒</h3>
+<div class="sj">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="date_add_table">
+        <tr>
+        	<td><label><input name="" type="checkbox" value="" /> 开启邮件提醒 </label> </td>
+        </tr>
+</table>
+</div>
+</div>
+<p style="padding-left:10%"><input type="submit" name="" value="确定" class="btn_ty"/>  
+<input type="reset" name="" value="重置" class="btn_ty"/>
+</p> 
+</form>
+
+<form action="" method="post" id="form_id">
+<h1>邮件报警</h1>
+<div class="jbxx sj">
+  <table style="width:65%" border="0" cellpadding="0" cellspacing="0" class="date_add_table">
+        <tr>
+            <td align="right" width="13%">启用网关邮件功能：</td>
+            <td><input name="" type="checkbox" value="" /></td>
+        </tr>
+        <tr>
+            <td align="right"><font class="red">*</font>发件箱地址：</td>
+            <td><input type="text" name="textfield" id="select" class="validate[required] text text_width"/></td>
+        </tr>
+        <tr>
+            <td align="right"><font class="red">*</font>口令：</td>
+            <td><input type="text" name="textfield" id="select" class="validate[required] text text_width"/></td>
+        </tr>
+        <tr>
+            <td align="right">SMTP邮件服务器：</td>
+            <td><input type="text" name="textfield" id="select" class="validate[required] text text_width"/></td>
+        </tr>
+        <tr>
+            <td align="right">SMTP端口：</td>
+            <td><input type="text" name="textfield" id="select" class="validate[required] text text_width"/></td>
+        </tr>
+        <tr>
+            <td align="right">收件人邮箱：</td>
+            <td><input type="text" name="textfield" id="select" class="validate[required] text text_width"/></td>
+        </tr>
+   </table>
+</div>
+<p style="padding-left:10%"><input type="button" name="" value="发送测试邮件" class="btn_ty"/>
+<input type="submit" name="" value="确定" class="btn_ty"/>  
+<input type="reset" name="" value="重置" class="btn_ty"/>
+</p> 
+</form>
+
+</div>
+</body>
+</html>
+

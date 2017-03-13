@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>列表</title>
+<!--公共-->
+<link href="../../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../../js/lib/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../js/lib/index.js"></script>
+<script type="text/javascript" src="../../js/lib/tab.js"></script>
+<script type="text/javascript">		
+$(document).ready(function() {	
+	 //新增任务菜单切换
+  $(".list-tab ul li").click(function(){
+   	$(".list-tab ul li").removeClass();
+	$(this).addClass("listcurrent");
+   })
+})
+</script>
+
+<!--代码变色-->
+<script src="../../js/lib/vejis.js" type="text/javascript"></script>
+<script src="../../js/lib/vlight.js" type="text/javascript"></script>
+<style type="text/css">
+html{overflow:hidden}
+</style>
+</head>
+
+<body>
+
+<div class="openWin">
+
+<div class="menu" style="height:220px; list-style:none;" >
+        <ul id="documents">
+        	<li><a link="home.html" rel="home" target="right"><span class="menu_icon xtzy"></span><p>菜单</p><span class="menu_s"></span></a>
+            </li>
+        	 <li><a><span class="menu_icon gjqm"></span><p>菜单</p><span class="menu_s menu_small_icon"></span></a>
+                <ul>                   
+					<li><a link="mmqm.html" rel="mmqm" target="right"><span class="menu_sicon menu_small_icon"></span><p>二级菜单</p></a>
+                        <ul>                   
+                        <li><a link="mmqm.html" rel="mmqm" target="right"><span class="menu_sicon menu_small_icon"></span><p>三级菜单</p></a></li>
+                        <li><a link="mmqm.html" rel="mmqm" target="right"><span class="menu_sicon menu_small_icon"></span><p>三级菜单</p></a></li>
+                        <li><a link="mmqm.html" rel="mmqm" target="right"><span class="menu_sicon menu_small_icon"></span><p>三级菜单</p></a></li>
+                   		</ul>
+                    </li>
+                    <li><a link="hym.html" rel="hym" target="right"><span class="menu_sicon menu_small_icon"></span><p>二级菜单</p></a></li>
+                    <li><a link="hym.html" rel="hym" target="right"><span class="menu_sicon menu_small_icon"></span><p>二级菜单</p></a></li>
+                    <li><a link="hym.html" rel="hym" target="right"><span class="menu_sicon menu_small_icon"></span><p>二级菜单</p></a></li>
+                </ul>
+            </li>
+            <li><a link="knxw.html" rel="knxw" target="right"><span class="menu_icon kyxw"></span><p>菜单</p><span class="menu_s"></span></a></li>
+
+        </ul>
+    </div>
+    
+<div class="clearfix"></div>    
+<div style="padding:0px 20px;">
+  <div class="list-data">
+        <div class="list-tab mar_top">
+            <ul>
+            <li class="listcurrent"><a href="#html">HTML代码</a></li>
+            <li><a href="#css">CSS代码</a></li>
+            <li><a href="#java">JAVASCRIPT代码(含数据交互)</a></li>
+            <li><a href="#date">使用说明</a></li>
+        </ul>
+        </div>
+    </div>
+     
+     <div class="clearfix"></div> 
+     <div class=" list-content">
+		
+<!--HTML代码-->
+<div id="html">
+<blockquote class="vlight">
+<p>
+<!--js文件--><br>
+&lt;script src="../js/lib/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;<br>
+&lt;script type="text/javascript" src="../js/lib/index.js"&gt;&lt;/script&gt;<br>
+&lt;script type="text/javascript" src="../js/lib/tab.js"&gt;&lt;/script&gt;<br>
+<!--内容显示--><br>
+&lt;div class="menu" style="height:220px; list-style:none;" &gt;<br>
+        &lt;ul id="documents"&gt;<br>
+        	&lt;li&gt;&lt;a link="home.html" rel="home" target="right"&gt;&lt;span class="menu_icon xtzy"&gt;&lt;/span&gt;&lt;p&gt;菜单&lt;/p&gt;&lt;span class="menu_s"&gt;&lt;/span&gt;&lt;/a&gt;<br>
+            &lt;/li&gt;<br>
+        	 &lt;li&gt;&lt;a&gt;&lt;span class="menu_icon gjqm"&gt;&lt;/span&gt;&lt;p&gt;菜单&lt;/p&gt;&lt;span class="menu_s menu_small_icon"&gt;&lt;/span&gt;&lt;/a&gt;<br>
+                &lt;ul&gt;<br>                   
+					&lt;li&gt;&lt;a link="mmqm.html" rel="mmqm" target="right"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;二级菜单&lt;/p&gt;&lt;/a&gt;<br>
+                        &lt;ul&gt;<br>                   
+                        &lt;li&gt;&lt;a link="mmqm.html" rel="mmqm" target="right"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;三级菜单&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                   		&lt;/ul&gt;<br>
+                    &lt;/li&gt;<br>
+                    &lt;li&gt;&lt;a link="hym.html" rel="hym" target="right"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;二级菜单&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+					&lt;li&gt;&lt;a link="csgj.html" rel="csgj" target="right"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;二级菜单&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                &lt;/ul&gt;<br>
+            &lt;/li&gt;<br>
+            &lt;li&gt;&lt;a link="knxw.html" rel="knxw" target="right"&gt;&lt;span class="menu_icon kyxw"&gt;&lt;/span&gt;&lt;p&gt;菜单&lt;/p&gt;&lt;span class="menu_s"&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br>
+
+        &lt;/ul&gt;<br>
+    &lt;/div&gt;<br>
+</p>    
+</blockquote>
+</div>
+        
+<!--CSS代码-->
+<div id="css">
+<blockquote class="vlight">
+<p>
+/**********CSS*************/<br>
+&lt;link rel="stylesheet" href="../js/lib/menu/menu.css" type="text/css"&gt;
+</p>
+</blockquote>
+</div>
+        
+<!--JAVASCRIPT代码-->
+<div id="java">
+<blockquote class="vlight">
+<p>
+// JavaScript Document<br>
+  //editor 姚秀萍<br>
+	    $(document).ready(function() {<br>
+			$('#documents').delegate('a', 'click', function () {<br>
+            //左导航菜单点击时调用增加TAB的函数<br>
+			if (!$(this).attr("link")) {<br>
+                return false;<br>
+            } else {<br>
+                addTab($(this));<br>
+			}<br>
+            });<br>
+			$(".data_chart a").click(function() {//iframe框架内菜单点击时调用增加TAB的函数<br>
+                parent.addTab($(this));<br>
+            });<br>
+			
+            $('#tabs').delegate('a.tab', 'click', function () {//切换tab<br>
+                // 隐藏所有tab和iframe<br>
+                $("#tabs li").removeClass("current");<br>
+                $("#content iframe").hide();<br>
+				
+				var this_id = $(this).attr("id");//读取首页的id<br>
+				if(this_id=='index'){//判断id是否等于index，是就显示<br>
+					$("#home_content").show();<br>
+				 
+				}<br>
+				
+                // 显示点击的tab及iframe<br>
+                $(this).parent().addClass("current");<br>
+				var contentname = $(this).attr("id") + "_content";<br>
+				
+                $("#" + contentname).show();<br>
+
+            });<br>
+			$('#tabs').delegate('a.remove', 'click', function (e) {//删除TAB<br>
+                // Get the tab name<br>
+                var tabid = $(this).parent().find(".tab").attr("id");<br>
+
+                // remove tab and related content<br>
+                var contentname = tabid + "_content";<br>
+                $("#" + contentname).remove();<br>
+                $(this).parent().remove();<br>
+
+                // if there is no current tab and if there are still tabs left, show the first one<br>
+                if ($("#tabs li.current").length == 0 && $("#tabs li").length > 0) {<br>
+
+                    // find the first tab<br>    
+                    var firsttab = $("#tabs li:first-child");<br>
+                    firsttab.addClass("current");<br>
+
+                    // get its link name and show related content<br>
+                    var firsttabid = $(firsttab).find("a.tab").attr("id");<br>
+                    $("#" + firsttabid + "_content").show();<br>
+                }<br>
+            });<br>
+        });<br>
+        function addTab(link) {//增加TAB<br>
+            // If tab already exist in the list, return<br>
+			if ($(link).attr("rel")=='home') {<br>
+				$("#tabs li").removeClass("current");<br>
+			    $("#content iframe").hide();<br>
+			    $("#index").parent("li").addClass("current");<br>
+			    $("#home_content").show();<br>
+                return false;<br>
+            } <br>
+            if ($("#" + $(link).attr("rel")).length != 0) {<br>
+					
+				   $("#tabs li").removeClass("current");<br>
+				   $("#content iframe").hide();<br>
+				   $("#" + $(link).attr("rel")).parent("li").addClass("current");<br>
+				   $("#" + $(link).attr("rel") + "_content").show();<br>
+				   return<br>
+			   }<br>
+			   
+            
+            // hide other tabs<br>
+           $("#tabs li").removeClass("current");<br>
+           $("#content iframe").hide();<br>
+            tabs_num = $("#tabs li").length<br>
+			if(tabs_num > 7){<br>
+				 xxts()<br>
+				 
+			}<br>
+			
+			var html="&lt;li class='current'&gt;&lt;a class='tab' id='" +<br>
+                $(link).attr("rel") + "' href='#'&gt;" + $(link).text() + <br>
+                "&lt;/a&gt;&lt;a href='#' class='remove'&gt;&lt;/a&gt;&lt;/li&gt;";<br>
+			
+			$("#tabs").append(html);<br>
+			
+			
+            $("#content").append("&lt;iframe  id='" + $(link).attr("rel") + "_content' name='right' frameborder='0' src='"+$(link).attr("link")+"'  scrolling='auto' >&lt;/iframe&gt;");<br>
+            
+            // set the newly added tab as current<br>
+           $("#" + $(link).attr("rel") + "_content").show();<br>
+        }
+
+
+		function xxts(){<br>
+			var dialog = art.dialog({<br>
+			title: '提示',<br>
+			content: '窗口数量太多会影响性能，请关闭一些不再需要的窗口',<br>
+			width: '30em',<br>
+			lock:true,<br>
+			background:'#000',<br>
+			opacity:0.3<br>
+			
+		})<br>
+		}<br>
+
+</p>
+</blockquote>
+</div>
+        
+        
+<!--使用说明-->
+<div id="date">
+<blockquote class="vlight">
+<p>
+/* 数据等待添加 */
+
+</p>
+</blockquote>
+</div>
+
+        
+        
+    </div>
+
+</div>
+    
+    
+    
+</div>
+</body>
+</html>

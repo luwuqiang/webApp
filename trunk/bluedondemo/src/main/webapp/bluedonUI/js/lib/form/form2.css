@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*****2015.12.29 SYT 下拉框左右内容切换*****/
+.selbox{ width:350px; text-align:left; margin:0px 10px; overflow:hidden;}
+.selbox td{ border:0px; padding:10px 3px;}
+.seltab{ border:1px solid #c6d0da;}
+.seltab th{ background:#f0f7fd; border-bottom:1px solid #c6d0da; font-weight:bold; line-height:32px;}
+.seltab tr td select{ border:0px; height:200px;}
+.selbutleft{ width:40px; height:20px; border:0px; background: #46b3f8 url(../images/z_jiantou.png) no-repeat center top; margin:5px 10px;cursor:pointer;}
+.selbutright{ width:40px; height:20px; border:0px; background: #46b3f8 url(../images/y_jiantou.png) no-repeat center top; margin:5px 10px;cursor:pointer;}

@@ -1,0 +1,15 @@
+[{"sTitle":"id","bVisible":false,"data":"id"},
+{"sTitle":"描述","bVisible":false,"data":"bewrite"},
+{"sTitle":"用户姓名","data":"user_name"},
+{"sTitle":"时间","data":"time"},
+{"sTitle":"内部主机","bVisible":false,"data":"src_ip"},
+{"sTitle":"内部端口","bVisible":false,"data":"src_port"},
+{"sTitle":"内部MAC","bVisible":false,"data":"src_mac"},
+{"sTitle":"外部主机","bVisible":false,"data":"des_ip"},
+{"sTitle":"外部端口","bVisible":false,"data":"des_port"},
+{"sTitle":"外部MAC","bVisible":false,"data":"des_mac"},
+{"sTitle":"发送人","data":"src_ip"},
+{"sTitle":"传输类型","sClass":"url","data":"disk_type"},
+{"sTitle":"URL","bVisible":true,"data":"url"},
+{"sTitle":"上网方式","bVisible":true,"data":"internet_access"}
+]

@@ -1,0 +1,36 @@
+{ 
+	"categories": [  
+                {"name":"总网络","color":"#ff7f50"},
+				{"name":"分支1","color":"#87cdfa"},
+				{"name":"分支2","color":"#9acd32"}
+			],
+	"nodes":[
+		{"category":0, "name": "总网络", "label": "总网络"},
+		{"category":1, "name": "172.16.2.254","zjn":"路由1","dkh":"80"},
+		{"category":1, "name": "172.16.1.253","zjn":"路由2","dkh":"90"},
+		{"category":1, "name": "172.16.3.254","zjn":"路由3","dkh":"880"},
+		{"category":1, "name": "172.16.5.250","zjn":"路由4","dkh":"66"},
+		{"category":2, "name": "172.16.2.11","zjn":"PC1","dkh":"66"},
+		{"category":2, "name": "172.16.2.15","zjn":"PC2","dkh":"66"},
+		{"category":2, "name": "172.16.1.20","zjn":"PC4","dkh":"66"},
+		{"category":2, "name": "172.16.1.89","zjn":"PC3","dkh":"66"},
+		{"category":2, "name": "172.16.3.79","zjn":"PC7","dkh":"66"},
+		{"category":2, "name": "172.16.3.99","zjn":"PC8","dkh":"66"},
+		{"category":2, "name": "172.16.5.66","zjn":"PC5","dkh":"66"},
+		{"category":2, "name": "172.16.5.44","zjn":"PC6","dkh":"66"}
+	],
+	"links":[
+		{"source" : "172.16.2.254", "target" : "总网络", "weight" : 1, "name": "分支1"},
+		{"source" : "172.16.1.253", "target" : "总网络", "weight" : 1, "name": "分支2"},
+		{"source" : "172.16.3.254", "target" : "总网络", "weight" : 1, "name": "分支3"},
+		{"source" : "172.16.5.250", "target" : "总网络", "weight" : 1, "name": "分支4"},
+		{"source" : "172.16.2.11", "target" : "172.16.2.254", "weight" : 1},
+		{"source" : "172.16.2.15", "target" : "172.16.2.254", "weight" : 1},
+		{"source" : "172.16.1.20", "target" : "172.16.1.253", "weight" : 1},
+		{"source" : "172.16.1.89", "target" : "172.16.1.253", "weight" : 1},
+		{"source" : "172.16.3.79", "target" : "172.16.3.254", "weight" : 1},
+		{"source" : "172.16.3.99", "target" : "172.16.3.254", "weight" : 1},
+		{"source" : "172.16.5.66", "target" : "172.16.5.250", "weight" : 1},
+		{"source" : "172.16.5.44", "target" : "172.16.5.250", "weight" : 1}
+	]
+}  

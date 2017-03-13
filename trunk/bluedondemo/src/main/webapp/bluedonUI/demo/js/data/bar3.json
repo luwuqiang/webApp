@@ -1,0 +1,14 @@
+{ "seriesList": [  
+                {"name":"境内邮件","dataNumber":"100", "color":"#ac79ea","title":"查看详情"},
+				{"name":"境外邮件","dataNumber":"10", "color":"#8689fe","title":"查看细节"},
+				{"name":"即时通信","dataNumber":"150", "color":"#4996fe","title":"查看详1情"},
+				{"name":"网盘","dataNumber":"120", "color":"#4cb3d2","title":"查看详情2"},
+				{"name":"FTP","dataNumber":"200","color":"#8fcacf","title":"查看详情3"},
+				{"name":"HTTP上传","dataNumber":"50", "color":"#9ec678","title":"查看详情4"},
+				{"name":"其它","dataNumber":"10", "color":"#c5c542","title":"查看详6情"},
+				{"name":"tpps","dataNumber":"200","color":"#eca539","title":"查看详情3"},
+				{"name":"stmp上传","dataNumber":"50", "color":"#ed7a2c","title":"查看详情4"},
+				{"name":"other","dataNumber":"10", "color":"#e23b34","title":"查看详6情"}
+        ],
+	"title":"文件型涉密事件统计"
+}  

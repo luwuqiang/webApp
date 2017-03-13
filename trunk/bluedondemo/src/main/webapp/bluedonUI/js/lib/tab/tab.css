@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+.list-data{left:0px;right:0px;}
+.w-tab,.list-tab {-moz-user-select:none;hutia:expression(this.onselectstart=function(){return(false)});}
+.w-tab ul li:first-child,.list-tab ul li:first-child {border-left:1px solid #d7d7d7}
+.w-tab ul li,.list-tab ul li{float:left;padding:0px 10px;height:30px; line-height:30px; background:#efedee;border:1px solid #d7d7d7;border-left:none;border-bottom:none}
+.w-tab ul li.sel,.w-tab ul li.sel:hover,.list-tab ul li.listcurrent,.list-tab ul li.listcurrent:hover{ background:#4c9ddc;border:1px solid #4b9cdb;border-left:none;border-bottom:none}
+.w-tab ul li:hover,.list-tab ul li:hover{ background:#9c9fa1;border:1px solid #9c9fa1;border-left:none;border-bottom:none}
+.w-tab ul li:first-child.sel,.list-tab ul li:first-child.current,.list-tab ul li:first-child.listcurrent{border-left:1px solid #4b9cdb}
+.w-tab ul li:first-child:hover,.list-tab ul li:first-child:hover{border-left:1px solid #9c9fa1}
+.w-tab ul li.sel a,.w-tab ul li:hover a,.list-tab ul li.listcurrent a,.list-tab ul li:hover a{color:#fff; display:block}
+.w-content{ position:absolute;top:41px;border:1px solid #d7d7d7;left:0;right:0;bottom: 0px;}
+.list-content{ border:1px solid #d7d7d7; height:310px;left:0;right:0;bottom: 5px;overflow:hidden;padding:0px;width:99.8%;}

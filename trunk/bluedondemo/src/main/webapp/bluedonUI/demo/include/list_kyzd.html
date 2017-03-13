@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>列表</title>
+<!--公共-->
+<link href="../skin/blue/style/public.css" rel="stylesheet" type="text/css" />
+<link href="../skin/blue/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../js/lib/jquery.min.js" type="text/javascript"></script>
+<!--[if lt IE 7]> 
+<script src="../js/lib/jqueryie6.min.js" type="text/javascript"></script>
+<![endif]-->
+<!--grid-->
+<link href="../js/lib/ligerUI/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+<script src="../js/lib/ligerUI/js/base.js" type="text/javascript"></script>
+<script src="../js/lib/ligerUI/js/ligerGrid.js" type="text/javascript"></script>
+<script src="../js/bd/grid.js" type="text/javascript"></script>
+<script src="../js/lib/ligerUI/js/grid12.js" type="text/javascript"></script>
+<!--dialog-->
+<link href="../js/lib/dialog/dialog.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/lib/dialog/jquery.artDialog.source.js"></script>
+<script type="text/javascript" src="../js/lib/dialog/iframeTools.source.js"></script> 
+
+<!--日历-->
+<script language="javascript" type="text/javascript" src="../js/lib/My97DatePicker/WdatePicker.js"></script>
+
+<!--弹出框封装和日历的扩展-->
+<script type="text/javascript" src="../js/lib/unit.js"></script>
+
+<script language="javascript">
+;(function ($) {
+   $(document).ready(function () { 
+		/*var hListTabel = $.CreateTabel({//调用ligerUI的列表插件
+			checkbox: false,
+			el:'#maingrid',
+                columns: [
+					{ display: '用户名', name: 'CustomerID',minWidth: 80},
+					{ display: '源IP', name: 'Account',minWidth: 50},
+					{ display: '中标黑IP', name: 'username',minWidth: 50},
+					{ display: '中标黑域名', name: 'NewTime',minWidth: 50},
+					{ display: '中标灰域名', name: 'Sex',minWidth: 50},
+					{ display: '中标黑URL', name: 'Orle',minWidth: 50},
+					{ display: '中标灰URL', name: 'Update',minWidth: 50},
+					{ display: '境外访问', name: 'online',minWidth: 50},
+					{ display: '使用翻墙软件', name: 'online',minWidth: 50},
+					{ display: '危险系数', name: 'online',minWidth: 50},
+					{ display: '描述', name: 'online',minWidth: 50}
+			
+               ], pageSize:20,
+				pageSizeOptions: [5, 10, 20, 30],
+				data: CustomersData,
+				rownumbers:false,
+				root :'Rows',
+				record :'Total',
+				width: '99.8%',
+				height:'98.5%',
+				detail: { onShowDetail: f_showOrder },
+                onError: function (a, b)
+                { 
+                }
+               
+            });*/
+			
+
+        });
+		/*function f_getCustomersData2(CustomerID)
+        {
+            var data = { Rows: [] };
+            for (var i = 0; i < CustomersData2.Rows.length; i++)
+            {
+                if (CustomersData2.Rows[i].CustomerID == CustomerID)
+                    data.Rows.push(CustomersData2.Rows[i]);
+            }
+            return data;
+        }
+        //显示顾客订单
+        function f_showOrder(row, detailPanel,callback)
+        {
+            var grid = document.createElement('div'); 
+            $(detailPanel).append(grid);
+            $(grid).css({'margin':8,'width':'100%'}).ligerGrid({
+                columns:
+					[
+					{ display: '违规事项', name: 'username'},
+					{ display: '时间', name: 'Sex'},
+					{ display: '用户姓名', name: 'Orle' },
+					{ display: '源IP', name: 'username'},
+					{ display: '源端口', name: 'Sex' },
+					{ display: '源MAC', name: 'Orle' },
+					{ display: '目的IP', name: 'username'},
+					{ display: '目的端口', name: 'Sex' },
+					{ display: '中标事件描述', name: 'Orle' }
+					], pageSize:5,
+					  pageSizeOptions: [5, 10, 20, 30],
+					 rownumbers:false,
+					 root :'Rows',
+					 record :'Total',
+					 data: f_getCustomersData2(row.CustomerID) ,
+					 columnWidth: 200, 
+					 onAfterShowData: callback
+            });  
+        }*/
+
+	
+})(jQuery);
+
+function display(id){  
+ var traget=document.getElementById(id);  
+ if(traget.style.display=="none"){  
+    traget.style.display="";  
+    }else{  
+    traget.style.display="none";  
+      }  
+   }  
+</script>
+</head>
+
+<body>
+
+
+
+    <div class="btn_box">
+ 	
+   
+	<div class="aearch_box"><form action="" method="post">
+     <label>时间：</label>
+     <input name="" type="text" class="text date_plug date_pos" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="开始时间">
+     <label>至</label>
+     <input name="" type="text" class="text date_plug date_pos" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="结束时间">
+     <input name="" type="submit" class="btn btn_search" value="查询">
+     <input type="button" class="btn btn_sea" value="精确查询" onclick="display('keyword_box')" >
+
+     </form></div>
+    </div>
+    
+<div class="keyword_box pad_top" id="keyword_box" style="display:none">
+    <form action="" method="post">
+     <span class="up up_right" ></span>
+     <span class="close"  onclick="display('keyword_box')"></span>
+     <ul>
+     <li>
+     <label>时间：</label><input name="" type="text" class="text date_plug" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="开始时间">
+     <label>至</label>
+     <input name="" type="text" class="text date_plug " onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="结束时间">
+     </li>
+     <li>
+     <label>用户姓名：</label>
+     <input name="" type="text" class="text" placeholder="张三">
+     </li>
+     <li>
+     <label>源IP：</label>
+     <input name="" type="text" class="text" placeholder="源IP">
+     </li>
+     <li>
+     <label>源端口：</label>
+     <input name="" type="text" class="text" placeholder="源IP">
+     </li>
+     <li>
+     <label>源MAC：</label>
+     <input name="" type="text" class="text" placeholder="源MAC">
+     </li>
+     <li>
+     <label>目的IP：</label>
+     <input name="" type="text" class="text" placeholder="目的IP">
+     </li>
+     <li>
+     <label>目的端口：</label>
+     <input name="" type="text" class="text" placeholder="目的IP">
+     </li>
+     <li>
+     <label>协议类型：</label>
+     <select name="">
+     </select>
+     </li>
+     <li><input name="" type="submit" class="btn bpad" value="查询"></li>
+     </ul>
+     
+    
+    </form>
+    </div>
+
+    <div id="maingrid"  class="list">
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FW</title>
+<link href="../skin/blue/style/public.css" rel="stylesheet" type="text/css" />
+<link href="../skin/blue/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../js/lib/jquery.min.js" type="text/javascript"></script>
+<!--[if lt IE 7]> 
+<script src="../js/lib/jqueryie6.min.js" type="text/javascript"></script>
+<![endif]-->
+<!--check start-->
+<link rel="stylesheet" href="../js/lib/jQuery_check/css/validationEngine.jquery.css" type="text/css"/>
+<script src="../js/lib/jQuery_che../js/lib/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/lib/jQuery_che../js/lib/languages/jquery.validationEngine-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+<!--check end-->
+<script type="text/javascript" src="../js/lib/dialog/jquery.artDialog.source.js"></script>
+<script type="text/javascript" src="../js/lib/dialog/iframeTools.source.js"></script>
+<script type="text/javascript" src="../js/lib/unit.js"></script>
+
+<script type="text/javascript">
+;(function ($) {
+    $(function ()
+    {   
+        var dialog =    top.getDialog();
+        dialog.DOM.wrap.on('ok', function (e) {
+            e.preventDefault();
+            $("#form_id").submit();
+        });
+        $("#form_id").validationEngine({
+			promptPosition:'centerRight: 0, -4',scroll: false , binded: false ,'custom_error_messages': {
+			// Custom Error Messages for Validation Types
+			'required': {
+				'message': '* 该项必须填写！'
+			}
+			},
+        });
+	        
+    }); 
+})(jQuery);
+</script>
+<!--check end-->
+<!--select end-->
+<style type="text/css"/>
+html,body{height:100%;background:#fafafa;}
+</style>
+</head>
+
+<body>
+<div class="openWin">
+
+ <form action="" method="get" id="form_id">
+ <table width="100%" border="0" cellpadding="0" cellspacing="0" class="date_add_table">
+  <tr>
+    <td width="90" class="t_r"><font class="red">*</font>服务器ID：</td>
+    <td ><input type="text" name="textfield1" id="textfield1" class="validate[required] text" /></td>
+  </tr>
+  <tr>
+    <td class="t_r"><font class="red">*</font>服务器IP：</td>
+    <td><input type="text" name="textfield2" id="textfield2" class="validate[required] text" /></td>
+  </tr>
+  <tr>
+    <td class="t_r"><font class="red">*</font>服务器URL：</td>
+    <td><input type="text" name="textfield3" id="textfield3" class="validate[required] text" /></td>
+  </tr>
+    <tr>
+    <td class="t_r"><font class="red">*</font>服务器类型：</td>
+    <td>
+      <select name="textfield4" id="textfield4" class="validate[required] text">
+      <option>蓝盾</option>
+      <option>保密</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td class="t_r"><font class="red">*</font>证书密码：</td>
+    <td><input type="text" name="textfield5" id="textfield5" class="validate[required] text" /></td>
+  </tr>
+  <tr>
+    <td class="t_r"><font class="red">*</font>上报内容：</td>
+    <td class="open_inp_wid"><label><input name="" type="checkbox" value="" /> 报警日志 </label><label><input name="" type="checkbox" value="" /> 网络日志 </label><label><input name="" type="checkbox" value="" /> 策略 </label><label><input name="" type="checkbox" value="" /> 审计日志 </label> <label><input name="" type="checkbox" value="" /> 运行日志 </label><label><input name="" type="checkbox" value="" /> 报警日志（自定义策略产生） </label></td>
+  </tr>
+  <tr>
+    <td class="t_r">详细描述：</td>
+    <td><textarea cols="" rows="" class="validate[required] text_wid_area"></textarea></td>
+  </tr>
+ </table>
+ </form>
+ 
+</div>
+</body>
+</html>

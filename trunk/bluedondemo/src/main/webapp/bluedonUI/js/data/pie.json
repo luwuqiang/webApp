@@ -1,0 +1,9 @@
+{
+	"serData": 
+		[  
+              {"value":100, "name":"蓝盾实验设备","url":"list_zjxw.html"},
+			  {"value":10, "name":"实训设备","url":"list_zjxw.html"},
+			  {"value":10, "name":"其他设备","url":"list_zjxw.html"}
+        ],
+	"title":"实训设备"
+}  

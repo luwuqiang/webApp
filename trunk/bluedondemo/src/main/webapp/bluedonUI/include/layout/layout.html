@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>FW</title>
+        <!--公共-->
+        <link href="../../skin/style/style.css" rel="stylesheet" type="text/css" />
+        <script src="../../js/lib/jquery.min.js" type="text/javascript"></script>
+        <script src="../../js/lib/tab/tab.js" type="text/javascript"></script>
+        <!--ligerUI-->
+		<link href="../../js/lib/ligerUI/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+   		<script src="../../js/lib/ligerUI/js/base.js" type="text/javascript"></script>
+        <script src="../../js/lib/ligerUI/js/ligerLayout.js" type="text/javascript"></script>
+         <script type="text/javascript">
+
+                $(function ()
+                {
+
+                    $("#layout1").ligerLayout({ leftWidth: 300});
+                });
+                
+         </script> 
+         <!--代码变色-->
+		<script src="../../js/lib/vejis.js" type="text/javascript"></script>
+        <script src="../../js/lib/vlight.js" type="text/javascript"></script>
+        <style type="text/css"> 
+		   body{overflow:hidden}
+        </style>
+    </head>
+    <body > 
+    
+    <div style="margin:10px; height:220px;">
+
+ 
+      <div id="layout1" style=" height:200px;">
+       		<div position="top" hidden></div>
+            <div position="left" hidden></div>
+            <div position="center" hidden></div>  
+        </div> 
+
+     </div>     
+        
+        
+<div class="clearfix"></div>   
+<div style="padding:0px 20px;">
+  <div class="list-data">
+        <div class="list-tab mar_top">
+            <ul>
+            <li class="listcurrent"><a href="#html">HTML代码</a></li>
+            <li><a href="#css">CSS代码</a></li>
+            <li><a href="#java">JAVASCRIPT代码(含数据交互)</a></li>
+            <li><a href="#date">使用说明</a></li>
+        </ul>
+       </div> 
+    </div>
+    </div> 
+     <div class="clearfix"></div>
+     <div class=" list-content">
+		
+<!--HTML代码-->
+<div id="html">
+<blockquote class="vlight">
+<p>
+<!--js文件--><br>
+&lt;script src="../js/lib/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;<br>
+&lt;script src="../js/lib/tab/tab.js" type="text/javascript"&gt;&lt;/script&gt;<br>
+<!--ligerUI--><br>
+&lt;link href="../js/lib/ligerUI/css/ligerui-all.css" rel="stylesheet" type="text/css" /&gt;<br>
+&lt;script src="../js/lib/ligerUI/js/base.js" type="text/javascript"&gt;&lt;/script&gt;<br>
+&lt;script src="../js/lib/ligerUI/js/ligerLayout.js" type="text/javascript"&gt;&lt;/script&gt;<br>
+&lt;script type="text/javascript"&gt;<br>
+                $(function ()<br>
+                {<br>
+                    $("#layout1").ligerLayout({ leftWidth: 300});<br>
+                });<br>
+&lt;/script&gt;<br>
+<!--内容显示--><br>
+&lt;div id="layout1" style=" height:200px;"&gt;<br>
+			&lt;div position="top" hidden&gt;&lt;/div&gt;<br>
+            &lt;div position="left" hidden&gt;&lt;/div&gt;<br>
+            &lt;div position="center" hidden&gt;&lt;/div&gt;<br> 
+        &lt;/div&gt;<br>
+</p>    
+</blockquote>
+</div>
+
+        
+<!--CSS代码-->
+<div id="css">
+<blockquote class="vlight">
+<p>
+/**********暂无相关文件*************/<br>
+</p>
+</blockquote>
+</div>
+
+        
+<!--JAVASCRIPT代码-->
+<div id="java">
+<blockquote class="vlight">
+<p>
+/**<br>
+* jQuery ligerUI 1.2.4<br>
+* <br>
+* http://ligerui.com<br>
+*  <br>
+* Author daomi 2014 [ gd_star@163.com ] <br>
+* <br>
+*/<br>
+(function ($)<br>
+{<br>
+    $.fn.ligerLayout = function (options)<br>
+    {<br>
+        return $.ligerui.run.call(this, "ligerLayout", arguments);<br>
+    };<br>
+
+    $.fn.ligerGetLayoutManager = function ()<br>
+    {<br>
+        return $.ligerui.run.call(this, "ligerGetLayoutManager", arguments);<br>
+    };<br>
+
+
+    $.ligerDefaults.Layout = {<br>
+        topHeight: 50,<br>
+        bottomHeight: 50,<br>
+        leftWidth: 110,<br>
+        centerWidth: 300,<br>
+        rightWidth: 170,<br>
+        centerBottomHeight: 100,<br>
+        allowCenterBottomResize: true, <br>
+        inWindow: true,     //是否以窗口的高度为准 height设置为百分比时可用<br>
+        heightDiff: 0,     //高度补差<br>
+        height: '220',      //高度 可设置100%高度<br>
+        onHeightChanged: null,<br>
+        isLeftCollapse: false,      //初始化时 左边是否隐藏<br>
+        isRightCollapse: false,     //初始化时 右边是否隐藏<br>
+        allowLeftCollapse: true,      //是否允许 左边可以隐藏<br>
+        allowRightCollapse: true,     //是否允许 右边可以隐藏<br>
+        allowLeftResize: true,      //是否允许 左边可以调整大小<br>
+        allowRightResize: true,     //是否允许 右边可以调整大小<br>
+        allowTopResize: true,      //是否允许 头部可以调整大小<br>
+        allowBottomResize: true,     //是否允许 底部可以调整大小<br>
+        space: 3, //间隔 <br>
+        onEndResize: null,          //调整大小结束事件<br>
+        minLeftWidth: 10,            //调整左侧宽度时的最小允许宽度<br>
+        minRightWidth: 80           //调整右侧宽度时的最小允许宽度 <br>
+    };<br>
+
+    $.ligerMethos.Layout = {};<br>
+
+    $.ligerui.controls.Layout = function (element, options)<br>
+    { <br>
+        $.ligerui.controls.Layout.base.constructor.call(this, element, options);<br>
+    };<br>
+    $.ligerui.controls.Layout.ligerExtend($.ligerui.core.UIComponent, {<br>
+        __getType: function ()<br>
+        {<br>
+            return 'Layout';<br>
+        },<br>
+        __idPrev: function ()<br>
+        {<br>
+            return 'Layout';<br>
+        },<br>
+        _extendMethods: function ()<br>
+        {<br>
+            return $.ligerMethos.Layout;<br>
+        },<br>
+        _init: function()<br>
+        {<br>
+            $.ligerui.controls.Layout.base._init.call(this);<br>
+
+            var g = this, p = this.options;<br>
+            if (p.InWindow != null && p.inWindow == null) p.inWindow = p.InWindow; //旧版本命名错误纠正<br>
+        },<br>
+        _render: function ()<br>
+        {<br>
+            var g = this, p = this.options;<br>
+            g.layout = $(this.element);<br>
+            g.layout.addClass("l-layout");<br>
+            g.width = g.layout.width();<br>
+            //top<br>
+            if ($("> div[position=top]", g.layout).length > 0)<br>
+            {<br>
+                g.top = $("> div[position=top]", g.layout).wrap('<div class="l-layout-top" style="top:0px;"></div>').parent();<br>
+                g.top.content = $("> div[position=top]", g.top);<br>
+                if (!g.top.content.hasClass("l-layout-content"))<br>
+                    g.top.content.addClass("l-layout-content");<br>
+                g.topHeight = p.topHeight;<br>
+                if (g.topHeight)<br>
+                {<br>
+                    g.top.height(g.topHeight);<br>
+                }<br>
+            }<br>
+            //bottom<br>
+            if ($("> div[position=bottom]", g.layout).length > 0)<br>
+            {<br>
+                g.bottom = $("> div[position=bottom]", g.layout).wrap('<div class="l-layout-bottom"></div>').parent();<br>
+                g.bottom.content = $("> div[position=bottom]", g.bottom);<br>
+                if (!g.bottom.content.hasClass("l-layout-content"))<br>
+                    g.bottom.content.addClass("l-layout-content");<br>
+
+                g.bottomHeight = p.bottomHeight;<br>
+                if (g.bottomHeight)<br>
+                {<br>
+                    g.bottom.height(g.bottomHeight);<br>
+                }<br>
+                //set title<br>
+                var bottomtitle = g.bottom.content.attr("title");<br>
+                if (bottomtitle)<br>
+                {<br>
+                    g.bottom.header = $('<div class="l-layout-header"></div>');<br>
+                    g.bottom.prepend(g.bottom.header);<br>
+                    g.bottom.header.html(bottomtitle);<br>
+                    g.bottom.content.attr("title", "");<br>
+                }<br>
+            }<br>
+            //left<br>
+            if ($("> div[position=left]", g.layout).length > 0)<br>
+            {<br>
+                g.left = $("> div[position=left]", g.layout).wrap('<div class="l-layout-left" style="left:0px;"></div>').parent();<br>
+                g.left.header = $('<div class="l-layout-header"><div class="l-layout-header-toggle"></div><div class="l-layout-header-inner"></div></div>');<br>
+                g.left.prepend(g.left.header);<br>
+                g.left.header.toggle = $(".l-layout-header-toggle", g.left.header);<br>
+                g.left.content = $("> div[position=left]", g.left);<br>
+                if (!g.left.content.hasClass("l-layout-content"))<br>
+                    g.left.content.addClass("l-layout-content");<br>
+                if (!p.allowLeftCollapse) $(".l-layout-header-toggle", g.left.header).remove();<br>
+                //set title<br>
+                var lefttitle = g.left.content.attr("title");<br>
+                if (lefttitle)<br>
+                {<br>
+                    g.left.content.attr("title", "");<br>
+                    $(".l-layout-header-inner", g.left.header).html(lefttitle);<br>
+                }<br>
+                //set title <br>
+                if (g.left.content.attr("hidetitle"))<br>
+                {<br>
+                    g.left.content.attr("title", "");<br>
+                    g.left.header.remove();<br>
+                }<br>
+                //set width<br>
+                g.leftWidth = p.leftWidth;<br>
+                if (g.leftWidth)<br>
+                    g.left.width(g.leftWidth);<br>
+            }<br>
+            //center<br>
+            if ($("> div[position=center]", g.layout).length > 0)<br>
+            {<br>
+                g.center = $("> div[position=center]", g.layout).wrap('<div class="l-layout-center" ></div>').parent();<br>
+                g.center.content = $("> div[position=center]", g.center);<br>
+                g.center.content.addClass("l-layout-content");<br>
+                //set title<br>
+                var centertitle = g.center.content.attr("title");<br>
+                if (centertitle)<br>
+                {<br>
+                    g.center.content.attr("title", "");<br>
+                    g.center.header = $('<div class="l-layout-header"></div>');<br>
+                    g.center.prepend(g.center.header);<br>
+                    g.center.header.html(centertitle);<br>
+                }<br>
+                if (g.center.content.attr("hidetitle"))<br>
+                {<br>
+                    g.center.content.attr("title", "");<br>
+                    g.center.header.remove();<br>
+                }<br>
+                //set width<br>
+                g.centerWidth = p.centerWidth;<br>
+                if (g.centerWidth)<br>
+                    g.center.width(g.centerWidth); <br>
+
+                //centerBottom<br>
+                if ($("> div[position=centerbottom]", g.layout).length > 0)<br>
+                {<br>
+                    g.centerBottom = $("> div[position=centerbottom]", g.layout).wrap('<div class="l-layout-centerbottom" ></div>').parent();<br>
+                    g.centerBottom.content = $("> div[position=centerbottom]", g.centerBottom);<br>
+                    g.centerBottom.content.addClass("l-layout-content");<br>
+                    //set title<br>
+                    var centertitle = g.centerBottom.content.attr("title");<br>
+                    if (centertitle)<br>
+                    {<br>
+                        g.centerBottom.content.attr("title", "");<br>
+                        g.centerBottom.header = $('<div class="l-layout-header"></div>');<br>
+                        g.centerBottom.prepend(g.centerBottom.header);<br>
+                        g.centerBottom.header.html(centertitle);<br>
+                    }<br>
+                    if (g.centerBottom.content.attr("hidetitle"))<br>
+                    {<br>
+                        g.centerBottom.content.attr("title", "");<br>
+                        if (g.centerBottom.header)<br>
+                        {<br>
+                            g.centerBottom.header.remove();<br>
+                        }<br>
+                    }<br>
+                    if (g.centerWidth)<br>
+                        g.centerBottom.width(g.centerWidth);<br>
+                }<br>
+            } <br>
+            //right<br>
+            if ($("> div[position=right]", g.layout).length > 0)<br>
+            {<br>
+                g.right = $("> div[position=right]", g.layout).wrap('<div class="l-layout-right"></div>').parent();<br>
+
+                g.right.header = $('<div class="l-layout-header"><div class="l-layout-header-toggle"></div><div class="l-layout-header-inner"></div></div>');<br>
+                g.right.prepend(g.right.header);<br>
+                g.right.header.toggle = $(".l-layout-header-toggle", g.right.header);<br>
+                if (!p.allowRightCollapse) $(".l-layout-header-toggle", g.right.header).remove();<br>
+                g.right.content = $("> div[position=right]", g.right);<br>
+                if (!g.right.content.hasClass("l-layout-content"))<br>
+                    g.right.content.addClass("l-layout-content");<br>
+
+                //set title<br>
+                var righttitle = g.right.content.attr("title");<br>
+                if (righttitle)<br>
+                {<br>
+                    g.right.content.attr("title", "");<br>
+                    $(".l-layout-header-inner", g.right.header).html(righttitle);<br>
+                }<br>
+                if (g.right.content.attr("hidetitle"))<br>
+                {<br>
+                    g.right.content.attr("title", "");<br>
+                    g.right.header.remove();<br>
+                }<br>
+                //set width<br>
+                g.rightWidth = p.rightWidth;<br>
+                if (g.rightWidth)<br>
+                    g.right.width(g.rightWidth);<br>
+            }<br>
+            //lock<br>
+            g.layout.lock = $("<div class='l-layout-lock'></div>");<br>
+            g.layout.append(g.layout.lock);<br>
+            //DropHandle<br>
+            g._addDropHandle();<br>
+
+            //Collapse<br>
+            g.isLeftCollapse = p.isLeftCollapse;<br>
+            g.isRightCollapse = p.isRightCollapse;<br>
+            g.leftCollapse = $('<div class="l-layout-collapse-left" style="display: none; "><div class="l-layout-collapse-left-toggle"></div></div>');<br>
+            g.rightCollapse = $('<div class="l-layout-collapse-right" style="display: none; "><div class="l-layout-collapse-right-toggle"></div></div>');<br>
+            g.layout.append(g.leftCollapse).append(g.rightCollapse);<br>
+            g.leftCollapse.toggle = $("> .l-layout-collapse-left-toggle", g.leftCollapse);<br>
+            g.rightCollapse.toggle = $("> .l-layout-collapse-right-toggle", g.rightCollapse);<br>
+            g._setCollapse();<br>
+            //init<br>
+            g._bulid();<br>
+            $(window).resize(function ()<br>
+            {<br>
+                g._onResize();<br>
+            });<br>
+            g.set(p);<br>
+            g.mask.height(g.layout.height());<br>
+        },<br>
+        setLeftCollapse: function (isCollapse)<br>
+        {<br>
+            var g = this, p = this.options;<br>
+            if (!g.left) return false;<br>
+            g.isLeftCollapse = isCollapse;<br>
+            if (g.isLeftCollapse)<br>
+            {<br>
+                g.leftCollapse.show();<br>
+                g.leftDropHandle && g.leftDropHandle.hide();<br>
+                g.left.hide();<br>
+            }<br>
+            else<br>
+            {<br>
+                g.leftCollapse.hide();<br>
+                g.leftDropHandle && g.leftDropHandle.show();<br>
+                g.left.show();<br>
+            }<br>
+            g._onResize();<br>
+        },<br>
+        setRightCollapse: function (isCollapse)<br>
+        {<br>
+            var g = this, p = this.options;<br>
+            if (!g.right) return false;<br>
+            g.isRightCollapse = isCollapse;<br>
+            g._onResize();<br>
+            if (g.isRightCollapse)<br>
+            {<br>
+                g.rightCollapse.show();<br>
+                g.rightDropHandle && g.rightDropHandle.hide();<br>
+                g.right.hide();<br>
+            }<br>
+            else<br>
+            {<br>
+                g.rightCollapse.hide();<br>
+                g.rightDropHandle && g.rightDropHandle.show();<br>
+                g.right.show();<br>
+            }<br>
+            g._onResize();<br>
+        },<br>
+        _bulid: function ()<br>
+        {<br>
+            var g = this, p = this.options;<br>
+            $("> .l-layout-left .l-layout-header,> .l-layout-right .l-layout-header", g.layout).hover(function ()<br>
+            {<br>
+                $(this).addClass("l-layout-header-over");<br>
+            }, function ()<br>
+            {<br>
+                $(this).removeClass("l-layout-header-over");<br>
+
+            });<br>
+            $(".l-layout-header-toggle", g.layout).hover(function ()<br>
+            {<br>
+                $(this).addClass("l-layout-header-toggle-over");<br>
+            }, function ()<br>
+            {<br>
+                $(this).removeClass("l-layout-header-toggle-over");<br>
+
+            });<br>
+            $(".l-layout-header-toggle", g.left).click(function ()<br>
+            {<br>
+                g.setLeftCollapse(true);<br>
+            });<br>
+            $(".l-layout-header-toggle", g.right).click(function ()<br>
+            {<br>
+                g.setRightCollapse(true);<br>
+            });<br>
+            //set top<br>
+            g.middleTop = 0;<br>
+            if (g.top)<br>
+            {<br>
+                g.middleTop += g.top.height();<br>
+                g.middleTop += parseInt(g.top.css('borderTopWidth'));<br>
+                g.middleTop += parseInt(g.top.css('borderBottomWidth'));<br>
+                g.middleTop += p.space;<br>
+            }<br>
+            if (g.left)<br>
+            {<br>
+                g.left.css({ top: g.middleTop });<br>
+                g.leftCollapse.css({ top: g.middleTop });<br>
+            }<br>
+            if (g.center) g.center.css({ top: g.middleTop });<br>
+            if (g.right)<br>
+            {<br>
+                g.right.css({ top: g.middleTop });<br>
+                g.rightCollapse.css({ top: g.middleTop });<br>
+            }<br>
+            //set left<br>
+            if (g.left) g.left.css({ left: 0 });<br>
+            g._onResize();<br>
+            g._onResize();<br>
+        },<br>
+        _setCollapse: function ()<br>
+        {<br>
+            var g = this, p = this.options;<br>
+            g.leftCollapse.hover(function ()<br>
+            {<br>
+                $(this).addClass("l-layout-collapse-left-over");<br>
+            }, function ()<br>
+            {<br>
+                $(this).removeClass("l-layout-collapse-left-over");<br>
+            });<br>
+            g.leftCollapse.toggle.hover(function ()<br>
+            {<br>
+                $(this).addClass("l-layout-collapse-left-toggle-over");<br>
+            }, function ()<br>
+            {<br>
+                $(this).removeClass("l-layout-collapse-left-toggle-over");<br>
+            });<br>
+            g.rightCollapse.hover(function ()<br>
+            {<br>
+                $(this).addClass("l-layout-collapse-right-over");<br>
+            }, function ()<br>
+            {<br>
+                $(this).removeClass("l-layout-collapse-right-over");<br>
+            });<br>
+            g.rightCollapse.toggle.hover(function ()<br>
+            {<br>
+                $(this).addClass("l-layout-collapse-right-toggle-over");<br>
+            }, function ()<br>
+            {<br>
+                $(this).removeClass("l-layout-collapse-right-toggle-over");<br>
+            });<br>
+            g.leftCollapse.toggle.click(function ()<br>
+            {<br>
+                g.setLeftCollapse(false);<br>
+            });<br>
+            g.rightCollapse.toggle.click(function ()<br>
+            {<br>
+                g.setRightCollapse(false);<br>
+            });<br>
+            if (g.left && g.isLeftCollapse)<br>
+            {<br>
+                g.leftCollapse.show();<br>
+                g.leftDropHandle && g.leftDropHandle.hide();<br>
+                g.left.hide();<br>
+            }<br>
+            if (g.right && g.isRightCollapse)<br>
+            {<br>
+                g.rightCollapse.show();<br>
+                g.rightDropHandle && g.rightDropHandle.hide();<br>
+                g.right.hide();<br>
+            }<br>
+        },<br>
+        _addDropHandle: function ()<br>
+        {<br>
+            var g = this, p = this.options;<br>
+            if (g.left && p.allowLeftResize)<br>
+            {<br>
+                g.leftDropHandle = $("<div class='l-layout-drophandle-left'></div>");<br>
+                g.layout.append(g.leftDropHandle);<br>
+                g.leftDropHandle && g.leftDropHandle.show();<br>
+                g.leftDropHandle.mousedown(function (e)<br>
+                {<br>
+                    g._start('leftresize', e);<br>
+                });<br>
+            }<br>
+            if (g.right && p.allowRightResize)<br>
+            {<br>
+                g.rightDropHandle = $("<div class='l-layout-drophandle-right'></div>");<br>
+                g.layout.append(g.rightDropHandle);<br>
+                g.rightDropHandle && g.rightDropHandle.show();<br>
+                g.rightDropHandle.mousedown(function (e)<br>
+                {<br>
+                    g._start('rightresize', e);<br>
+                });<br>
+            }<br>
+            if (g.top && p.allowTopResize)<br>
+            {<br>
+                g.topDropHandle = $("<div class='l-layout-drophandle-top'></div>");<br>
+                g.layout.append(g.topDropHandle);<br>
+                g.topDropHandle.show();<br>
+                g.topDropHandle.mousedown(function (e)<br>
+                {<br>
+                    g._start('topresize', e);<br>
+                });<br>
+            }<br>
+            if (g.bottom && p.allowBottomResize)<br>
+            {<br>
+                g.bottomDropHandle = $("<div class='l-layout-drophandle-bottom'></div>");<br>
+                g.layout.append(g.bottomDropHandle);<br>
+                g.bottomDropHandle.show();<br>
+                g.bottomDropHandle.mousedown(function (e)<br>
+                {<br>
+                    g._start('bottomresize', e);<br>
+                });<br>
+            }<br>
+            if (g.centerBottom && p.allowCenterBottomResize)<br>
+            {<br>
+                g.centerBottomDropHandle = $("<div class='l-layout-drophandle-centerbottom'></div>");<br>
+                g.layout.append(g.centerBottomDropHandle);<br>
+                g.centerBottomDropHandle.show();<br>
+                g.centerBottomDropHandle.mousedown(function (e)<br>
+                {<br>
+                    g._start('centerbottomresize', e);<br>
+                });<br>
+            }<br>
+            g.draggingxline = $("<div class='l-layout-dragging-xline'></div>");<br>
+            g.draggingyline = $("<div class='l-layout-dragging-yline'></div>");<br>
+            g.mask = $("<div class='l-dragging-mask'></div>");<br>
+            g.layout.append(g.draggingxline).append(g.draggingyline).append(g.mask);<br>
+        },<br>
+        _setDropHandlePosition: function ()<br>
+        {<br>
+            var g = this, p = this.options;<br>
+            if (g.leftDropHandle)<br>
+            {<br>
+                g.leftDropHandle.css({ left: g.left.width() + parseInt(g.left.css('left')), height: g.middleHeight, top: g.middleTop });<br>
+            }<br>
+            if (g.rightDropHandle)<br>
+            {<br>
+                g.rightDropHandle.css({ left: parseInt(g.right.css('left')) - p.space, height: g.middleHeight, top: g.middleTop });<br>
+            }<br>
+            if (g.topDropHandle)<br>
+            {<br>
+                g.topDropHandle.css({ top: g.top.height() + parseInt(g.top.css('top')), width: g.top.width() });<br>
+            }<br>
+            if (g.bottomDropHandle)<br>
+            {<br>
+                g.bottomDropHandle.css({ top: parseInt(g.bottom.css('top')) - p.space, width: g.bottom.width() });<br>
+            }<br>
+            if (g.centerBottomDropHandle)<br>
+            {<br>
+                g.centerBottomDropHandle.css({<br>
+                    top: parseInt(g.centerBottom.css('top')) - p.space,<br>
+                    left: parseInt(g.center.css('left')),<br>
+                    width: g.center.width()<br>
+                });<br>
+            }<br>
+        },<br>
+        _onResize: function ()<br>
+        { <br>
+            var g = this, p = this.options;<br>
+            var oldheight = g.layout.height(); <br>
+            //set layout height <br>
+            var h = 0;<br>
+            var windowHeight = $(window).height();<br>
+            var parentHeight = null;<br>
+            if (typeof (p.height) == "string" && p.height.indexOf('%') > 0)<br>
+            {<br>
+                var layoutparent = g.layout.parent();<br>
+                if (p.inWindow || layoutparent[0].tagName.toLowerCase() == "body")<br>
+                {<br>
+                    parentHeight = windowHeight;<br>
+                    parentHeight -= parseInt($('body').css('paddingTop'));<br>
+                    parentHeight -= parseInt($('body').css('paddingBottom'));<br>
+                }<br>
+                else<br>
+                {<br>
+                    parentHeight = layoutparent.height();<br>
+                }<br>
+                h = parentHeight * parseFloat(p.height) * 0.01;<br>
+                if (p.inWindow || layoutparent[0].tagName.toLowerCase() == "body")<br>
+                    h -= (g.layout.offset().top - parseInt($('body').css('paddingTop')));<br>
+            }<br>
+            else<br>
+            {<br>
+                h = parseInt(p.height);<br>
+            }<br>
+            h += p.heightDiff;<br>
+            g.layout.height(h);<br>
+            g.layoutHeight = g.layout.height();<br>
+            g.middleWidth = g.layout.width();<br>
+            g.middleHeight = g.layout.height();<br>
+            if (g.top)<br>
+            {<br>
+                g.middleHeight -= g.top.height();<br>
+                g.middleHeight -= parseInt(g.top.css('borderTopWidth'));<br>
+                g.middleHeight -= parseInt(g.top.css('borderBottomWidth'));<br>
+                g.middleHeight -= p.space;<br>
+            }<br>
+            if (g.bottom)<br>
+            {<br>
+                g.middleHeight -= g.bottom.height();<br>
+                g.middleHeight -= parseInt(g.bottom.css('borderTopWidth'));<br>
+                g.middleHeight -= parseInt(g.bottom.css('borderBottomWidth'));<br>
+                g.middleHeight -= p.space;<br>
+            }<br>
+            //specific<br>
+            g.middleHeight -= 2;<br>
+
+            if (g.hasBind('heightChanged') && g.layoutHeight != oldheight)<br>
+            {<br>
+                g.trigger('heightChanged', [{ layoutHeight: g.layoutHeight, diff: g.layoutHeight - oldheight, middleHeight: g.middleHeight}]);<br>
+            }<br>
+
+            if (g.center)<br>
+            {<br>
+                g.centerWidth = g.middleWidth;<br>
+                if (g.left)<br>
+                {<br>
+                    if (g.isLeftCollapse)<br>
+                    {<br>
+                        g.centerWidth -= g.leftCollapse.width();<br>
+                        g.centerWidth -= parseInt(g.leftCollapse.css('borderLeftWidth'));<br>
+                        g.centerWidth -= parseInt(g.leftCollapse.css('borderRightWidth'));<br>
+                        g.centerWidth -= parseInt(g.leftCollapse.css('left'));<br>
+                        g.centerWidth -= p.space;<br>
+                    }<br>
+                    else<br>
+                    {<br>
+                        g.centerWidth -= g.leftWidth;<br>
+                        g.centerWidth -= parseInt(g.left.css('borderLeftWidth'));<br>
+                        g.centerWidth -= parseInt(g.left.css('borderRightWidth'));<br>
+                        g.centerWidth -= parseInt(g.left.css('left'));<br>
+                        g.centerWidth -= p.space;<br>
+                    }<br>
+                }<br>
+                if (g.right)<br>
+                {<br>
+                    if (g.isRightCollapse)<br>
+                    {<br>
+                        g.centerWidth -= g.rightCollapse.width();<br>
+                        g.centerWidth -= parseInt(g.rightCollapse.css('borderLeftWidth'));<br>
+                        g.centerWidth -= parseInt(g.rightCollapse.css('borderRightWidth'));<br>
+                        g.centerWidth -= parseInt(g.rightCollapse.css('right'));<br>
+                        g.centerWidth -= p.space;<br>
+                    }<br>
+                    else<br>
+                    {<br>
+                        g.centerWidth -= g.rightWidth;<br>
+                        g.centerWidth -= parseInt(g.right.css('borderLeftWidth'));<br>
+                        g.centerWidth -= parseInt(g.right.css('borderRightWidth'));<br>
+                        g.centerWidth -= p.space;<br>
+                    }<br>
+                }<br>
+                g.centerLeft = 0;<br>
+                if (g.left)<br>
+                {<br>
+                    if (g.isLeftCollapse)<br>
+                    {<br>
+                        g.centerLeft += g.leftCollapse.width();<br>
+                        g.centerLeft += parseInt(g.leftCollapse.css('borderLeftWidth'));<br>
+                        g.centerLeft += parseInt(g.leftCollapse.css('borderRightWidth'));<br>
+                        g.centerLeft += parseInt(g.leftCollapse.css('left'));<br>
+                        g.centerLeft += p.space;<br>
+                    }<br>
+                    else<br>
+                    {<br>
+                        g.centerLeft += g.left.width();<br>
+                        g.centerLeft += parseInt(g.left.css('borderLeftWidth'));<br>
+                        g.centerLeft += parseInt(g.left.css('borderRightWidth'));<br>
+                        g.centerLeft += p.space;<br>
+                    }<br>
+                }<br>
+                g.center.css({ left: g.centerLeft });<br>
+                g.centerWidth >= 0 && g.center.width(g.centerWidth);<br>
+                g.middleHeight >= 0 && g.center.height(g.middleHeight);<br>
+                var contentHeight = g.middleHeight;<br>
+                if (g.center.header) contentHeight -= g.center.header.height();<br>
+                contentHeight >= 0 && g.center.content.height(contentHeight);<br>
+                 
+                g._updateCenterBottom(true);<br>
+            }<br>
+            if (g.left)<br>
+            {<br>
+                g.leftCollapse.height(g.middleHeight);<br>
+                g.left.height(g.middleHeight);<br>
+            }<br>
+            if (g.right)<br>
+            {<br>
+                g.rightCollapse.height(g.middleHeight);<br>
+                g.right.height(g.middleHeight);<br>
+                //set left<br>
+                g.rightLeft = 0;<br>
+
+                if (g.left)<br>
+                {<br>
+                    if (g.isLeftCollapse)<br>
+                    {<br>
+                        g.rightLeft += g.leftCollapse.width();<br>
+                        g.rightLeft += parseInt(g.leftCollapse.css('borderLeftWidth'));<br>
+                        g.rightLeft += parseInt(g.leftCollapse.css('borderRightWidth'));<br>
+                        g.rightLeft += p.space;<br>
+                    }<br>
+                    else<br>
+                    {<br>
+                        g.rightLeft += g.left.width();<br>
+                        g.rightLeft += parseInt(g.left.css('borderLeftWidth'));<br>
+                        g.rightLeft += parseInt(g.left.css('borderRightWidth'));<br>
+                        g.rightLeft += parseInt(g.left.css('left'));<br>
+                        g.rightLeft += p.space;<br>
+                    }<br>
+                }<br>
+                if (g.center)<br>
+                {<br>
+                    g.rightLeft += g.center.width();<br>
+                    g.rightLeft += parseInt(g.center.css('borderLeftWidth'));<br>
+                    g.rightLeft += parseInt(g.center.css('borderRightWidth'));<br>
+                    g.rightLeft += p.space;<br>
+                }<br>
+                g.right.css({ left: g.rightLeft });<br>
+            }<br>
+            if (g.bottom)<br>
+            {<br>
+                g.bottomTop = g.layoutHeight - g.bottom.height() - 2;<br>
+                g.bottom.css({ top: g.bottomTop });<br>
+            }<br>
+            g._setDropHandlePosition();<br>
+
+        },<br>
+        //加了centerBottom以后，需要对centerBottom进行刷新处理一下<br>
+        _updateCenterBottom: function (isHeightResize)<br>
+        {<br>
+            var g = this, p = this.options;<br>
+            if (g.centerBottom)<br>
+            {<br>
+                if (isHeightResize)<br>
+                {<br>
+                    var centerBottomHeight = g.centerBottomHeight || p.centerBottomHeight;<br>
+                    g.centerBottom.css({ left: g.centerLeft });<br>
+                    g.centerWidth >= 0 && g.centerBottom.width(g.centerWidth);<br>
+                    var centerHeight = g.center.height(), centerTop = parseInt(g.center.css("top"));<br>
+                    g.centerBottom.height(centerBottomHeight)<br>
+                    g.centerBottom.css({ top: centerTop + centerHeight - centerBottomHeight + 2 });<br>
+                    g.center.height(centerHeight - centerBottomHeight - 2);<br>
+                }<br>
+                var centerLeft = parseInt(g.center.css("left"));<br>
+                g.centerBottom.width(g.center.width()).css({ left: centerLeft });<br>
+            }<br>
+        },<br>
+        _start: function (dragtype, e)<br>
+        {<br>
+            var g = this, p = this.options;<br>
+            g.dragtype = dragtype;<br>
+            if (dragtype == 'leftresize' || dragtype == 'rightresize')<br>
+            {<br>
+                g.xresize = { startX: e.pageX };<br>
+                g.draggingyline.css({ left: e.pageX - g.layout.offset().left, height: g.middleHeight, top: g.middleTop }).show();<br>
+                $('body').css('cursor', 'col-resize');<br>
+                g.mask.height(g.layout.height()).removeClass("l-layout-ymask").addClass("l-layout-xmask").show();<br>
+            }<br>
+            else if (dragtype == 'topresize' || dragtype == 'bottomresize')<br>
+            {<br>
+                g.yresize = { startY: e.pageY };<br>
+                g.draggingxline.css({ top: e.pageY - g.layout.offset().top, width: g.layout.width() }).show();<br>
+                $('body').css('cursor', 'row-resize'); <br>
+                g.mask.height(g.layout.height()).removeClass("l-layout-xmask").addClass("l-layout-ymask").show();<br>
+            }<br>
+            else if (dragtype == 'centerbottomresize')<br>
+            {<br>
+                g.yresize = { startY: e.pageY };<br>
+                g.draggingxline.css({ top: e.pageY - g.layout.offset().top, width: g.layout.width() }).show();<br>
+                $('body').css('cursor', 'row-resize');<br>
+                g.mask.height(g.layout.height()).removeClass("l-layout-xmask").addClass("l-layout-ymask").show();<br>
+            }<br>
+            else<br>
+            {<br>
+                return;<br>
+            } <br>
+            g.layout.lock.width(g.layout.width());<br>
+            g.layout.lock.height(g.layout.height());<br>
+            g.layout.lock.show();<br>
+            if ($.browser.msie || $.browser.safari) $('body').bind('selectstart', function () { return false; }); // 不能选择<br>
+
+            $(document).bind('mouseup', function ()<br>
+            {<br>
+                g._stop.apply(g, arguments);<br>
+            });<br>
+            $(document).bind('mousemove', function ()<br>
+            {<br>
+                g._drag.apply(g, arguments);<br>
+            });<br>
+        },<br>
+        _drag: function (e)<br>
+        {<br>
+            var g = this, p = this.options;<br>
+            if (g.xresize)<br>
+            {<br>
+                g.xresize.diff = e.pageX - g.xresize.startX;<br>
+                g.draggingyline.css({ left: e.pageX - g.layout.offset().left });<br>
+                $('body').css('cursor', 'col-resize'); <br>
+            }<br>
+            else if (g.yresize)<br>
+            {<br>
+                g.yresize.diff = e.pageY - g.yresize.startY;<br>
+                g.draggingxline.css({ top: e.pageY - g.layout.offset().top });<br>
+                $('body').css('cursor', 'row-resize');<br>
+            }<br>
+        },<br>
+        _stop: function (e)<br>
+        {<br>
+            var g = this, p = this.options;<br>
+            var diff;<br>
+            if (g.xresize && g.xresize.diff != undefined)<br>
+            {<br>
+                diff = g.xresize.diff;<br>
+                if (g.dragtype == 'leftresize')<br>
+                {<br>
+                    if (p.minLeftWidth)<br>
+                    {<br>
+                        if (g.leftWidth + g.xresize.diff < p.minLeftWidth)<br>
+                            return;<br>
+                    }<br>
+                    g.leftWidth += g.xresize.diff;<br>
+                    g.left.width(g.leftWidth);<br>
+                    if (g.center)<br>
+                        g.center.width(g.center.width() - g.xresize.diff).css({ left: parseInt(g.center.css('left')) + g.xresize.diff });<br>
+                    else if (g.right)<br>
+                        g.right.width(g.left.width() - g.xresize.diff).css({ left: parseInt(g.right.css('left')) + g.xresize.diff }); <br>
+                }<br>
+                else if (g.dragtype == 'rightresize')<br>
+                {<br>
+                    if (p.minRightWidth)<br>
+                    {<br>
+                        if (g.rightWidth - g.xresize.diff < p.minRightWidth)<br>
+                            return;<br>
+                    }<br>
+                    g.rightWidth -= g.xresize.diff;<br>
+                    g.right.width(g.rightWidth).css({ left: parseInt(g.right.css('left')) + g.xresize.diff });<br>
+                    if (g.center)<br>
+                        g.center.width(g.center.width() + g.xresize.diff);<br>
+                    else if (g.left)<br>
+                        g.left.width(g.left.width() + g.xresize.diff);<br>
+                }<br>
+                g._updateCenterBottom();<br>
+            }<br>
+            else if (g.yresize && g.yresize.diff != undefined)<br>
+            {<br>
+                diff = g.yresize.diff;<br>
+                if (g.dragtype == 'topresize')<br>
+                {<br>
+                    g.top.height(g.top.height() + g.yresize.diff);<br>
+                    g.middleTop += g.yresize.diff;<br>
+                    g.middleHeight -= g.yresize.diff;<br>
+                    if (g.left)<br>
+                    {<br>
+                        g.left.css({ top: g.middleTop }).height(g.middleHeight);<br>
+                        g.leftCollapse.css({ top: g.middleTop }).height(g.middleHeight);<br>
+                    }<br>
+                    if (g.center) g.center.css({ top: g.middleTop }).height(g.middleHeight);<br>
+                    if (g.right)<br>
+                    {<br>
+                        g.right.css({ top: g.middleTop }).height(g.middleHeight);<br>
+                        g.rightCollapse.css({ top: g.middleTop }).height(g.middleHeight);<br>
+                    }<br>
+                    g._updateCenterBottom(true);<br>
+                }<br>
+                else if (g.dragtype == 'bottomresize')<br>
+                {<br>
+                    g.bottom.height(g.bottom.height() - g.yresize.diff);<br>
+                    g.middleHeight += g.yresize.diff;<br>
+                    g.bottomTop += g.yresize.diff;<br>
+                    g.bottom.css({ top: g.bottomTop });<br>
+                    if (g.left)<br>
+                    {<br>
+                        g.left.height(g.middleHeight);<br>
+                        g.leftCollapse.height(g.middleHeight);<br>
+                    }<br>
+                    if (g.center) g.center.height(g.middleHeight);<br>
+                    if (g.right)<br>
+                    {<br>
+                        g.right.height(g.middleHeight);<br>
+                        g.rightCollapse.height(g.middleHeight);<br>
+                    }<br>
+                    g._updateCenterBottom(true);<br>
+                }<br>
+                else if (g.dragtype == 'centerbottomresize')<br>
+                {<br>
+                    g.centerBottomHeight = g.centerBottomHeight || p.centerBottomHeight;<br>
+                    g.centerBottomHeight -= g.yresize.diff; <br>
+                    var centerBottomTop = parseInt(g.centerBottom.css("top"));<br>
+                    g.centerBottom.css("top" , centerBottomTop + g.yresize.diff);<br>
+                    g.centerBottom.height(g.centerBottom.height() - g.yresize.diff);  <br>  
+                    g.center.height(g.center.height() + g.yresize.diff); <br>
+                }<br>
+            }<br>
+            g.trigger('endResize', [{<br>
+                direction: g.dragtype ? g.dragtype.replace(/resize/, '') : '',<br>
+                diff: diff<br>
+            }, e]);<br>
+            g._setDropHandlePosition();<br>
+            g.draggingxline.hide();<br>
+            g.draggingyline.hide();<br>
+            g.mask.hide();<br>
+            g.xresize = g.yresize = g.dragtype = false;<br>
+            g.layout.lock.hide();<br>
+            if ($.browser.msie || $.browser.safari)<br>
+                $('body').unbind('selectstart');<br>
+            $(document).unbind('mousemove', g._drag);<br>
+            $(document).unbind('mouseup', g._stop);<br>
+            $('body').css('cursor', '');<br>
+
+        }<br>
+    });<br>
+
+})(jQuery);<br>
+</p>
+</blockquote>
+</div>
+
+        
+        
+<!--使用说明-->
+<div id="date">
+<blockquote class="vlight">
+<p>
+/* 数据等待添加 */
+
+</p>
+</blockquote>
+</div>
+
+
+</div>       
+</body>
+</html>

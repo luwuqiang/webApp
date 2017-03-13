@@ -1,0 +1,86 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<link href="../../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../../js/lib/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/lib/echarts/echarts-all.js"></script>
+<script type="text/javascript" src="../../js/lib/echarts/echarts.js"></script>
+<script src="../../js/lib/echarts/echarts_map.js"></script>
+<script src="../../js/bd/charts.js"></script>
+<script src="../../js/lib/echarts/echarts_maplist.js"></script>
+<!--倒计时-->
+<link href="../../js/lib/countdown/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/lib/countdown/js/jquery.countdown.js"></script>    
+<script type="text/javascript">
+$(document).ready(function(e) {
+	$("#chart_map").chartsMap({
+			jsonUrl:'../../js/data/map2.json',  //报表的JSON文件路径
+			tabID:'#chart_map',              //调用报表的ID
+			width:780,                      //报表显示宽度
+			height:200,                      //报表显示高度
+			isWhat:'world'  ,                  //报表所用的格式
+			echartsAdd:'../../js/lib/echarts'  //echarts文件路径
+		});
+});	
+$(function(){
+	$(".digits").countdown({
+		image: "../../js/lib/countdown/images/digits.png",
+		format: "hh:mm:ss",
+		startTime: "00:60:00"
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="testHTml"></div>
+<div style="background:#000;">
+    <div class="dpsj">
+        <div class="digits"></div>
+     </div>
+     
+    <div id="chart_map" style="position: relative;top:0%;left:0px; right:0px; bottom:0px; height:220px;width:800px"></div>
+</div>
+<script language="JavaScript">
+<!--
+function _InitScroll(_S1,_S2,_W,_H,_T){
+	return "var marqueesHeight"+_S1+"="+_H+";var stopscroll"+_S1+"=false;var scrollElem"+_S1+"=document.getElementById('"+_S1+"');with(scrollElem"+_S1+"){style.width="+_W+";style.height=marqueesHeight"+_S1+";style.overflow='hidden';noWrap=true;}scrollElem"+_S1+".onmouseover=new Function('stopscroll"+_S1+"=true');scrollElem"+_S1+".onmouseout=new Function('stopscroll"+_S1+"=false');var preTop"+_S1+"=0; var currentTop"+_S1+"=0; var stoptime"+_S1+"=0;var leftElem"+_S2+"=document.getElementById('"+_S2+"');scrollElem"+_S1+".appendChild(leftElem"+_S2+".cloneNode(true));setTimeout('init_srolltext"+_S1+"()',"+_T+");function init_srolltext"+_S1+"(){scrollElem"+_S1+".scrollTop=0;setInterval('scrollUp"+_S1+"()',50);}function scrollUp"+_S1+"(){if(stopscroll"+_S1+"){return;}currentTop"+_S1+"+=1;if(currentTop"+_S1+"==(marqueesHeight"+_S1+"+1)) {stoptime"+_S1+"+=1;currentTop"+_S1+"-=1;if(stoptime"+_S1+"=="+_T/50+") {currentTop"+_S1+"=0;stoptime"+_S1+"=0;}}else{preTop"+_S1+"=scrollElem"+_S1+".scrollTop;scrollElem"+_S1+".scrollTop +=1;if(preTop"+_S1+"==scrollElem"+_S1+".scrollTop){scrollElem"+_S1+".scrollTop=0;scrollElem"+_S1+".scrollTop +=1;}}}";
+}
+
+eval(_InitScroll("A1","A2",200,40*5,3000));
+
+/*
+A1,A2或B1,B2是滚动内容区域外的两个DIV的ID
+如
+	<div id="B1">
+		<div id="B2">
+_W为滚动内容的宽度
+_H为滚动内容的高度,必须为单元格高度的整数倍，这里每个单元格是19px高
+_T为滚动后每次停留言时间
+
+*/
+//-->
+</script>
+<!--<script src="../../js/lib/echarts/echarts_map.js"></script>
+<script type="text/javascript">
+ // 路径配置
+        require.config({
+            paths: {
+                echarts: '../../js/lib/echarts'
+            }
+        });
+		
+        
+</script>
+<script src="../../js/lib/echarts/chart_map2.js"></script>-->
+
+
+<div class="clearfix"></div>  
+<iframe src="add_chart_map2.html" name="wcontent"  frameborder="0" scrolling="auto" width="100%" height="345px"></iframe>   
+
+</body>
+</html>

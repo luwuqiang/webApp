@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" >
+<title>蓝盾模板</title>
+<link href="../skin/style/style.css" rel="stylesheet" type="text/css">
+<link href="../skin/style/dialog.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/lib/jquery.min.js" ></script>
+<script type="text/javascript" src="../js/lib/index.js"></script>
+<script type="text/javascript" src="../js/lib/jquery.artDialog.source.js"></script>
+<script type="text/javascript" src="../js/lib/tab.js"></script>
+</head>
+<body>
+<div id="pagewidth">
+    <!--header-->
+    <div class="header">
+        <!--header-left-->
+        <div class="header_left">
+            <!--logo-->
+            <img src="../skin/images/logo.png"  class="float_l">
+            <!--语言选择-->
+            <div class="language float_l">简体中文</div>
+            <div class="lang" style="display:none">
+                <ul>
+                    <li>简体中文</li>
+                    <li>English</li>
+                    <li>日文版</li>
+                    <li>韩文版</li>
+                </ul>
+            </div>
+        </div>
+        <!--header-right 告警 主页 用户信息-->
+        <div class="float_r header_right" >
+        	<div class="right_menu">
+                <ul>
+                    <li class="warning"></li>
+                    <li class="home" ><a href="home.html" rel="index" target="index"  style="display:none">系统主页</a></li>
+                    <li class="user" ></li>
+                </ul>
+                <!--告警总数显示，超过两个数字显示99+-->
+                <span class="xxts_n w">5</span>
+            </div>
+            <!--告警-->
+            <div id="warnning" class="xxts">
+            	<span class="xxts_icon"></span>
+                <h3>有<span>5</span>类告警提示</h3>
+                <div class="xxts_nr">
+                	<ul>
+                    	<li><a href="zjpzgj.html" rel="zjpzgj" target="right"><font>主机配置告警</font><span class="xxts_n">1</span></a></li>
+                    	<li><font>主机配置告警</font><span class="xxts_n">1</span></span>
+                    	<li><font>主机配置告警</font><span class="xxts_n">1</span></li>
+                    	<li><font>主机配置告警</font><span class="xxts_n">1</span></li>
+                    	<li><font>主机配置告警</font><span class="xxts_n">1</span></li>
+                    </ul>
+                </div>
+            </div>
+            <!--用户-->
+            <div id="user" class="xxts">
+            	<span class="xxts_icon"></span>
+                <h3>Admin 超级用户</h3>
+                <div class="xxts_nr">
+                	<ul>
+                    	<li><a href="mod_password.html" rel="zjpzgj" target="right"><font>重设密码</font></a></li>
+                    	<li><a href="../login.html"><font>退出系统</font></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+<!--left-->
+   
+    <div  class="menu" >
+        <ul id="documents">
+            <li><a><span class="menu_icon xtgl"></span><p>系统管理</p><span class="menu_s menu_small_icon"></span></a>
+                <ul>
+                   <!--三级菜单-->
+				<li><a><span class="menu_sicon menu_small_icon"></span><p>系统信息 </p><span class="menu_s menu_small_icon"></span></a>
+                     
+                     	 <ul>
+                            <li><a link="chart.html" rel="wldk1" target="right" ><span class="menu_sicon menu_small_icon"></span><p>网络端口2</p></a></li>
+                            <li><a link="list_mb.html" target="right"><span class="menu_sicon menu_small_icon"></span><p>网络端口2</p></a></li>
+                            <li><a link="list_mb.html" target="right"><span class="menu_sicon menu_small_icon"></span><p>网络端口2</p></a></li>
+                        </ul>
+                    </li>  
+					<li><a link="chart.html" rel="wldk7" target="right"><span class="menu_sicon menu_small_icon"></span><p>报表 </p></a></li>
+                    <li><a link="add_mb.html" rel="wldk8" target="right"><span class="menu_sicon menu_small_icon"></span><p>系统配置</p></a></li>
+                    <li><a link="list_mb.html" rel="list_mb" target="right"><span class="menu_sicon menu_small_icon"></span><p>用户管理</p></a></li>
+                    <li><a link="sys_adm.html" rel="wldk4" target="right"><span class="menu_sicon menu_small_icon"></span><p>系统维护</p></a></li>
+                    <li><a link="add_mb.html" rel="add_mb" target="right"><span class="menu_sicon menu_small_icon"></span><p>恢复出厂设置</p></a></li>
+                </ul>
+            </li>
+            <li ><a><span class="menu_icon xtjk"></span><p>系统监控</p><span class="menu_s menu_small_icon"></span></a>
+                <ul>
+                    <li><a><span class="menu_sicon menu_small_icon"></span><p>网络端口2</p></a></li>
+                    <li><a><span class="menu_sicon menu_small_icon"></span><p>网络端口3</p></a></li>
+                </ul>
+            </li>
+            <li><a href="javascript:void(0)" link="add_mb.html"  rel="zygl" target="right"><span class="menu_icon zygl"></span><p>资源管理</p><span class="menu_s menu_small_icon"></span></a></li>
+            <li><a href="javascript:void(0)" link="sys_adm.html" rel="wlgl" target="right"><span class="menu_icon wlgl"></span><p>网络管理</p><span class="menu_s menu_small_icon"></span></a></li>
+            <li><a href="javascript:void(0)" link="sys_adm.html" rel="fhq" target="right"><span class="menu_icon fhq"></span><p>防火墙</p><span class="menu_s menu_small_icon"></span></a></li>
+            <li><a href="javascript:void(0)" rel="index" target="right"><span class="menu_icon xnfhq"></span><p>虚拟防火墙</p><span class="menu_s menu_small_icon"></span></a></li>
+            <li><a><span class="menu_icon wbfhq"></span><p>WEB防火墙</p><span class="menu_s menu_small_icon"></span></a></li>
+            <li><a><span class="menu_icon xnzyw"></span><p>虚拟专用网</p><span class="menu_s menu_small_icon"></span></a></li>
+            <li><a><span class="menu_icon fljyj"></span><p>反垃圾邮件</p><span class="menu_s menu_small_icon"></span></a></li>
+            <li><a><span class="menu_icon rqfy"></span><p>入侵防御</p><span class="menu_s menu_small_icon"></span></a></li>
+            <li><a><span class="menu_icon yygl"></span><p>应用过滤</p><span class="menu_s menu_small_icon" ></span></a></li>
+            <li><a><span class="menu_icon bdfy"></span><p>病毒防御</p><span class="menu_s menu_small_icon"></span></a></li>
+            <li><a><span class="menu_icon gkgx"></span><p>高可靠性</p><span class="menu_s menu_small_icon"></span></a></li>
+            <li><a><span class="menu_icon rzgl"></span><p>日志管理</p><span class="menu_s menu_small_icon"></span></a></li>
+        </ul>
+    </div>
+<!--left hidden-->
+    <div class="left_h">
+        <div class="l_icon hidden_i"></div>
+    </div>
+<!--content-->
+    <div class="content">
+         <div class="l-tab-links"> 
+            <ul id="tabs">
+            <li class='current'>
+                <a id="index" class="tab" href='#' >系统主页</a>
+            </li>
+            </ul>
+         </div>
+        <div id="content" class="l-tab-content">
+            <iframe  id="index_content" frameborder="0" name="home" src="home.html" ></iframe>
+            <!-- Tab content goes here -->
+        </div>
+
+    </div>
+<!--footer-->    
+   <div class="footer">蓝盾信息安全技术股份有限公司  版权所有   Copyright&copy;1998-2014   Bluedon.   All Rights Reserve</div>
+</div>
+</body>
+</html>

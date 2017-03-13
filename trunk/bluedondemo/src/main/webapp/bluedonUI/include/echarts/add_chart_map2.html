@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>title</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<!--可以在收藏夹中显示出图标-->
+<link rel="Bookmark" href="../../skin/style/images/favicon.ico" type="image/x-icon"/>
+<!--可以在地址栏中显示出图标-->
+<link rel="shortcut icon" href="../../skin/style/images/favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="../../skin/style/images/favicon.ico" type="image/x-icon"/>
+<!--公共-->
+<link href="../../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../../js/lib/jquery.min.js" type="text/javascript"></script>
+<script src="../../js/lib/tab/tab.js" type="text/javascript"></script>
+<!--代码变色-->
+<script src="../../js/lib/vejis.js" type="text/javascript"></script>
+<script src="../../js/lib/vlight.js" type="text/javascript"></script>
+<style type="text/css">
+body{_overflow:hidden}
+</style>
+</head>
+
+<body>
+
+<div style="padding:0px 20px;">
+  <div class="list-data">
+        <div class="list-tab mar_top">
+            <ul>
+            <li class="listcurrent"><a href="#html">HTML代码</a></li>
+            <li><a href="#css">CSS代码</a></li>
+            <li><a href="#java">JAVASCRIPT代码(含数据交互)</a></li>
+            <li><a href="#date">使用说明</a></li>
+        </ul>
+        </div>
+    </div>
+     
+     <div class="clearfix"></div> 
+     <div class=" list-content">
+		
+<!--HTML代码-->
+<div id="html">
+<blockquote class="vlight">
+<p>
+
+
+<!--内容显示--><br>
+&lt;div style="background:#000;"&gt;<br>
+    &lt;div class="dpsj"&gt;<br>
+        &lt;div class="digits"&gt;&lt;/div&gt;<br>
+     &lt;/div&gt;<br>
+     
+    &lt;div id="chart_map" style="position:relative;top:0%;left:0px; right:0px; bottom:0px; height:220px;width:100%"&gt;&lt;/div&gt;<br>
+&lt;/div&gt;<br>
+&lt;script language="JavaScript"&gt;<br>
+&lt;!--<br>
+function _InitScroll(_S1,_S2,_W,_H,_T){<br>
+	return "var marqueesHeight"+_S1+"="+_H+";var stopscroll"+_S1+"=false;var scrollElem"+_S1+"=document.getElementById('"+_S1+"');with(scrollElem"+_S1+"){style.width="+_W+";style.height=marqueesHeight"+_S1+";style.overflow='hidden';noWrap=true;}scrollElem"+_S1+".onmouseover=new Function('stopscroll"+_S1+"=true');scrollElem"+_S1+".onmouseout=new Function('stopscroll"+_S1+"=false');var preTop"+_S1+"=0; var currentTop"+_S1+"=0; var stoptime"+_S1+"=0;var leftElem"+_S2+"=document.getElementById('"+_S2+"');scrollElem"+_S1+".appendChild(leftElem"+_S2+".cloneNode(true));setTimeout('init_srolltext"+_S1+"()',"+_T+");function init_srolltext"+_S1+"(){scrollElem"+_S1+".scrollTop=0;setInterval('scrollUp"+_S1+"()',50);}function scrollUp"+_S1+"(){if(stopscroll"+_S1+"){return;}currentTop"+_S1+"+=1;if(currentTop"+_S1+"==(marqueesHeight"+_S1+"+1)) {stoptime"+_S1+"+=1;currentTop"+_S1+"-=1;if(stoptime"+_S1+"=="+_T/50+") {currentTop"+_S1+"=0;stoptime"+_S1+"=0;}}else{preTop"+_S1+"=scrollElem"+_S1+".scrollTop;scrollElem"+_S1+".scrollTop +=1;if(preTop"+_S1+"==scrollElem"+_S1+".scrollTop){scrollElem"+_S1+".scrollTop=0;scrollElem"+_S1+".scrollTop +=1;}}}";
+}<br>
+
+eval(_InitScroll("A1","A2",200,40*5,3000));<br>
+
+/*<br>
+A1,A2或B1,B2是滚动内容区域外的两个DIV的ID<br>
+如<br>
+	&lt;div id="B1"&gt;<br>
+		&lt;div id="B2"&gt;<br>
+_W为滚动内容的宽度<br>
+_H为滚动内容的高度,必须为单元格高度的整数倍，这里每个单元格是19px高<br>
+_T为滚动后每次停留言时间<br>
+
+*/<br>
+//--&gt;<br>
+&lt;/script&gt;<br>
+
+<!--js文件--><br>
+&lt;script src="../../js/lib/echarts/echarts-all.js"&gt;&lt;/script&gt;<br>
+&lt;script src="../../js/lib/echarts/echarts.js"&gt;&lt;/script&gt;<br>
+&lt;script src="../../js/bd/charts.js"&gt;&lt;/script&gt;<br>
+&lt;script src="../../js/lib/echarts/echarts_maplist.js"&gt;&lt;/script&gt;<br>
+&lt;script type="text/javascript"&gt;<br>
+$(document).ready(function(e) {<br>
+    $("#chart_map").chartsMap({<br>
+            jsonUrl:'../../js/data/map2.json',  //报表的JSON文件路径<br>
+            tabID:'#chart_map',              //调用报表的ID<br>
+            width:780,                      //报表显示宽度<br>
+            height:200,                      //报表显示高度<br>
+            isWhat:'world'  ,                  //报表所用的格式<br>
+            echartsAdd:'../../js/lib/echarts'  //echarts文件路径<br>
+        });<br>
+}); <br>
+$(function(){<br>
+    $(".digits").countdown({<br>
+        image: "../../js/lib/countdown/images/digits.png",<br>
+        format: "hh:mm:ss",<br>
+        startTime: "00:60:00"<br>
+    });<br>
+});<br>
+&lt;/script&gt;<br>
+</p>    
+</blockquote>
+</div>
+        
+<!--CSS代码-->
+<div id="css">
+<blockquote class="vlight">
+<p>
+/* 暂无涉及的相关文件 */
+</p>
+</blockquote>
+</div>
+        
+<!--JAVASCRIPT代码-->
+<div id="java">
+<blockquote class="vlight">
+<p>
+// JSON 数据格式<br>
+{ <br>
+    "series": [{<br>
+        "geoCoord":[{"李二": [116.3910,39.9169],"李子": [113.2707,23.1345],"李好": [121.4802,31.2375],"宋安": [139.657341,35.81953],
+"首尔": [126.926412,37.644562],"河内": [105.8203,20.76433],"班农": [102.8182,20.10184],"永珍": [102.6329,17.9747],
+"曼谷": [100.5036,13.7522],"吉隆坡": [101.6925,3.1178],"新加坡":[103.8568,1.2805],"雅加达": [106.8458,-6.2238],
+"巴里岛": [115.0904,-8.3481],"格兰努": [125.4402,-8.7350],"门迪": [143.6514,-6.1834],"马莱":[121.9397,11.91298],
+"加拉干达": [73.1137,49.7695],"喀什": [75.9808,39.4259],"拉萨":[91.1639,29.6049],"周华": [-118.2405,34.0083],
+"周明": [-122.9870,49.2650],"墨西哥": [-99.2269,19.4953],"多伦多": [-79.43149,43.67593],"休士顿": [-95.22,29.46],
+"纽约":[-74.0066,40.7164],"哈瓦那": [-82.22,23.08],"危地马拉": [-90.31,14.38],"利马": [-77.03,-12.03],"太子港": [-72.20,18.32],
+"马那瓜": [-86.17,12.09],"罗索": [-61.24,15.18],"梅洛": [-54.1646,-32.3840],"坦迪尔": [-59.1435,-37.3603],
+"科海丘": [-72.0552,-45.6053],"雅典":[23.43,37.58], "威尼斯":[12.21,45.27],"伦敦":[0.10,51.30],
+"卢森堡":[6.09,49.36],"牛津":[-1.15, 51.46],"都柏林":[-6.15,53.20],"巴黎":[2.20,48.52],
+"穆村":[-345.8537,66.3154],"普勒文":[-415.6141,72.3482],"坎帕拉":[32.25,0.19],"拉巴特":[-6.51,34.02],
+"阿克拉":[-0.15,5.33],"开普敦":[18.28,-35.56],"德班":[-328.9781,-29.8592],"奧克蘭":[174.45,-36.53], 
+"墨爾本":[144.58,-37.49],"霍尼亞拉":[159.57,-9.27],"蘇瓦":[178.25,-18.08],"莫斯科":[37.35,55.45], 
+"喀山":[49.08,55.45],"明斯克":[27.34,53.54],"基輔":[30.31,50.26],"张小华":[24.55,59.25]
+    }],<br>
+        "markLine": [<br>
+                    [{"name":"李二"}, {"name":"纽约","value":95}],<br>
+                    [{"name":"纽约"}, {"name":"李二","value":15}],<br>
+                    [{"name":"莫斯科"}, {"name":"李二","value":90}],<br>
+                    [{"name":"利马"}, {"name":"李二","value":90}],<br>
+                    [{"name":"李二"}, {"name":"巴黎","value":90}],<br>
+                    [{"name":"周明"}, {"name":"周华","value":50}],<br>
+                    [{"name":"李二"}, {"name":"李子","value":30}]<br>
+        ],<br>
+        "markPoint": [<br>
+                    {"name":"穆村","value":75},
+                    {"name":"李二","value":75},
+                    {"name":"周明","value":90},
+                    {"name":"莫斯科","value":30},
+                    {"name":"李子","value":30},
+                    {"name":"李好","value":60},
+                    {"name":"纽约","value":95},
+                    {"name":"马那瓜","value":60},
+                    {"name":"梅洛","value":30},
+                    {"name":"开普敦","value":30},
+                    {"name":"张小华","value":30},
+                    {"name":"墨爾本","value":30},
+                    {"name":"巴黎","value":90},
+                    {"name":"周华","value":50},
+                    {"name":"墨西哥","value":60},
+                    {"name":"马莱","value":80},
+                    {"name":"宋安","value":20},
+                    {"name":"永珍","value":80},
+                    {"name":"河内","value":60},
+                    {"name":"曼谷","value":30},
+                    {"name":"坎帕拉","value":90},
+                    {"name":"都柏林","value":90},
+                    {"name":"拉巴特","value":30},
+                    {"name":"利马","value":30},
+                    {"name":"普勒文","value":30},
+                    {"name":"利马","value":30},
+                    {"name":"伦敦","value":30}
+        ],<br>
+        "title":"城市态势图"<br>
+    }],<br>
+    "color":["#ff3333", "orange", "yellow","lime","aqua"],<br>
+    "title":"'蓝盾杯'安全大赛"<br>
+}  <br>
+//公共代码<br>
+$.fn.chartsObj = function(option){<br>
+    var setting = {<br>
+        typecharts:'bar',     //是什么类型的报表bar,line,pie等<br>
+        jsonUrl:null,         //报表的JSON文件路径<br>
+        tabID:null,           //调用报表的ID<br>
+        trigger:null,         //报表的trigger类型<br>
+        width:'98%',          //报表显示宽度<br>
+        height:240,           //报表显示高度<br>
+        openWin:null,         //报表是否有弹出详情页面<br>
+        openurl:null,         //报表弹出详情页面地址<br>
+        isWhat :null,         //报表所用的格式<br>
+        lineType:true,        //判断是否有背景的线形图,true为有背景的，FALSE为无背景<br>
+        echartsAdd:null       //echarts文件路径<br>
+    };<br>
+    option = $.extend(setting, option);    //合并参数<br>
+    var tp = option.typecharts;<br>
+    var jsonA = option.jsonUrl;<br>
+    var ID = option.tabID;<br>
+    var Tg = option.trigger;<br>
+    var ou = option.openWin;<br>
+    var Url = option.openurl;<br>
+    
+    require.config({<br>
+        paths : {  <br>
+            echarts : option.echartsAdd<br>
+        }  <br>
+    });  <br>
+    require([ 'echarts', 'echarts/chart/'+tp]);<br>
+    
+
+    $(ID).BDChats.defaults = {<br>
+            iWidth:option.width,<br>
+            iHeight:option.height,<br>
+            noAjax:true, //使用后台请求数据<br>
+            loading : true, //加载层<br>
+            hParams :{} //提交的参数<br>
+    
+    };
+    //类型<br>
+    switch(option.isWhat){<br>
+        case 'world'://世界地图<br>
+            var geoCoord = new Array();<br>
+            var markLine = new Array();<br>
+            var markPoint = new Array();<br>
+            var titleAll = new Array();<br>
+            var color = new Array();<br>
+            var title = new Array();<br>
+            $.ajaxSettings.async = false;<br>
+            $.getJSON(jsonA, function (jsonArray) {<br>
+                geoCoord = jsonArray.series[0].geoCoord[0];<br>
+                markLine = jsonArray.series[0].markLine;<br>
+                markPoint = jsonArray.series[0].markPoint;<br>
+                title = jsonArray.series[0].title;<br>
+                titleAll = jsonArray.title;<br>
+                color = jsonArray.color<br>
+            });<br>
+            //console.log(titleAll);
+            $("#testHTml").html(markPoint);<br>
+            worldmap(ID,geoCoord,markLine,markPoint,titleAll,title,color);  //map调用option函数<br>
+            break;<br>
+    }<br>
+}<br>
+//世界地图<br>
+function worldmap(ID,geoCoord,markLine,markPoint,titleAll,title,color){<br>
+         var addMarkpdiv = {<br>
+                symbol:'emptyCircle',<br>
+                symbolSize : 3,<br>
+                effect: {<br>
+                    show: true,<br>
+                    shadowBlur : 0,<br>
+                    type:'scale',<br>
+                    period:15//运动周期，值越大就越慢<br>
+                },<br>
+                data: markPoint <br>
+            };<br>
+         $(ID).BDChats({<br>
+            noAjax:true,<br>
+            openUrl:false,<br>
+            isWorld:true,<br>
+            addWorldmark:addMarkpdiv,<br>
+            color: color,<br>
+            title : {<br>
+                text: titleAll,<br>
+                x:'left',<br>
+                padding:20,<br>
+                textStyle : {<br>
+                    color: '#ddd',<br>
+                    fontSize:'22'     <br>  
+                }<br>
+            },<br>
+            tooltip : {<br>
+                trigger: 'item',<br>
+                formatter: '{b}'<br>
+            },<br>
+            dataRange: {<br>
+                show:false,<br>
+                min : 0,<br>
+                max : 100,<br>
+                calculable : true,<br>
+                color: color,<br>
+                textStyle:{<br>
+                    color:'#fff'<br>
+                }<br>
+            },<br>
+            series : [<br>
+            {<br>
+                name: title,<br>
+                type: 'map',<br>
+                roam: true,<br>
+                hoverable: false,<br>
+                mapType: 'world',<br>
+                data:[],<br>
+                itemStyle:{<br>
+                    normal:{<br>
+                        borderColor:'rgba(100,149,237,1)',<br>
+                        borderWidth:0.5,<br>
+                        areaStyle:{<br>
+                            color: '#000000'<br>
+                        },<br>
+                    },<br>
+                
+                },<br>
+               geoCoord:geoCoord,<br>
+               markLine:{<br>
+                        smooth:true,<br>
+                        symbol: ['none', 'circle'], <br> 
+                        symbolSize : 1,<br>
+                        effect : {<br>
+                            show: true,<br>
+                            scaleSize: 2,<br>
+                            period: 10,<br>
+                            color: '#fff',<br>
+                            shadowBlur: 12<br>
+                        },<br>
+                        data:markLine,<br>
+                        itemStyle : {<br>
+                                normal: {<br>
+                                    label:{show:false,<br>
+                                    position:'bottom',<br>
+                                    formatter : function(s) {<br>
+                                    return s.name.split(":")[1];<br>
+                                    },<br>
+                                     textStyle : {<br>
+                                        fontSize:'14' <br>      
+                                    }<br>
+                                    },<br>
+                                    borderWidth:1,<br>
+                                    lineStyle: {<br>
+                                        type: 'solid',<br>
+                                        shadowBlur: 5<br>
+                                    }<br>
+                                }<br>
+                            }<br>
+                    },<br>
+               markPoint:{<br>
+                            symbol:'emptyCircle',<br>
+                            symbolSize : 3,<br>
+                            itemStyle:{<br>
+                                normal:{<br>
+                                    label:{<br>
+                                        show:true,<br>
+                                        position:'left',<br>
+                                        formatter : function(d) {<br>
+                                            return d.name;<br>
+                                        },<br>
+                                         textStyle : {<br>
+                                            fontSize:'16' <br>      
+                                        }<br>
+                                    }<br>
+                                    
+                                }<br>
+                                
+                            },<br>
+                           data:markPoint
+               }<br>
+            }]<br>
+            }) .on('afterrender', function (e, charts, el,option) {<br>
+                    $('body').delegate('.reload','click',function(e){<br>
+                    });<br>
+                });    <br> 
+};<br>
+</p>
+</blockquote>
+</div>
+        
+        
+<!--使用说明-->
+<div id="date">
+<blockquote class="vlight">
+<p>
+/* 数据等待添加 */
+
+</p>
+</blockquote>
+</div>
+
+        
+        
+</div>
+
+</div>
+
+</body>
+</html>

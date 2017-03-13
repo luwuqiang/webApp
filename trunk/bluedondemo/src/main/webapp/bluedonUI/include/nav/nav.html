@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>列表</title>
+<!--公共-->
+<link href="../../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../../js/lib/jquery.min.js" type="text/javascript"></script>
+<!--grid-->
+<link href="../../js/lib/ligerUI/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+<script src="../../js/lib/liger../js/lib/base.js" type="text/javascript"></script>
+<script src="../../js/lib/liger../js/lib/ligerGrid.js" type="text/javascript"></script>
+<script src="../../js/lib/liger../js/lib/CustomersData1.js" type="text/javascript"></script>
+<script src="../../js/lib/liger../js/lib/GridList.js" type="text/javascript"></script>
+<!--dialog-->
+<link href="../../js/lib/dialog/dialog.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../../js/lib/dialog/jquery.artDialog.source.js"></script>
+<script type="text/javascript" src="../../js/lib/dialog/iframeTools.source.js"></script> 
+
+<!--日历-->
+<script language="javascript" type="text/javascript" src="../../js/lib/My97DatePicker/WdatePicker.js"></script>
+
+<!--弹出框封装和日历的扩展-->
+<script type="text/javascript" src="../../js/lib/unit.js"></script>
+
+<script language="javascript">
+;(function ($) {
+   $(document).ready(function () { 
+		var hListTabel = $.CreateTabel({//调用ligerUI的列表插件
+			checkbox: false,
+			el:'#maingrid',
+                columns: [
+					{display: 'ID', name: 'id',width: 50} ,
+					{ display: '时间', name: 'time',minWidth: 80},
+					{ display: '用户姓名', name: 'username',minWidth: 50},
+					{ display: '源IP', name: 'sip',minWidth: 80},
+					{ display: '源MAC', name: 'smac',minWidth: 80},
+					{ display: '目标IP', name: 'mip',minWidth: 50},
+					{ display: '目的端口', name: 'mddk',minWidth: 50},
+					{ display: '警报类型', name: 'bjlx',type:'int',minWidth: 80,
+					render: function (item)
+						{
+							if (parseInt(item.bjlx) == 1) return '特种木马行为';
+							if (parseInt(item.bjlx) == 2) return '普通木马行为';
+							if (parseInt(item.bjlx) == 3) return '疑似木马行为';
+							if (parseInt(item.bjlx) == 4) return '非木马行为';
+							if (parseInt(item.bjlx) == 5) return '其他可疑行为';
+						}
+					},
+					{ display: '木马名称', name: 'mmmc',minWidth: 80},
+					{ display: '地理信息', name: 'dlxx',minWidth: 50},
+					{ display: '描述', name: 'ms',minWidth: 80},
+                ], 
+				pageSize: 20, 
+				pageSizeOptions: [3, 10, 20, 30, 40, 50, 100],
+				data: CustomersData1,
+				rownumbers:false,
+				root :'Rows',
+				record :'Total',
+				width: '99.8%',
+				height:'98.5%',
+				detail: {height:'auto', onShowDetail: function (r, p)
+                {
+					 
+                    $(p).append($('<table cellpadding="0" cellspacing="0" style="width:95%;" class="detailtd"><tr><td align="right" class="dtd">时间：</td><td>' + r.time + '</td><td align="right" class="dtd">用户姓名：</td><td>' + r.username + '</td></tr><tr><td align="right" class="dtd">源IP：</td><td>' + r.sip + '</td><td align="right" class="dtd">源MAC：</td><td>' + r.smac + '</td></tr><tr><td align="right" class="dtd">目标IP：</td><td>' + r.mip + '</td><td align="right" class="dtd">警报类型：</td><td>' + r.bjlx + '</td></tr><tr><td align="right" class="dtd">木马名称：</td><td>' + r.mmmc + '</td><td align="right" class="dtd">地理信息：</td><td>' + r.dlxx + '</td></tr><tr><td align="right" class="dtd">描述：</td><td colspan="3">' + r.ms + '</td></tr></table>').css('margin', '20px auto'));
+
+                }
+                }
+               
+            });
+        });
+
+
+	$(".l-grid-row:odd").css("background-color","#f9f9f9");//列表间隔行
+	
+	 
+
+
+})(jQuery);
+
+
+
+function display(id){  
+ var traget=document.getElementById(id);  
+ if(traget.style.display=="none"){  
+    traget.style.display="";  
+    }else{  
+    traget.style.display="none";  
+      }  
+   }  
+</script>
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="date_add_table">
+        <tr height="80px">
+        <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/ips.png" /></p><p>IPS</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/WEB防护.png" /></p><p>WEB防护</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/web防火墙.png" /></p><p>web防火墙</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/保密.png" /></p><p>保密</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/报表管理.png" /></p><p>报表管理</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/病毒防御.png" /></p><p>病毒防御</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/策略管理.png" /></p><p>策略管理</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/查询统计.png" /></p><p>查询统计</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/代码.png" /></p><p>代码</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/对象定义.png" /></p><p>对象定义</p></dt></a></td>	
+        </tr>
+        <tr height="80px">
+        <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/对象管理.png" /></p><p>对象管理</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/反垃圾邮件.png" /></p><p>反垃圾邮件</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/防火墙.png" /></p><p>防火墙</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/访问策略.png" /></p><p>访问策略</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/高可用性.png" /></p><p>高可用性</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/管控命令.png" /></p><p>管控命令</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/行为审计.png" /></p><p>行为审计</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/监控分析.png" /></p><p>监控分析</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/可疑问题.png" /></p><p>可疑问题</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/联动.png" /></p><p>联动</p></dt></a></td>	
+        </tr>
+         <tr height="80px">
+        <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/流量管理.png" /></p><p>流量管理</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/漏洞扫描.png" /></p><p>漏洞扫描</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/模板参数.png" /></p><p>模板参数</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/配置向导.png" /></p><p>配置向导</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/平台.png" /></p><p>平台</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/前端设备.png" /></p><p>前端设备</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/全局信息.png" /></p><p>全局信息</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/日志.png" /></p><p>日志</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/日志查询.png" /></p><p>日志查询</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/入侵防御.png" /></p><p>入侵防御</p></dt></a></td>	
+        </tr>
+         <tr height="80px">
+        <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/软件.png" /></p><p>软件</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/上网行为.png" /></p><p>上网行为</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/设备监控.png" /></p><p>设备监控</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/深层检测.png" /></p><p>深层检测</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/实名制.png" /></p><p>实名制</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/数据统计.png" /></p><p>数据统计</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/网络工具.png" /></p><p>网络工具</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/网络管理.png" /></p><p>网络管理</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/网络接口.png" /></p><p>网络接口</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/网络设置.png" /></p><p>网络设置</p></dt></a></td>	
+        </tr>
+         <tr height="80px">
+        <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/文件.png" /></p><p>文件</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/系统报表.png" /></p><p>系统报表</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/系统管理.png" /></p><p>系统管理</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/系统监控.png" /></p><p>系统监控</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/系统警告.png" /></p><p>系统警告</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/系统维护.png" /></p><p>系统维护</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/信息泄露.png" /></p><p>信息泄露</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/虚拟防火墙.png" /></p><p>虚拟防火墙</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/虚拟专用网.png" /></p><p>虚拟专用网</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/言论.png" /></p><p>言论</p></dt></a></td>	
+        </tr>
+         <tr height="80px">
+        <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/应用过滤.png" /></p><p>应用过滤</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/用户管理.png" /></p><p>用户管理</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/邮件.png" /></p><p>邮件</p></dt></a></td>
+        	<td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/智能防护.png" /></p><p>智能防护</p></dt></a></td>
+            <td width="10%" align="center"><a class="nav"><dt align="center" class="l_lei"><p><img src="../../skin/images/daohang/主页.png" /></p><p>主页</p></dt></a></td>
+        	<td width="10%" align="center"></td>
+            <td width="10%" align="center"></td>
+        	<td width="10%" align="center"></td>
+            <td width="10%" align="center"></td>
+        	<td width="10%" align="center"></td>	
+        </tr>
+        
+  </table>
+</body>
+</html>

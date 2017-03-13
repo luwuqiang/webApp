@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FW</title>
+<link href="../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../js/lib/jquery.min.js" type="text/javascript"></script>
+<!--check start-->
+<link rel="stylesheet" href="../js/lib/jQuery_check/css/validationEngine.jquery.css" type="text/css"/>
+<script src="../js/lib/jQuery_che../js/lib/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/lib/jQuery_che../js/lib/languages/jquery.validationEngine-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+<!--check end-->
+<script type="text/javascript" src="../js/lib/dialog/jquery.artDialog.source.js"></script>
+<script type="text/javascript" src="../js/lib/dialog/iframeTools.source.js"></script>
+<script type="text/javascript" src="../js/lib/unit.js"></script>
+
+<script type="text/javascript">
+;(function ($) {
+    $(function ()
+    {   
+        var dialog =    top.getDialog();
+        dialog.DOM.wrap.on('ok', function (e) {
+            e.preventDefault();
+            $("#form_id").submit();
+        });
+        $("#form_id").validationEngine({
+			promptPosition:'centerRight: 0, -4',scroll: false , binded: false ,'custom_error_messages': {
+			// Custom Error Messages for Validation Types
+			'required': {
+				'message': '* 该项必须填写！'
+			}
+			},
+        });
+	        
+    }); 
+})(jQuery);
+</script>
+<!--check end-->
+<!--select start-->
+<link href="../js/lib/ligerUI/css/ligerui-all.css" rel="stylesheet" type="text/css" />    
+<script src="../js/lib/liger../js/lib/base.js" type="text/javascript"></script>
+<script src="../js/lib/liger../js/lib/inject.js" type="text/javascript"></script>
+<script src="../js/lib/liger../js/lib/ligerCheckBox.js" type="text/javascript"></script>
+<script src="../js/lib/liger../js/lib/ligerButton.js" type="text/javascript"></script>
+<script src="../js/lib/liger../js/lib/ligerListBox.js" type="text/javascript"></script>    
+<script type="text/javascript">
+    $(function ()
+       { 
+           $("#listbox1").ligerListBox({
+               isShowCheckBox: true, isMultiSelect: true,
+               data: [
+                   { text: '张三', id: '1' },
+                   { text: '李四', id: '2' },
+                   { text: '赵武2', id: '3' },
+                   { text: '赵武3', id: '4' },
+                   { text: '赵武4', id: '5' },
+                   { text: '赵武5', id: '6' },
+                   { text: '赵武6', id: '7' },
+                   { text: '赵武7', id: '8' }
+               ], valueFieldID: 'test3'
+           }); 
+       });
+       function getValue()
+       {
+           alert($("#test3").val());
+       }
+       function setValue()
+       {
+           liger.get("listbox1").setValue("1;2;5");
+       }
+</script>
+<!--select end-->
+<style type="text/css">
+html{height:100%;background:#fafafa;}
+</style>
+</head>
+
+<body>
+<div class="openWin">
+
+    <div class="l-listbox" id="listbox1"><input data-ligerid="listbox1" id="test3" name="test3" type="hidden"></div> 
+    
+    
+
+</div>
+</body>
+</html>

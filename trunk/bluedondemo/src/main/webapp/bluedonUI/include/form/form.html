@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FW</title>
+<link href="../../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../../js/lib/jquery.min.js" type="text/javascript"></script>
+<script src="../../js/lib/tab/tab.js" type="text/javascript"></script>
+<!--check start-->
+<link rel="stylesheet" href="../../js/lib/jQuery_check/css/validationEngine.jquery.css" type="text/css"/>
+<script src="../../js/lib/jQuery_check/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/lib/jQuery_check/js/languages/jquery.validationEngine-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+<!--check end-->
+<script type="text/javascript">
+;(function ($) {
+    $(function ()
+    {   
+        var dialog =    top.getDialog();
+        dialog.DOM.wrap.on('ok', function (e) {
+            e.preventDefault();
+            $("#form_id").submit();
+        });
+        $("#form_id").validationEngine({
+			promptPosition:'centerRight: 0, -4',scroll: false , binded: false ,'custom_error_messages': {
+			// Custom Error Messages for Validation Types
+			'required': {
+				'message': '* 该项必须填写！'
+			}
+			},
+        });
+	        
+    }); 
+})(jQuery);
+</script>
+<!--select end-->
+
+<style type="text/css">
+html{height:100%;background:#fafafa;}
+.formErrorContent {background: #33be40;}
+</style>
+</head>
+
+<body>
+<div class="openWin">
+
+ <form action="" method="get" id="form_id">
+ <table width="100%" border="0" cellpadding="0" cellspacing="0" class="date_add_table">
+  <tr>
+    <td class="t_r">下拉框：</td>
+    <td ><select name="textfield" id="textfield" class="validate[required] text">
+      <option>eth0</option>
+      <option>eth1</option>
+      <option>eth2</option>
+      <option>eth3</option>
+      </select></td>
+  </tr>
+  <tr>
+    <td width="70" class="t_r">文本框：</td>
+    <td ><input name="input" type="text"  class="validate[required] text" value="" /></td>
+  </tr>
+  <tr>
+    <td class="t_r">文件：</td>
+    <td ><div class="filebox"><input type="file" name="file_0_ture" size="20" onchange="document.getElementById('file_0').value=this.value" class="filetext opacity"><input name="file_0" id="file_0" value="" class="text"> <input type="button" value="浏 览" class="file_btn"></div></td>
+  </tr>
+  <tr>
+    <td class="t_r">描述：</td>
+    <td ><textarea name="textarea" class="validate[required] text text_area" required></textarea></td>
+  </tr>
+
+ </table>
+ </form>
+
+
+<div class="clearfix"></div>    
+<div style="padding:0px 20px;">
+  <div class="list-data">
+        <div class="list-tab mar_top">
+            <ul>
+            <li class="listcurrent"><a href="#html">HTML代码</a></li>
+            <li><a href="#css">CSS代码</a></li>
+            <li><a href="#java">JAVASCRIPT代码(含数据交互)</a></li>
+            <li><a href="#date">使用说明</a></li>
+        </ul>
+        </div>
+    </div>
+     
+     <div class="clearfix"></div> 
+     <div class=" list-content">
+		
+<!--HTML代码-->
+<div id="html">
+<blockquote class="vlight">
+<p>
+<!--js文件--><br>
+&lt;script src="../../js/lib/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;<br>
+<!--check start--><br>
+&lt;link rel="stylesheet" href="../../js/lib/jQuery_check/css/validationEngine.jquery.css" type="text/css"/&gt;<br>
+&lt;script src="../../js/lib/jQuery_check/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;<br>
+&lt;script src="../../js/lib/jQuery_check/js/languages/jquery.validationEngine-zh_CN.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;<br>
+<!--check end--><br>
+<!--内容显示--><br>
+&lt;form action="" method="get" id="form_id"&gt;<br>
+ &lt;table width="100%" border="0" cellpadding="0" cellspacing="0" class="date_add_table"&gt;<br>
+  &lt;tr&gt;<br>
+    &lt;td class="t_r"&gt;下拉框：&lt;/td&gt;<br>
+    &lt;td &gt;&lt;select name="textfield" id="textfield" class="validate[required] text"&gt;<br>
+      &lt;option&gt;eth0&lt;/option&gt;<br>
+      &lt;option&gt;eth1&lt;/option&gt;<br>
+      &lt;option&gt;eth2&lt;/option&gt;<br>
+      &lt;option&gt;eth3&lt;/option&gt;<br>
+    &lt;/select&gt;&lt;/td&gt;<br>
+  &lt;/tr&gt;<br>
+  &lt;tr&gt;<br>
+    &lt;td width="70" class="t_r"&gt;文本框：&lt;/td&gt;<br>
+    &lt;td &gt;&lt;input name="input" type="text"  class="validate[required] text" value="" /&gt;&lt;/td&gt;<br>
+  &lt;/tr&gt;<br>
+  &lt;tr&gt;<br>
+    &lt;td class="t_r"&gt;文件：&lt;/td&gt;<br>
+    &lt;td &gt;&lt;div class="filebox"&gt;&lt;input type="file" name="file_0_ture" size="20" onchange="document.getElementById('file_0').value=this.value" class="filetext opacity"&gt;&lt;input name="file_0" id="file_0" value="" class="text"&gt; &lt;input type="button" value="浏 览" class="file_btn"&gt;&lt;/div&gt;&lt;/td&gt;<br>
+  &lt;/tr&gt;<br>
+  &lt;tr&gt;<br>
+    &lt;td class="t_r"&gt;&nbsp;&lt;/td&gt;<br>
+    &lt;td &gt;&nbsp;&lt;/td&gt;<br>
+  &lt;/tr&gt;<br>
+ &lt;/table&gt;<br>
+ &lt;/form&gt;<br>
+</p>    
+</blockquote>
+</div>
+        
+<!--CSS代码-->
+<div id="css">
+<blockquote class="vlight">
+<p>
+/*---CSS---*/<br>
+.text{border:1px solid #c8c8c8; height:22px; line-height:22px; padding-left:3px;}<br>
+/**2015.12.02 SYT 文件浏览**/ <br>
+.opacity {opacity:0;FILTER:Alpha(Opacity=0); line-height:25px;}<br>
+.filetext {border: 1px solid #c0c1b3;}<br>
+.filebox .opacity {position:absolute;height:26px; _left:98px;}<br>
+.filebox .file {width:180px;z-index:100;}<br>
+.filebox .file_btn {height:24px;margin:-1 0 -1px 0;width:auto;background:#4c9ddc;padding:0px 8px;_padding:0px 4px; color:#FFF; border:1px solid #4191ce; list-style:none; font-weight:bold;}<br>
+</p>
+</blockquote>
+</div>
+        
+<!--JAVASCRIPT代码-->
+<div id="java">
+<blockquote class="vlight">
+<p>
+// JavaScript Document<br>
+;(function ($) {<br>
+    $(function ()<br>
+    { <br>  
+        var dialog =    top.getDialog();<br>
+        dialog.DOM.wrap.on('ok', function (e) {<br>
+            e.preventDefault();<br>
+            $("#form_id").submit();<br>
+        });<br>
+        $("#form_id").validationEngine({<br>
+			promptPosition:'centerRight: 0, -4',scroll: false , binded: false ,'custom_error_messages': {<br>
+			// Custom Error Messages for Validation Types<br>
+			'required': {<br>
+				'message': '* 该项必须填写！'<br>
+			}<br>
+			},<br>
+        });<br>
+	        
+    }); <br>
+})(jQuery);<br>
+
+//文件浏览<br>
+window.onload=function(){ <br>
+var file=document.querySelector("#file input[type='file']"); <br>
+var text=document.querySelector("#file input[type='text']"); <br>
+file.addEventListener("change",assign,false); <br>
+function assign(){ <br>
+text.value=file.value; <br>
+} <br>
+} <br>
+</p>
+</blockquote>
+</div>
+        
+        
+<!--使用说明-->
+<div id="date">
+<blockquote class="vlight">
+<p>
+/* 数据等待添加 */
+
+</p>
+</blockquote>
+</div>
+
+        
+        
+    </div>
+
+</div>
+ 
+</div>
+</body>
+</html>

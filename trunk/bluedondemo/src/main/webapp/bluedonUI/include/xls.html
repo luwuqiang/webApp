@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FW</title>
+<link href="../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../js/lib/jquery.min.js" type="text/javascript"></script>
+<!--ligerUI-->
+<link href="../js/lib/ligerUI/css/ligerui-all.css" rel="stylesheet" type="text/css">
+<script src="../js/lib/liger../js/lib/base.js" type="text/javascript"></script>
+<script src="../js/lib/liger../js/lib/ligerResizable.js" type="text/javascript"></script>
+<script src="../js/lib/liger../js/lib/ligertree.js" type="text/javascript"></script>
+<script src="../js/lib/liger../js/lib/ligerComboBox.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function ()
+        {
+
+		   $("#txt2").ligerComboBox({
+                width: 180,
+                selectBoxWidth: 200,
+                selectBoxHeight: 200,
+				valueField: 'text',
+				treeLeafOnly: false,
+                tree: {
+                    url: '../js/lib/liger../js/lib/json.txt',
+                    checkbox: false,
+                    ajaxType: 'get'
+                }
+            });
+
+
+        }); 
+    </script>
+</head>
+<body> 
+<div class="openWin">
+ <form action="" method="get" id="form_id">
+ <table width="100%" border="0" cellpadding="0" cellspacing="0" class="date_add_table">
+  <tr>
+    <td width="90" class="t_r">下拉树：</td>
+    <!--这里的下拉框需要做成树形菜单-->
+    <td ><input type="text" id="txt2" class="text"/>
+    </td>
+  </tr>
+ </table>
+ <div style="display:none;"></div>
+ </form>
+ 
+</div>
+</body>
+</html>
