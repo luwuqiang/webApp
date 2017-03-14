@@ -18,7 +18,6 @@ public class RootController {
         return "/common/error";
     }
 
-
     @RequestMapping(value = "exception")
     public String exception(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setAttribute("msg", "exception");

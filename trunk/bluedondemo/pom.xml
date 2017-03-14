@@ -134,11 +134,11 @@
         </dependency>
 
         <!-- jdbc driver -->
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>${postgresql.driver.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.postgresql</groupId>-->
+            <!--<artifactId>postgresql</artifactId>-->
+            <!--<version>${postgresql.driver.version}</version>-->
+        <!--</dependency>-->
 
 
         <!-- WEB begin -->

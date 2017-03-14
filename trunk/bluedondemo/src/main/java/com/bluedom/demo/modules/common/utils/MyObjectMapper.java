@@ -8,10 +8,9 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 /**
  * 
 * @desc: MyObjectMapper.java  
-* @author: lujq  
+* @author: liuwuqiang
 * @createTime: 2016年8月26日 下午5:45:00  
 * @history:  
-* @version: v1.0
  */
 public class MyObjectMapper extends ObjectMapper {  
     
