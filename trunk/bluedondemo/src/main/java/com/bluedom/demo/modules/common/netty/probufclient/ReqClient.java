@@ -2,6 +2,7 @@ package com.bluedom.demo.modules.common.netty.probufclient;
 
 
 import com.bluedom.demo.modules.common.protobuf.PersonProbuf;
+import com.bluedom.demo.modules.common.protobuf.UserProbuf;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -19,6 +20,8 @@ import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
  *
  */
 public class ReqClient {
+
+    ChannelFuture f = null;
 
     public void connect(String host, int port) throws Exception {
         // 配置服务端的NIO线程组
@@ -44,14 +47,38 @@ public class ReqClient {
                     });
 
             // 发起异步连接操作
-            ChannelFuture f = b.connect(host, port).sync();
+            f = b.connect(host, port).sync();
+
+            f.channel().writeAndFlush(PReq(100));
+            f.channel().writeAndFlush(PReq2(120));
 
             // 等待客服端链路关闭
             f.channel().closeFuture().sync();
 
+
         } finally {
             group.shutdownGracefully();
         }
+    }
+
+    private static PersonProbuf.Person PReq(int id) {
+        PersonProbuf.Person.Builder builder = PersonProbuf.Person.newBuilder();
+        builder.setId(id);
+        builder.setName("orange");
+        builder.setSex("man");
+        builder.setTel("999");
+
+        return builder.build();
+    }
+
+    private static PersonProbuf.Person PReq2(int id) {
+        PersonProbuf.Person.Builder builder = PersonProbuf.Person.newBuilder();
+        builder.setId(id);
+        builder.setName("orange22");
+        builder.setSex("man");
+        builder.setTel("999");
+
+        return builder.build();
     }
 
     public static void main(String[] args) throws Exception {
@@ -63,5 +90,6 @@ public class ReqClient {
             }
         }
         new ReqClient().connect("127.0.0.1", port);
+        System.out.println("---nedddddd");
     }
 }

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- proxool 连接池 -->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="filters" value="stat" />
+        <property name="maxActive" value="20" />
+        <property name="initialSize" value="1" />
+        <property name="maxWait" value="60000" />
+        <property name="minIdle" value="1" />
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+        <property name="validationQuery" value="SELECT 'x'" />
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="false" />
+        <property name="testOnReturn" value="false" />
+        <property name="poolPreparedStatements" value="true" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="50" />
+    </bean>
+
+    <!-- MyBatis Factory -->
+    <bean id="sqlSessionFactory" class="com.bluedom.demo.modules.common.PackagesSqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+        <property name="mapperLocations" value="classpath:com/bluedom/demo/modules/*/dao/*.xml" />
+        <property name="typeAliasesPackage"
+                  value="com.leederedu.educhat.modules.*.model;com.leederedu.educhat.modules.common.model.api" />
+
+        <!-- http://git.oschina.net/free/Mybatis_PageHelper/   12345 -->
+        <property name="plugins">
+            <array>
+                <!-- 执行时间分析，只在测试环境启用 -->
+                <bean class="com.bluedom.demo.modules.common.interceptor.PerformanceInterceptor"></bean>
+                <!--分页插件-->
+            </array>
+        </property>
+    </bean>
+
+    <!--=============================================================================================-->
+    <!-- 定义事务管理器（声明式的事务） -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="*" propagation="REQUIRED" />
+        </tx:attributes>
+    </tx:advice>
+    <!-- 将事务控制在Service层 -->
+    <aop:config>
+        <aop:pointcut expression="execution(public * com.bluedom.demo.modules.*.service.*.*(..))" id="pc"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="pc" />
+    </aop:config>
+    <!--=============================================================================================-->
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.leederedu.educhat.modules.*.dao" />
+    </bean>
+
+</beans>

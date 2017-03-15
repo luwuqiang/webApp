@@ -20,21 +20,22 @@ public class ReqClientHandler extends SimpleChannelInboundHandler<Object> {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
-        for (int i = 0; i < 2; i++) {
-            ctx.write(PReq(i));
-        }
-        ctx.flush();
+//        for (int i = 0; i < 2; i++) {
+//            ctx.write(PReq(i));
+//        }
+//        ctx.flush();
+        System.out.println("--> channelActive");
     }
 //
-    private PersonProbuf.Person PReq(int id) {
-        PersonProbuf.Person.Builder builder = PersonProbuf.Person.newBuilder();
-        builder.setId(id);
-        builder.setName("orange");
-        builder.setSex("man");
-        builder.setTel("999");
-
-        return builder.build();
-    }
+//    private PersonProbuf.Person PReq(int id) {
+//        PersonProbuf.Person.Builder builder = PersonProbuf.Person.newBuilder();
+//        builder.setId(id);
+//        builder.setName("orange");
+//        builder.setSex("man");
+//        builder.setTel("999");
+//
+//        return builder.build();
+//    }
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {

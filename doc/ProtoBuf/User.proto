@@ -1,0 +1,10 @@
+package com.bluedom.demo.modules.common.protobuf;
+option java_package = "com.bluedom.demo.modules.common.protobuf"; 
+option java_outer_classname = "UserProbuf"; 
+
+message User {
+    required int64 uid=1;
+    optional string uname=2;
+    optional string usex=3;
+    required string class=4;
+}
