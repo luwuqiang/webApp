@@ -1,0 +1,197 @@
+<%@page contentType="text/html" pageEncoding="utf-8" session="false" %>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>蓝盾下一代互联网接入口保密检测器日志管理中心</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <!--可以在收藏夹中显示出图标-->
+    <link rel="Bookmark" href="../favicon.ico" type="image/x-icon"/>
+    <!--可以在地址栏中显示出图标-->
+    <link rel="shortcut icon" href="../favicon.ico/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="../favicon.ico/favicon.ico" type="image/x-icon"/>
+
+    <!--公共-->
+    <link href="${CXT}/assets/lib/bluedonUI/skin/style/public.css" rel="stylesheet" type="text/css" />
+    <link href="${CXT}/assets/lib/bluedonUI/skin/style/style.css" rel="stylesheet" type="text/css" />
+    <script src="${CXT}/assets/lib/bluedonUI/js/lib/jquery.min.js" type="text/javascript"></script>
+    <!--[if IE 6]>
+    <script src="${CXT}/assets/lib/bluedonUI/js/lib/ie6_bug/DD_belatedPNG.js" type="text/javascript"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('*');</script>
+    <![endif]-->
+
+    <!--[if lt IE 7]>
+    <script src="${CXT}/assets/lib/bluedonUI/js/lib/jqueryie6.min.js" type="text/javascript"></script>
+    <![endif]-->
+    <script type="text/javascript" src="${CXT}/assets/lib/bluedonUI/js/lib/index.js"></script>
+    <script type="text/javascript" src="${CXT}/assets/lib/bluedonUI/js/lib/tab.js"></script>
+
+    <!--dialog-->
+    <link href="../js/lib/dialog/dialog.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="${CXT}/assets/lib/bluedonUI/js/lib/dialog/jquery.artDialog.source.js"></script>
+    <script type="text/javascript" src="${CXT}/assets/lib/bluedonUI/js/lib/dialog/iframeTools.source.js"></script>
+    <script>
+
+        $(document).ready(function(e) {
+
+            selectTab(1);
+        });
+
+    </script>
+    <!--[if IE 6]>
+
+    <script type="text/javascript">
+
+        $(window).resize(function(){
+            h=$(window).height();
+            w=$(window).width();
+            mh=h-90;
+            ch=h-100;
+            cw=w-240;
+            $(".menu").css("height",mh);
+            $(".content").css("height",ch);
+            $(".content").css("width",cw);
+        })
+        $(document).ready(function() {
+            $(window).resize();
+        });
+
+    </script>
+    <![endif]-->
+
+</head>
+<body>
+<div id="pagewidth">
+    <!--header-->
+    <div class="header">
+        <!--header-left-->
+        <div class="header_left">
+            <!--logo-->
+            <img src="../skin/blue/images/custom/logo.png"  class="float_l">
+
+        </div>
+        <!--header-right 告警 主页 用户信息-->
+        <div class="float_r header_right" >
+            <div class="right_menu">
+                <ul>
+                    <li>欢迎你！<font>administrator</font></li>
+                    <li class="exit" onClick="javascript:window.location.href='../login.html'" title="退出"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--left-->
+
+    <div  class="menu" >
+        <ul id="documents">
+            <li><a><span class="menu_icon sbzt"></span><p>设备管理监控</p><span class="menu_s menu_small_icon"></span></a>
+                <ul>
+                    <li><a link="sbzt.html" rel="sbzt" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>本机监控管理</p></a></li>
+                    <li><a link="list_qdsb.html" rel="qdsb" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>前端设备信息</p></a></li>
+                    <li><a><span class="menu_sicon menu_small_icon"></span><p>前端设备日志</p><span class="menu_s menu_small_icon"></span></a>
+                        <ul>
+                            <li><a link="yxrz.html" rel="yxrz" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>运行日志</p></a></li>
+                            <li><a link="pzxx.html" rel="pzxx" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>配置信息</p></a></li>
+                        </ul>
+                    </li>
+                    <li><a><span class="menu_sicon menu_small_icon"></span><p>外网管控中心日志</p><span class="menu_s menu_small_icon"></span></a>
+                        <ul>
+                            <li><a link="wkyxrz.html" rel="wkyxrz" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>运行日志</p></a></li>
+                            <li><a link="wkpzxx.html" rel="wkpzxx" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>配置信息</p></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a><span class="menu_icon wlxwj"></span><p>网络行为审计</p><span class="menu_s menu_small_icon"></span></a>
+                <ul>
+                    <li><a link="list_zjxw.html" rel="list_zjxw" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>网络行为审计日志</p></a></li>
+                    <li><a link="list_zxyf.html" rel="list_zxyf" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>在线用户审计</p></a></li>
+                </ul>
+            </li>
+            <li><a link="list_mgyj.html" rel="list_mgyj"  target="right" class="select"><span class="menu_icon mjyj"></span><p>敏感邮件检测</p><span class="menu_s"></span></a></li>
+            <li><a link="list_mgyl.html" rel="list_mgyl"  target="right" class="select"><span class="menu_icon mjyl"></span><p>敏感言论检测</p><span class="menu_s"></span></a></li>
+            <li><a><span class="menu_icon mjwj"></span><p>敏感文件检测</p><span class="menu_s menu_small_icon"></span></a>
+                <ul>
+                    <li><a link="list_wjnr.html" rel="list_fwwg" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>文件内容涉密检测</p></a></li>
+                    <li><a link="list_tpnr.html" rel="list_tpnr" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>图片内容涉密检测</p></a></li>
+                    <li><a link="list_gwnr.html" rel="wldk8" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>公文内容涉密检测</p></a></li>
+                </ul>
+            </li>
+            <li><a link="list_fqrj.html" rel="list_fqrj"  target="right" class="select"><span class="menu_icon fqrj"></span><p>翻墙软件检测</p><span class="menu_s"></span></a></li>
+            <li><a><span class="menu_icon gjqm"></span><p>攻击窃密警报</p><span class="menu_s menu_small_icon"></span></a>
+                <ul>
+                    <li><a link="list_wmgj.html" rel="list_wmgj" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>木马攻击窃密</p></a></li>
+                    <li><a link="list_fwmgj.html" rel="list_fwmgj" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>非木马类行为</p></a></li>
+                    <li><a link="list_qtmgj.html" rel="list_qtgj" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>其它攻击行为</p></a></li>
+                </ul>
+            </li>
+            <li><a link="cxtj.html" rel="cxtj"  target="right" class="select"><span class="menu_icon cxtj"></span><p>查询统计</p><span class="menu_s"></span></a></li>
+            <li><a><span class="menu_icon xtgl"></span><p>系统管理</p><span class="menu_s menu_small_icon"></span></a>
+                <ul>
+                    <li><a><span class="menu_sicon menu_small_icon"></span><p>配置管理</p><span class="menu_s menu_small_icon"></span></a>
+                        <ul>
+                            <li><a link="list_htfw.html" rel="list_htfw" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>后台服务器管理</p></a></li>
+                            <li><a link="list_gjfwq.html" rel="list_gjfwq" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>告警服务器设置</p></a></li>
+                        </ul>
+                    </li>
+                    <li><a link="list_admin.html" rel="list_admin" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>用户管理</p></a></li>
+                    <li><a><span class="menu_sicon menu_small_icon"></span><p>备份与恢复</p><span class="menu_s menu_small_icon"></span></a>
+                        <ul>
+                            <li><a link="list_bfcssz.html" rel="list_bfcssz" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>备份服务器设置</p></a></li>
+                            <li><a link="list_sdbf.html" rel="list_sdbf" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>手动备份日志</p></a></li>
+                            <li><a link="list_zdbf.html" rel="list_zdbf" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>自动备份参数设置</p></a></li>
+                            <li><a link="list_bfcxff.html" rel="list_bfcxff" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>备份查询/恢复</p></a></li>
+                        </ul>
+                    </li>
+                    <li><a link="list_xtsj.html" rel="list_xtsj" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>系统升级</p></a></li>
+                    <li><a link="list_fwkz.html" rel="list_fwkz" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>访问控制</p></a></li>
+                </ul>
+            </li>
+            <li><a><span class="menu_icon rzgl"></span><p>日志管理与审计</p><span class="menu_s menu_small_icon"></span></a>
+                <ul>
+                    <li><a link="list_xtyx.html" rel="list_xtyx" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>系统运行状态日志</p></a></li>
+                    <li><a link="list_bjpz.html" rel="list_bjpz" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>本机配置信息</p></a></li>
+                    <li><a><span class="menu_sicon menu_small_icon"></span><p>系统操作日志审计</p><span class="menu_s menu_small_icon"></span></a>
+                        <ul>
+                            <li><a link="list_qtsb.html" rel="list_qdsb" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>前端设备操作日志</p></a></li>
+                            <li><a link="list_gkzx.html" rel="list_gkzx" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>管控中心操作日志</p></a></li>
+                        </ul>
+                    </li>
+                    <li><a><span class="menu_sicon menu_small_icon"></span><p>事件审计</p><span class="menu_s menu_small_icon"></span></a>
+                        <ul>
+                            <li><a link="list_txzdsj.html" rel="list_txzdsj" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>通信阻断审计日志</p></a></li>
+                            <li><a link="list_gkzxsj.html" rel="pzxx" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>管控中心事件审计</p></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--left hidden-->
+    <div class="left_h">
+        <div class="l_icon hidden_i"></div>
+    </div>
+    <!--content-->
+    <div class="content">
+        <div class="l-tab-links-d">
+            <div class="l-tab-links">
+                <ul id="tabs">
+
+                </ul>
+            </div>
+            <div class="t-tab-links">
+                <a link="home.html">系统主页</a> <span> > <b></b></span>
+            </div>
+        </div>
+        <div id="content" class="l-tab-content">
+            <iframe  id="home_content" class="right" name="right" width="100%"  height="100%" frameborder="0"  scrolling="auto" src="home.html" ></iframe>
+            <!-- Tab content goes here -->
+        </div>
+
+    </div>
+    <!--footer-->
+    <div class="footer">蓝盾信息安全技术股份有限公司  版权所有   Copyright&copy;1998-2014   Bluedon.   All Rights Reserve</div>
+</div>
+</body>
+</html>
