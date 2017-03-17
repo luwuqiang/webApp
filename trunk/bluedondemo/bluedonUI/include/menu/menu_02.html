@@ -1,0 +1,300 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>蓝盾下一代互联网接入口保密检测器日志管理中心</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<!--可以在收藏夹中显示出图标-->
+<link rel="Bookmark" href="../../favicon.ico" type="image/x-icon"/>
+<!--可以在地址栏中显示出图标-->
+<link rel="shortcut icon" href="../../favicon.ico/favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="../../favicon.ico/favicon.ico" type="image/x-icon"/>
+
+<!--公共-->
+<link href="../../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../../js/lib/jquery.min.js" type="text/javascript"></script>
+<script src="../../js/lib/tab/tab.js" type="text/javascript"></script>
+<!--[if lt IE 7]> 
+<script src="../../js/lib/lib/jqueryie6.min.js" type="text/javascript"></script>
+<![endif]-->
+<script type="text/javascript" src="../../js/lib/index.js"></script>
+<script type="text/javascript" src="../../js/lib/tab.js"></script>
+
+<script>
+
+$(document).ready(function(e) {
+    selectTab(2);
+});
+
+</script>
+<!--[if IE 6]> 
+ 
+<script type="text/javascript">
+	
+	 $(window).resize(function(){
+     h=$(window).height(); 
+     w=$(window).width();
+     mh=h-90;
+	 ch=h-100;
+	 cw=w-240;
+	$(".menu").css("height",mh);
+	$(".content").css("height",ch);
+	$(".content").css("width",cw);
+	 })
+    $(document).ready(function() {
+         $(window).resize();
+    });
+	
+</script>
+<![endif]-->
+<!--代码变色-->
+<script src="../../js/lib/vejis.js" type="text/javascript"></script>
+<script src="../../js/lib/vlight.js" type="text/javascript"></script>
+<style type="text/css">
+html{overflow:hidden}
+</style>
+</head>
+<body>
+<div id="pagewidth" style="height:240px;">
+<!--left-->   
+    <div  class="menu" style=" margin-left:0px; position: absolute;top: 0px;left: 0px;bottom: 0px;">
+        <ul id="documents">
+            <li><a link="cxtj.html" rel="cxtj"  target="right" class="select"><span class="menu_icon cxtj"></span><p>查询统计</p><span class="menu_s"></span></a></li>
+            <li><a><span class="menu_icon xtgl"></span><p>系统管理</p><span class="menu_s menu_small_icon"></span></a>
+                <ul>
+                    <li><a><span class="menu_sicon menu_small_icon"></span><p>配置管理</p><span class="menu_s menu_small_icon"></span></a>
+                     	 <ul>
+                            <li><a link="list_htfw.html" rel="list_htfw" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>后台服务器管理</p></a></li>
+                            <li><a link="list_gjfwq.html" rel="list_gjfwq" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>告警服务器设置</p></a></li>
+                        </ul>
+                    </li>
+					<li><a link="list_admin.html" rel="list_admin" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>用户管理</p></a></li>
+                    <li><a link="list_xtsj.html" rel="list_xtsj" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>系统升级</p></a></li>
+					<li><a link="list_fwkz.html" rel="list_fwkz" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>访问控制</p></a></li>
+                </ul>
+            </li>
+            <li><a><span class="menu_icon rzgl"></span><p>日志管理与审计</p><span class="menu_s menu_small_icon"></span></a>
+                <ul>
+					<li><a link="list_xtyx.html" rel="list_xtyx" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>系统运行状态日志</p></a></li>
+                    <li><a link="list_bjpz.html" rel="list_bjpz" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>本机配置信息</p></a></li>
+                    <li><a><span class="menu_sicon menu_small_icon"></span><p>系统操作日志审计</p><span class="menu_s menu_small_icon"></span></a>
+                     <ul>
+                        <li><a link="list_qtsb.html" rel="list_qdsb" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>前端设备操作日志</p></a></li>
+                        <li><a link="list_gkzx.html" rel="list_gkzx" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>管控中心操作日志</p></a></li>
+                      </ul>
+                    </li>
+                    <li><a><span class="menu_sicon menu_small_icon"></span><p>事件审计</p><span class="menu_s menu_small_icon"></span></a>
+                     <ul>
+                        <li><a link="list_txzdsj.html" rel="list_txzdsj" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>通信阻断审计日志</p></a></li>
+                        <li><a link="list_gkzxsj.html" rel="pzxx" target="right" class="select"><span class="menu_sicon menu_small_icon"></span><p>管控中心事件审计</p></a></li>
+                      </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+<!--left hidden-->
+    <div class="left_h">
+        <div class="l_icon hidden_i"></div>
+    </div>
+<!--content-->
+    <div class="content" style="top:10px;">
+         <div class="l-tab-links-d">
+             <div class="l-tab-links" style="min-width:500px;"> 
+                <ul id="tabs">
+                
+                </ul>
+             </div>
+             <div class="t-tab-links"> 
+                <a link="home.html">系统主页</a> <span> > <b></b></span>
+             </div>
+         </div>
+        <div id="content" class="l-tab-content">
+            <iframe  id="home_content" class="right" name="right" width="100%"  height="100%" frameborder="0"  scrolling="auto" src="home.html" ></iframe>
+            <!-- Tab content goes here -->
+        </div>
+
+    </div>
+</div>
+
+<div class="clearfix"></div>    
+<div style="padding:240px 10px 0px;">
+  <div class="list-data">
+        <div class="list-tab mar_top">
+            <ul>
+            <li class="listcurrent"><a href="#html">HTML代码</a></li>
+            <li><a href="#css">CSS代码</a></li>
+            <li><a href="#java">JAVASCRIPT代码(含数据交互)</a></li>
+            <li><a href="#date">使用说明</a></li>
+        </ul>
+        </div>
+    </div>
+     
+     <div class="clearfix"></div> 
+     <div class=" list-content">
+		
+<!--HTML代码-->
+<div id="html">
+<blockquote class="vlight">
+<p>
+<!--js文件--><br>
+&lt;!--公共--&gt;<br>
+&lt;link href="../../skin/style/style.css" rel="stylesheet" type="text/css" /&gt;<br>
+&lt;script src="../../js/lib/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;<br>
+&lt;!--[if lt IE 7]&gt; <br>
+&lt;script src="../../js/lib/lib/jqueryie6.min.js" type="text/javascript"&gt;&lt;/script&gt;<br>
+&lt;![endif]--&gt;<br>
+&lt;script type="text/javascript" src="../../js/lib/index.js"&gt;&lt;/script&gt;<br>
+&lt;script type="text/javascript" src="../../js/lib/tab.js"&gt;&lt;/script&gt;<br>
+
+&lt;script&gt;<br>
+
+$(document).ready(function(e) {<br>
+    selectTab(2);<br>
+});<br>
+
+&lt;/script&gt;<br>
+<!--内容显示--><br>
+&lt;div id="pagewidth" style="height:240px;"&gt;<br>
+&lt;!--left--&gt;<br>
+    &lt;div  class="menu" style=" margin-left:0px; position: absolute;top: 0px;left: 0px;bottom: 0px;"&gt;<br>
+        &lt;ul id="documents"&gt;<br>
+            &lt;li&gt;&lt;a link="cxtj.html" rel="cxtj"  target="right" class="select"&gt;&lt;span class="menu_icon cxtj"&gt;&lt;/span&gt;&lt;p&gt;查询统计&lt;/p&gt;&lt;span class="menu_s"&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;<br>
+            &lt;li&gt;&lt;a&gt;&lt;span class="menu_icon xtgl"&gt;&lt;/span&gt;&lt;p&gt;系统管理&lt;/p&gt;&lt;span class="menu_s menu_small_icon"&gt;&lt;/span&gt;&lt;/a&gt;<br>
+                &lt;ul&gt;<br>
+                    &lt;li&gt;&lt;a&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;配置管理&lt;/p&gt;&lt;span class="menu_s menu_small_icon"&gt;&lt;/span&gt;&lt;/a&gt;<br>
+                     	 &lt;ul&gt;<br>
+                            &lt;li&gt;&lt;a link="list_htfw.html" rel="list_htfw" target="right" class="select"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;后台服务器管理&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                            &lt;li&gt;&lt;a link="list_gjfwq.html" rel="list_gjfwq" target="right" class="select"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;告警服务器设置&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                        &lt;/ul&gt;<br>
+                    &lt;/li&gt;<br>
+					&lt;li&gt;&lt;a link="list_admin.html" rel="list_admin" target="right" class="select"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;用户管理&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                    &lt;li&gt;&lt;a link="list_xtsj.html" rel="list_xtsj" target="right" class="select"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;系统升级&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+					&lt;li&gt;&lt;a link="list_fwkz.html" rel="list_fwkz" target="right" class="select"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;访问控制&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                &lt;/ul&gt;<br>
+            &lt;/li&gt;<br>
+            &lt;li&gt;&lt;a&gt;&lt;span class="menu_icon rzgl"&gt;&lt;/span&gt;&lt;p&gt;日志管理与审计&lt;/p&gt;&lt;span class="menu_s menu_small_icon"&gt;&lt;/span&gt;&lt;/a&gt;<br>
+                &lt;ul&gt;<br>
+					&lt;li&gt;&lt;a link="list_xtyx.html" rel="list_xtyx" target="right" class="select"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;系统运行状态日志&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                    &lt;li&gt;&lt;a link="list_bjpz.html" rel="list_bjpz" target="right" class="select"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;本机配置信息&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                    &lt;li&gt;&lt;a&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;系统操作日志审计&lt;/p&gt;&lt;span class="menu_s menu_small_icon"&gt;&lt;/span&gt;&lt;/a&gt;<br>
+                     &lt;ul&gt;<br>
+                        &lt;li&gt;&lt;a link="list_qtsb.html" rel="list_qdsb" target="right" class="select"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;前端设备操作日志&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                        &lt;li&gt;&lt;a link="list_gkzx.html" rel="list_gkzx" target="right" class="select"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;管控中心操作日志&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                      &lt;/ul&gt;<br>
+                    &lt;/li&gt;<br>
+                    &lt;li&gt;&lt;a&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;事件审计&lt;/p&gt;&lt;span class="menu_s menu_small_icon"&gt;&lt;/span&gt;&lt;/a&gt;<br>
+                     &lt;ul&gt;<br>
+                        &lt;li&gt;&lt;a link="list_txzdsj.html" rel="list_txzdsj" target="right" class="select"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;通信阻断审计日志&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                        &lt;li&gt;&lt;a link="list_gkzxsj.html" rel="pzxx" target="right" class="select"&gt;&lt;span class="menu_sicon menu_small_icon"&gt;&lt;/span&gt;&lt;p&gt;管控中心事件审计&lt;/p&gt;&lt;/a&gt;&lt;/li&gt;<br>
+                      &lt;/ul&gt;<br>
+                    &lt;/li&gt;<br>
+                &lt;/ul&gt;<br>
+            &lt;/li&gt;<br>
+        &lt;/ul&gt;<br>
+    &lt;/div&gt;<br>
+&lt;!--left hidden--&gt;<br>
+    &lt;div class="left_h"&gt;<br>
+        &lt;div class="l_icon hidden_i"&gt;&lt;/div&gt;<br>
+    &lt;/div&gt;<br>
+&lt;!--content--&gt;<br>
+    &lt;div class="content" style="top:10px;"&gt;<br>
+         &lt;div class="l-tab-links-d"&gt;<br>
+             &lt;div class="l-tab-links" style="min-width:500px;"&gt; <br>
+                &lt;ul id="tabs"&gt;<br>
+                
+                &lt;/ul&gt;<br>
+             &lt;/div&gt;<br>
+             &lt;div class="t-tab-links"&gt; <br>
+                &lt;a link="home.html"&gt;系统主页&lt;/a&gt; &lt;span&gt; &gt; &lt;b&gt;&lt;/b&gt;&lt;/span&gt;<br>
+             &lt;/div&gt;<br>
+         &lt;/div&gt;<br>
+        &lt;div id="content" class="l-tab-content"&gt;<br>
+            &lt;iframe  id="home_content" class="right" name="right" width="100%"  height="100%" frameborder="0"  scrolling="auto" src="home.html" &gt;&lt;/iframe&gt;<br>
+            &lt;!-- Tab content goes here --&gt;<br>
+        &lt;/div&gt;<br>
+
+    &lt;/div&gt;<br>
+&lt;/div&gt;<br>
+</p>    
+</blockquote>
+</div>
+        
+<!--CSS代码-->
+<div id="css">
+<blockquote class="vlight">
+<p>
+/**********CSS*************/<br>
+/**********left menu  icon begin **************/<br>
+.menu{ margin:0px 0px 10px 20px;width:219px; background:#e4eef8;border-right:1px solid #c6d0dc;overflow-x:hidden; overflow-y:auto; font-size:15px;}<br>
+.menu ul li{width:100%;border-bottom:1px solid #d5dfe9; float:left; cursor:pointer; position:relative;}<br>
+/**menu  icon begin**/<br>
+.menu_icon{ background-image:url(../images/menu_icon.png); background-repeat: no-repeat; background-color: #dfe9f5;width:40px;height:40px;display:block}<br>
+.xtzy{ background-position:0px 0px;}<br>
+.gjqm{ background-position:0px -40px;}<br>
+.kyxw{ background-position:0px -80px;}<br>
+.smbs{ background-position:0px -120px;}<br>
+.wlxws{ background-position:0px -160px;}<br>
+.sbzt{ background-position:0px -200px;}<br>
+.wlxwj{ background-position:0px -240px;}<br>
+.scjc{background-position:0px -280px;}<br>
+.clgl{background-position:0px -320px;}<br>
+.rzgl{background-position:0px -360px;}<br>
+.cxtj{background-position:0px -400px;}<br>
+.smzgl{background-position:0px -440px;}<br>
+.xtgl{background-position:0px -480px;}<br>
+
+/*luoxiaohong*/<br>
+.menu ul li a.selectChange{ width:auto; display:inline; padding:0 5px; height:30px; position:absolute; right:5px; top:5px; font-weight:100; font-size:12px; background: #faf9ec; border:1px solid #c7c2a4; line-height:30px;}<br>
+
+/**menu  icon end**/<br>
+.menu ul li a{width:100%; height:40px; display:block}<br>
+.menu ul li a:hover,.aselec{font-weight:bold}<br>
+.menu ul li p,.menu ul li span{display:block}<br>
+.menu ul li p,.menu ul li span.menu_icon,.menu ul li span.menu_sicon{float:left;background-position: 0px -42px;}<br>
+.menu p{height:40px;line-height:40px;color:#333;padding-left:8px;font-size:15px;}<br>
+.menu ul li .menu_small_icon{ background:url(../images/menu_small_icon.gif) no-repeat left top;}<br>
+.menu_s{background-position:0px 0px;width:4px; height:7px; float:right;margin:15px 13px 0px 0px;}<br>
+.menu ul li ul{ background-color:#ecf5fa;}<br>
+/**menu  二级菜单**/<br>
+.menu ul li ul{width:100%;border-top:1px solid #d5dfe9; float:left;}<br>
+.menu ul li ul li{ border-top:1px dotted #d5dde8;border-bottom:none;width:100%; float:left}<br>
+.menu_sicon{background-position:0px -21px; width:8px; height:9px;margin-top:16px;margin-left:40px;_margin-left:25px;}<br>
+.menu ul li ul li.hower{background-color:#ecf5fa;}<br>
+.menu ul li ul li.twoli,.sel{ background-color:#4a98d6;}<br>
+.menu ul li ul li.twoli .menu_sicon,.sel .menu_sicon{background-position:0px -42px;}<br>
+.menu ul li ul li.twoli p,.sel p{color:#fff;}<br>
+.menu ul li ul li.twoli .menu_s,.sel .menu_s{background-position:0px -37px;}<br>
+</p>
+</blockquote>
+</div>
+        
+<!--JAVASCRIPT代码-->
+<div id="java">
+<blockquote class="vlight">
+<p>
+/**********暂无相关文件*************/<br>
+</p>
+</blockquote>
+</div>
+        
+        
+<!--使用说明-->
+<div id="date">
+<blockquote class="vlight">
+<p>
+/* 数据等待添加 */
+
+</p>
+</blockquote>
+</div>
+
+        
+        
+    </div>
+
+</div>
+</body>
+</html>

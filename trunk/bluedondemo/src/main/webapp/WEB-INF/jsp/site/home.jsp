@@ -1,0 +1,201 @@
+<%@page contentType="text/html" pageEncoding="utf-8" session="false" %>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>蓝盾下一代互联网接入口保密检测器</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <!--可以在收藏夹中显示出图标-->
+    <link rel="Bookmark" href="${CXT}/assets/lib/bluedonUI/demo/favicon.ico" type="image/x-icon"/>
+    <!--可以在地址栏中显示出图标-->
+    <link rel="shortcut icon" href="${CXT}/assets/lib/bluedonUI/demo/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="${CXT}/assets/lib/bluedonUI/demo/favicon.ico" type="image/x-icon"/>
+    <!--公共-->
+    <link href="${CXT}/assets/lib/bluedonUI/demo/skin/blue/style/public.css" rel="stylesheet" type="text/css" />
+    <link href="${CXT}/assets/lib/bluedonUI/demo/skin/blue/style/style.css" rel="stylesheet" type="text/css" />
+    <script src="${CXT}/assets/lib/bluedonUI/demo/js/lib/jquery.min.js" type="text/javascript"></script>
+    <!--[if lt IE 7]> <script src="${CXT}/assets/lib/bluedonUI/demo/js/lib/lib/jqueryie6.min.js" type="text/javascript"></script><![endif]-->
+    <script type="text/javascript" src="${CXT}/assets/lib/bluedonUI/demo/js/lib/index.js"></script>
+    <!--dialog-->
+    <link href="${CXT}/assets/lib/bluedonUI/demo/js/lib/dialog/dialog.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="${CXT}/assets/lib/bluedonUI/demo/js/lib/dialog/jquery.artDialog.source.js"></script>
+    <script type="text/javascript" src="${CXT}/assets/lib/bluedonUI/demo/js/lib/dialog/iframeTools.source.js"></script>
+
+    <!--弹出框封装和日历的扩展-->
+    <script type="text/javascript" src="${CXT}/assets/lib/bluedonUI/demo/js/lib/unit.js"></script>
+
+    <!--报表-->
+    <script type="text/javascript" src="${CXT}/assets/lib/bluedonUI/demo/js/lib/echarts/echarts-all.js"></script>
+    <script type="text/javascript" src="${CXT}/assets/lib/bluedonUI/demo/js/lib/echarts/echarts.js"></script>
+    <script src="${CXT}/assets/lib/bluedonUI/demo/js/bd/charts.js"></script>
+    <script src="${CXT}/assets/lib/bluedonUI/demo/js/lib/echarts/echarts_list.js"></script>
+    <script>
+        $(document).ready(function(e) {
+            $("#chart_bar1").chartsObj({
+                typecharts:'bar',                 //是什么类型的报表bar,line,pie等
+                jsonUrl:'../js/data/bar1.json',  //报表的JSON文件路径
+                tabID:'#chart_bar1',              //调用报表的ID
+                trigger:'axis',                   //报表的trigger类型
+                width:'100%',                      //报表显示宽度
+                height:'90%',                      //报表显示高度
+                openWin:false,                     //报表是否有弹出详情页面
+                openurl:'list_zjxw.html',		   //报表弹出详情页面地址
+                isWhat:'bar3',                     //报表所用的格式
+                echartsAdd:'../js/lib/echarts'  //echarts文件路径
+            });
+            $("#chart_bar2").chartsObj({
+                typecharts:'bar',                 //是什么类型的报表bar,line,pie等
+                jsonUrl:'../js/data/bar2.json',  //报表的JSON文件路径
+                tabID:'#chart_bar2',              //调用报表的ID
+                trigger:'item',                   //报表的trigger类型
+                width:'100%',                      //报表显示宽度
+                height:'90%',                      //报表显示高度
+                openWin:true,                     //报表是否有弹出详情页面
+                openurl:'list_zjxw.html',		   //报表弹出详情页面地址
+                isWhat:'bar2',                     //报表所用的格式
+                echartsAdd:'../js/lib/echarts'  //echarts文件路径
+            });
+            $("#chart_bar3").chartsObj({
+                typecharts:'bar',                 //是什么类型的报表bar,line,pie等
+                jsonUrl:'../js/data/bar3.json',  //报表的JSON文件路径
+                tabID:'#chart_bar3',              //调用报表的ID
+                trigger:'item',                   //报表的trigger类型
+                width:'100%',                      //报表显示宽度
+                height:'90%',                      //报表显示高度
+                openWin:true,                     //报表是否有弹出详情页面
+                openurl:'list_zjxw.html',		   //报表弹出详情页面地址
+                isWhat:'bar2',                     //报表所用的格式
+                echartsAdd:'../js/lib/echarts'  //echarts文件路径
+            });
+            $("#chart_pie2").chartsObj({
+                typecharts:'pie',                 //是什么类型的报表bar,line,pie等
+                jsonUrl:'../js/data/pie1.json',  //报表的JSON文件路径
+                tabID:'#chart_pie2',              //调用报表的ID
+                trigger:'item',                   //报表的trigger类型
+                width:'100%',                      //报表显示宽度
+                height:'90%',                      //报表显示高度
+                openWin:true,                     //报表是否有弹出详情页面
+                openurl:'list_zjxw.html',		   //报表弹出详情页面地址
+                isWhat:'pie1',                     //报表所用的格式
+                echartsAdd:'../js/lib/echarts'  //echarts文件路径
+            });
+
+            /*echartOption('bar','../js/data/bar1.json','#chart_bar1','axis','100%','90%',false,'bar3');
+             echartOption('bar','../js/data/bar2.json','#chart_bar2','item','100%','90%',false,'bar2');
+             echartOption('bar','../js/data/bar3.json','#chart_bar3','item','100%','90%',false,'bar2');
+             echartOption('pie','../js/data/pie1.json','#chart_pie2','item','100%','90%',false,'pie1');*/
+        });
+    </script>
+</head>
+
+<body>
+<div class="all">
+    <div class="index_search">
+        <label>设备编号：</label>
+        <select class="text">
+            <option>编号1</option>
+            <option>编号12</option>
+            <option>编号3</option>
+        </select>
+    </div>
+    <!-- report 活跃主机统计 -->
+    <div class="index_box float_l" style="width:49.5%;_width:48.6%">
+        <h3>活跃主机统计</h3>
+        <div class="shebeiZT hauto">
+            <!--当前统计方式-->
+            <div class="report_search ">
+                <label>当前统计方式：</label>
+                <select class="text">
+                    <option>按在线时长TOP10</option>
+                    <option selected>按外联IP数</option>
+                    <option>按总流量</option>
+                </select>
+                <label>当前统计时间：</label>
+                <select class="text" style="_width:55px">
+                    <option>30秒</option>
+                    <option >1分钟</option>
+                    <option selected>5分钟</option>
+                    <option>1小时</option>
+                    <option>当天</option>
+                </select>
+            </div>
+            <div id="chart_bar1" class="chart"></div>
+        </div>
+
+    </div>
+    <!-- report 言论型涉密事件统计 -->
+    <div class="index_box float_r" style="width:49.5%;_width:48.6%;">
+        <h3>言论型涉密事件统计</h3>
+        <div class="shebeiZT hauto " >
+            <!--当前统计时间-->
+            <div class="report_search ">
+                <label>当前统计时间：</label>
+                <select class="text">
+                    <option>30秒</option>
+                    <option>1分钟</option>
+                    <option selected>5分钟</option>
+                    <option>1小时</option>
+                    <option>当天</option>
+                </select>
+            </div>
+
+            <div id="chart_bar2" class="chart"></div>
+        </div>
+    </div>
+    <!-- report 访问类型统计 -->
+    <div class="index_box float_l" style="width:49.5%;_width:48.6%">
+        <h3>访问类型统计</h3>
+        <div class="shebeiZT hauto " >
+            <!--当前统计时间-->
+            <div class="report_search ">
+                <label>当前统计方式：</label>
+                <select class="text">
+                    <option>按访问流量</option>
+                    <option selected>按访问终端数</option>
+                </select>
+                <label>当前统计时间：</label>
+                <select class="text" style="_width:55px">
+                    <option>30秒</option>
+                    <option >1分钟</option>
+                    <option selected>5分钟</option>
+                    <option>1小时</option>
+                    <option>当天</option>
+                </select>
+
+            </div>
+            <div id="chart_pie2" class="chart"></div>
+        </div>
+    </div>
+
+    <!-- report 文件型涉密事件统计 -->
+    <div class="index_box float_r" style="width:49.5%;_width:48.6%;">
+        <h3>文件型涉密事件统计</h3>
+        <div class="shebeiZT hauto">
+            <!--当前统计时间-->
+            <div class="report_search">
+                <label>当前统计时间：</label>
+                <select class="text">
+                    <option>30秒</option>
+                    <option >1分钟</option>
+                    <option selected>5分钟</option>
+                    <option>1小时</option>
+                    <option>当天</option>
+                </select>
+            </div>
+
+            <div id="chart_bar3" class="chart"></div>
+        </div>
+    </div>
+
+</div>
+
+<!--<script src="${CXT}/assets/lib/bluedonUI/demo/../js/bd/charts.js"></script>-->
+<!--<script src="${CXT}/assets/lib/bluedonUI/demo/../js/lib/echarts/echarts.js"></script>
+<script src="${CXT}/assets/lib/bluedonUI/demo/js/lib/echarts/chart_bar_1.js"></script>-->
+<!--<script src="${CXT}/assets/lib/bluedonUI/demo/js/lib/echarts/chart_pie_t.js"></script>-->
+
+
+
+</body>
+</html>

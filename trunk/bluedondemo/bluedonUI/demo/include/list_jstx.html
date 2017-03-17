@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>列表</title>
+<!--公共-->
+<link href="../skin/blue/style/public.css" rel="stylesheet" type="text/css" />
+<link href="../skin/blue/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../js/lib/jquery.min.js" type="text/javascript"></script>
+<!--[if lt IE 7]> 
+<script src="../js/lib/jqueryie6.min.js" type="text/javascript"></script>
+<![endif]-->
+<!--grid-->
+<link href="../js/lib/ligerUI/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+<script src="../js/lib/ligerUI/js/base.js" type="text/javascript"></script>
+<script src="../js/lib/ligerUI/js/ligerGrid.js" type="text/javascript"></script>
+<script src="../js/lib/ligerUI/js/CustomersData1.js" type="text/javascript"></script>
+<script src="../js/lib/ligerUI/js/GridList.js" type="text/javascript"></script>
+<!--dialog-->
+<link href="../js/lib/dialog/dialog.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/lib/dialog/jquery.artDialog.source.js"></script>
+<script type="text/javascript" src="../js/lib/dialog/iframeTools.source.js"></script> 
+
+<!--日历-->
+<script language="javascript" type="text/javascript" src="../js/lib/My97DatePicker/WdatePicker.js"></script>
+
+<!--弹出框封装和日历的扩展-->
+<script type="text/javascript" src="../js/lib/unit.js"></script>
+
+<script language="javascript">
+;(function ($) {
+   $(document).ready(function () { 
+		var hListTabel = $.CreateTabel({//调用ligerUI的列表插件
+			checkbox: true,
+			el:'#maingrid',
+                columns: [
+					{ display: '设备编号', name: 'username',minWidth: 50},
+					{ display: '用户姓名', name: 'username',minWidth: 50},
+					{ display: '源IP', name: 'sip',minWidth: 50},
+					{ display: '源端口', name: 'mddk',minWidth: 50},					
+					{ display: '源MAC', name: 'smac',minWidth: 50},
+					{ display: '目的IP', name: 'mip',minWidth: 50},
+					{ display: '目的端口', name: 'mddk',minWidth: 50},
+					{ display: '目的MAC', name: 'smac',minWidth: 50},
+					{ display: '开始时间', name: 'time',minWidth: 80},
+					{ display: '结束时间', name: 'time',minWidth: 80},
+					{ display: '发送人ID', name: 'mmmc',minWidth: 80},
+					{ display: '接收人ID', name: 'dlxx',minWidth: 50},
+					{ display: '标题', name: 'dlxx',minWidth: 80},
+					{ display: '附件', name: 'dlxx',minWidth: 50},
+					{ display: '内容', name: 'dlxx',minWidth: 50},
+					{ display: '上网方式', name: 'dlxx',minWidth: 30},
+					{ display: '描述', name: 'dlxx',minWidth: 80},
+                ], 
+				pageSize: 20, 
+				pageSizeOptions: [3, 10, 20, 30, 40, 50, 100],
+				data: CustomersData1,
+				rownumbers:false,
+				root :'Rows',
+				record :'Total',
+				width: '99.8%',
+				height:'98.5%',
+				detail: {height:'auto', onShowDetail: function (r, p)
+                {
+					 
+                    $(p).append($('<table cellpadding="0" cellspacing="0" style="width:95%;" class="detailtd"><tr><td align="right" class="dtd">时间：</td><td>' + r.time + '</td><td align="right" class="dtd">用户姓名：</td><td>' + r.username + '</td></tr><tr><td align="right" class="dtd">源IP：</td><td>' + r.sip + '</td><td align="right" class="dtd">源MAC：</td><td>' + r.smac + '</td></tr><tr><td align="right" class="dtd">目标IP：</td><td>' + r.mip + '</td><td align="right" class="dtd">警报类型：</td><td>' + r.bjlx + '</td></tr><tr><td align="right" class="dtd">木马名称：</td><td>' + r.mmmc + '</td><td align="right" class="dtd">地理信息：</td><td>' + r.dlxx + '</td></tr><tr><td align="right" class="dtd">描述：</td><td colspan="3">' + r.ms + '</td></tr></table>').css('margin', '20px auto'));
+
+                }
+                }
+               
+            });
+			
+			 $(".xlk-icon").click(function(){
+					$(".xlsjlist").toggle();	
+				});
+			
+			$(".xlsjlist ul li").click(function(){
+				var ltext = $(this).text()
+				$(this).parent().parent().toggle();
+				$(".seltime").html(ltext);
+				
+			});
+			$(".l-grid-row:odd").css("background-color","#f9f9f9");//列表间隔行
+		
+        });
+
+
+	
+	 
+
+
+})(jQuery);
+
+
+
+function display(id){  
+ var traget=document.getElementById(id);  
+ if(traget.style.display=="none"){  
+    traget.style.display="";  
+    }else{  
+    traget.style.display="none";  
+      }  
+   }  
+</script>
+</head>
+
+<body>
+
+<div class="list_page">
+    <div class="btn_box">
+ 	<div class="btn_list">
+	 <label>当前定时刷新时间：</label>
+    <select class="text float_l">
+      <option>30秒</option>
+      <option selected="selected">1分钟</option>
+      <option>5分钟</option>
+      <option>10分钟</option>
+      <option>20分钟</option>
+    </select>
+    <input name="" type="button" class="ref btn_ty c_b float_l" value="停止刷新">
+   <!--点"停止刷新"时调用这个按钮-- <input name="" type="button" class="ref btn_ty c_o" value="启用刷新"> -->
+    <input type="button" class="btn c_o btn_del float_l" value="删除">
+    </div>
+   
+	<div class="aearch_box"><form action="" method="post">
+     <label>时间：</label>
+     <input name="" type="text" class="text date_plug date_pos float_l" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="开始时间">
+     <label>至</label>
+     <input name="" type="text" class="text date_plug date_pos float_l" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="结束时间">
+     <input name="" type="submit" class="btn btn_search" value="查询">
+     <input type="button" class="btn btn_sea" value="精确查询" onclick="display('keyword_box')">
+     <input type="button" class="btn c_g btn_excel" value="Excel导出">
+     <input type="button" class="btn c_b btn_print" value="打印">
+
+     </form></div>
+    </div>
+    
+<div class="keyword_box pad_top" id="keyword_box" style="display:none">
+    <form action="" method="post">
+     <span class="up up_right" ></span>
+     <span class="close"  onclick="display('keyword_box')"></span>
+     <ul>
+     <li>
+     <label>时间：</label><input name="" type="text" class="text date_plug" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="开始时间">
+     <label>至</label>
+     <input name="" type="text" class="text date_plug " onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="结束时间">
+     </li>
+     <li>
+     <label>设备编号：</label>
+     <input name="" type="text" class="text" placeholder="1111">
+     </li>
+     <li>
+     <label>用户姓名：</label>
+     <input name="" type="text" class="text" placeholder="张三">
+     </li>
+     <li>
+     <label>源IP：</label>
+     <input name="" type="text" class="text" placeholder="源IP">
+     </li>
+     <li>
+     <label>源MAC：</label>
+     <input name="" type="text" class="text" placeholder="源MAC">
+     </li>
+     <li>
+     <label>目的IP：</label>
+     <input name="" type="text" class="text" placeholder="目的IP">
+     </li>
+     <li>
+     <label>发送人ID：</label>
+     <input name="" type="text" class="text" placeholder="发送人ID">
+     </li>
+     <li>
+     <label>接收人ID：</label>
+     <input name="" type="text" class="text" placeholder="接收人ID">
+     </li>
+     <li>
+     <label>通信工具：</label>
+     <select name="">
+     </select>
+     </li>
+     <li><input name="" type="submit" class="btn bpad" value="查询"></li>
+     </ul>
+     
+    
+    </form>
+    </div>
+
+    <div id="maingrid"  class="list">
+    </div>
+</div>
+</body>
+</html>

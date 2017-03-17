@@ -1,30 +1,17 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page contentType="text/html" pageEncoding="utf-8" session="false" %>
+<div class="header">
+	<!--header-left-->
+	<div class="header_left">
+		<!--logo-->
+		<img src="${CXT}/assets/lib/bluedonUI/demo/skin/blue/images/custom/logo.png"  class="float_l">
 
-<div class="navbar navbar-default navbar-static-top" role="navigation">
-	<div class="container">
-		<div class="navbar-header ">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="sr-only">Toggle navigation</span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-			<div class="navbar-header">
-                <a href="index" style="text-align: center;font-size:20px">Header</a>
-			</div>
-		</div>
-		<div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right dropdown-hover">
-				<li class="dropdown">
-					<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                        菜单
-					</a>
-					<ul class="dropdown-menu dropdown-menu-left" role="menu">
-						<li><a href="#">菜单1</a></li>
-						<li><a href="#">菜单2</a></li>
-					</ul>
-				</li>
+	</div>
+	<!--header-right 告警 主页 用户信息-->
+	<div class="float_r header_right" >
+		<div class="right_menu">
+			<ul>
+				<li>欢迎你！<font>administrator</font></li>
+				<li class="exit" onClick="javascript:window.location.href='../login.html'" title="退出"></li>
 			</ul>
 		</div>
 	</div>

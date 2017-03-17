@@ -45,6 +45,12 @@ public class RootController {
         return "/site/index";
     }
 
+    @RequestMapping(value = "/home")
+    public String home(HttpServletRequest request, HttpServletResponse response) {
+        System.out.println("编码乱码。ww。。+++");
+        return "/site/home";
+    }
+
     private static PersonProbuf.Person PReq(int id) {
         PersonProbuf.Person.Builder builder = PersonProbuf.Person.newBuilder();
         builder.setId(id);

@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FW</title>
+<link href="../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../js/lib/jquery.min.js" type="text/javascript"></script>
+
+<script language="javascript"> 
+ ;(function ($) {
+   $(document).ready(function () { 
+	
+	$('.data_chart').delegate('a.line1', 'click', function () {
+		//alert(1111);
+		var $this = $(this);
+		alert($this); 
+		var dialog = $.Layer.iframe(
+			{
+				title: '标准面积图',
+				url:'echarts/chart_line.html',
+				width: 800,
+				height: 600
+			});
+	});
+	
+	$('.data_chart').delegate('a.bar', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '标准柱状图',
+				url:'echarts/chart_bar.html',
+				width: 800,
+				height: 600
+			});
+	});
+
+	
+	$('.data_chart').delegate('a.bar2', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '柱状图',
+				url:'echarts/chart_bar2.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	
+	$('.data_chart').delegate('a.line2', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '标准折线图',
+				url:'echarts/chart_line2.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	
+	$('.data_chart').delegate('a.pie', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '标准饼图',
+				url:'echarts/chart_pie.html',
+				width: 800,
+				height: 600
+			});
+	});	
+		
+	$('.data_chart').delegate('a.gauge', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '标准仪表盘',
+				url:'echarts/chart_gauge.html',
+				width: 800,
+				height: 600
+			});
+	});		 
+	
+	$('.data_chart').delegate('a.pie2', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '环形图',
+				url:'echarts/chart_pie2.html',
+				width: 800,
+				height: 600
+			});
+	});		
+	
+	$('.data_chart').delegate('a.map', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '地图-攻击事件分布',
+				url:'echarts/chart_map.html',
+				width: 800,
+				height: 600
+			});
+	});		
+	
+	$('.data_chart').delegate('a.event', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '时间坐标拆线图',
+				url:'echarts/chart_event.html',
+				width: 800,
+				height: 600
+			});
+	});		
+	
+	$('.data_chart').delegate('a.mix', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '混合报表',
+				url:'echarts/chart_mix.html',
+				width: 800,
+				height: 600
+			});
+	});		
+	
+	$('.data_chart').delegate('a.force', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '简单关系图',
+				url:'echarts/chart_force.html',
+				width: 800,
+				height: 600
+			});
+	});		
+								
+	$('.data_chart').delegate('a.grid1', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '常规表格',
+				url:'grid/grid_01.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	
+	
+	$('.data_chart').delegate('a.grid2', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '常规表格',
+				url:'grid/grid_02.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	
+	$('.data_chart').delegate('a.grid3', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '折叠表格-查看列表明细',
+				url:'grid/grid_03.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	
+	$('.data_chart').delegate('a.grid4', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: 'Web日程安排系统',
+				url:'grid/grid_04.html',
+				width: 800,
+				height: 600
+			});
+	});	
+					
+	$('.data_chart').delegate('a.tab', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: 'tab标签切换',
+				url:'tab/tab.html',
+				width: 800,
+				height: 600
+			});
+	});	
+
+	$('.data_chart').delegate('a.up', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '弹出窗',
+				url:'up/up.html',
+				width: 800,
+				height: 600
+			});
+	});		
+
+	$('.data_chart').delegate('a.tree', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '可折叠的下拉树',
+				url:'tree/tree.html',
+				width: 800,
+				height: 600
+			});
+	});		
+
+	$('.data_chart').delegate('a.form', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '表单验证',
+				url:'form/form.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	
+	$('.data_chart').delegate('a.form2', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '内容互换',
+				url:'form/form2.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	
+	$('.data_chart').delegate('a.form3', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '表单添加删除',
+				url:'form/form3.html',
+				width: 800,
+				height: 600
+			});
+	});					
+	
+	$('.data_chart').delegate('a.form4', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '多个表单添加',
+				url:'form/form4.html',
+				width: 800,
+				height: 600
+			});
+	});			
+	
+	$('.data_chart').delegate('a.form5', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '多个表单添加',
+				url:'form/form5.html',
+				width: 800,
+				height: 600
+			});
+	});			
+	
+	$('.data_chart').delegate('a.form6', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '表单内容修改',
+				url:'form/form6.html',
+				width: 800,
+				height: 600
+			});
+	});			
+	
+	$('.data_chart').delegate('a.form7', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '内容编辑器',
+				url:'form/form7.html',
+				width: 800,
+				height: 600
+			});
+	});			
+					
+	$('.data_chart').delegate('a.combox', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '下拉树',
+				url:'combox/combox.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	
+	$('.data_chart').delegate('a.combox2', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '下拉表格翻页',
+				url:'combox/combox2.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	
+	$('.data_chart').delegate('a.combox3', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '下拉复选框',
+				url:'combox/combox3.html',
+				width: 800,
+				height: 600
+			});
+	});	
+		
+	$('.data_chart').delegate('a.me1', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '系统左侧菜单',
+				url:'menu/menu.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	
+	$('.data_chart').delegate('a.layout', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '系统界面布局',
+				url:'layout/layout.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	
+	
+	$('.data_chart').delegate('a.layout2', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '区域可拉伸',
+				url:'layout/layout2.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	
+	$('.data_chart').delegate('a.drag', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '区域内容拖动',
+				url:'drag/drag.html',
+				width: 800,
+				height: 600
+			});
+	});	
+				
+	$('.data_chart').delegate('a.err', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '报错页面',
+				url:'error/err.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	$('.data_chart').delegate('a.icon', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '功能图标',
+				url:'icon/icon.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	$('.data_chart').delegate('a.icon1', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '按钮图标',
+				url:'icon/icon1.html',
+				width: 800,
+				height: 600
+			});
+	});	
+	$('.data_chart').delegate('a.nav', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '导航图标',
+				url:'nav/nav.html',
+				width: 800,
+				height: 600
+			});
+	});	
+});
+})(jQuery);
+</script>
+</head>
+
+<body style="min-width:1030px;">
+<div class="list_box" id="bb">
+<h1><span class="float_r">引用插件地址:http://echarts.baidu.com/</span>报表(charts)<a href="../down/echarts-2.1.10.rar" >下载插件</a></h1>
+<div class="data_chart">
+ <dl><a class="line1"><dt><img src="../skin/images/echarts_01.jpg" /></dt><dd>标准面积图</dd><i>填充样式，平滑曲线...</i></a></dl>
+ <dl><a class="bar"><dt><img src="../skin/images/echarts_02.jpg" /></dt><dd>标准柱状图</dd><i>标注，标线...</i></a></dl>
+ <dl><a class="bar2"><dt><img src="../skin/images/echarts_06.jpg" /></dt><dd>柱状图</dd><i>标注，标线...</i></a></dl>
+ <dl><a class="line2"><dt><img src="../skin/images/echarts_07.jpg" /></dt><dd>标准折线图</dd><i>标注，标线，个性化线条阴影...</i></a></dl>
+ <dl><a class="pie"><dt><img src="../skin/images/echarts_03.jpg" /></dt><dd>标准饼图</dd><i>中心，半径设置...</i></a></dl>
+ <dl><a class="gauge"><dt><img src="../skin/images/echarts_04.jpg" /></dt><dd>标准仪表盘</dd><i>信息图样式，文本标签技巧...</i></a></dl>
+ <dl><a class="pie2"><dt><img src="../skin/images/echarts_05.jpg" /></dt><dd>环形图</dd><i>个性化...</i></a></dl>
+ <dl><a class="map"><dt><img src="../skin/images/echarts_09.jpg" /></dt><dd>地图-攻击事件分布</dd><i>多用于国内或国外的攻击或事件的分布...</i></a></dl>
+ <dl><a class="event"><dt><img src="../skin/images/echarts_10.jpg" /></dt><dd>时间坐标拆线图</dd><i>多用于查看每个时间段所发生的事件...</i></a></dl>
+ <dl><a class="mix"><dt><img src="../skin/images/echarts_11.jpg" /></dt><dd>混合报表</dd><i>多采用复杂的数据统计分析...</i></a></dl>
+ <dl><a class="force"><dt><img src="../skin/images/echarts_12.jpg" /></dt><dd>简单关系图</dd><i>多用于大数据的关系或网络拓扑图...</i></a></dl>
+<div class="clearfix"></div>
+</div>
+</div>
+
+<div class="list_box" id="bg">
+<h1><span class="float_r">引用插件地址:http://www.ligerui.com/demo.html</span>表格(grids)<a href="../down/echarts-2.1.10.rar" >下载插件</a></h1>
+<div class="data_chart">
+ <dl><a class="grid1"><dt><img src="../skin/images/grid_01.jpg" /></dt><dd>常规表格</dd><i>常规表格，支持选择编辑查看信息...</i></a></dl>
+ <dl><a class="grid2"><dt><img src="../skin/images/grid_02.jpg" /></dt><dd>可折叠表格</dd><i>分层级可折叠表格，权限勾选...</i></a></dl>
+ <dl><a class="grid3"><dt><img src="../skin/images/grid_03.jpg" /></dt><dd>折叠表格-查看列表明细</dd><i>可折叠表格-查看列表明细...</i></a></dl>
+ <dl><a class="grid4"><dt><img src="../skin/images/grid_04.jpg" /></dt><dd>Web日程安排系统</dd><i>可选择周/月来查看近期安排...</i></a></dl>
+ <div class="clearfix"></div>
+</div>
+</div>
+
+<div class="list_box" id="tab">
+<h1><!--<span class="float_r">引用插件地址:http://echarts.baidu.com/</span>-->标签(tab)<a href="../down/echarts-2.1.10.rar" >下载插件</a></h1>
+<div class="data_chart">
+ <dl><a class="tab"><dt><img src="../skin/images/tab_01.jpg" /></dt><dd>tab标签切换</dd><i>tab标签切换...</i></a></dl>
+ <div class="clearfix"></div>
+</div>
+</div>
+
+<div class="list_box" id="up">
+<h1><!--<span class="float_r">引用插件地址:http://echarts.baidu.com/</span>-->弹出窗(windows)</h1>
+<div class="data_chart">
+ <dl><a class="up"><dt><img src="../skin/images/up_01.jpg" /></dt><dd>弹出窗</dd><i>弹出窗...</i></a></dl>
+ <div class="clearfix"></div>
+</div>
+</div>
+
+<div class="list_box" id="tree">
+<h1><span class="float_r">引用插件地址:http://www.ligerui.com/demo.html</span>树(tree)</h1>
+<div class="data_chart">
+ <dl><a class="tree"><dt><img src="../skin/images/tree_01.jpg" /></dt><dd>树</dd><i>可折叠的下拉树...</i></a></dl>
+ <div class="clearfix"></div>
+</div>
+</div>
+
+<div class="list_box" id="form">
+<h1><span class="float_r">引用插件地址:http://www.ligerui.com/demo.html</span>表单(form)</h1>
+<div class="data_chart">
+ <dl><a class="form"><dt><img src="../skin/images/form_01.jpg" /></dt><dd>表单验证</dd><i>表单验证、下拉框、浏览...</i></a></dl>
+ <dl><a class="form2"><dt><img src="../skin/images/form_02.jpg" /></dt><dd>内容互换</dd><i>文本框左右内容互换...</i></a></dl>
+ <dl><a class="form3"><dt><img src="../skin/images/form_03.jpg" /></dt><dd>表单添加删除</dd><i>添加、删除...</i></a></dl>
+ <dl><a class="form4"><dt><img src="../skin/images/form_04.jpg" /></dt><dd>支持多个表单添加</dd><i>新增、删除...</i></a></dl>
+ <dl><a class="form5"><dt><img src="../skin/images/form_05.jpg" /></dt><dd>时间日历</dd><i>时间日历...</i></a></dl>
+ <dl><a class="form6"><dt><img src="../skin/images/form_06.jpg" /></dt><dd>表单内容修改</dd><i>表单内容修改...</i></a></dl>
+ <dl><a class="form7"><dt><img src="../skin/images/form_07.jpg" /></dt><dd>内容编辑器</dd><i>适应于在线编辑文档，自由使用和修改代码...</i></a></dl>
+ <div class="clearfix"></div>
+</div>
+</div>
+
+<div class="list_box" id="combox">
+<h1><span class="float_r">引用插件地址:http://www.ligerui.com/demo.html</span>下拉框(combox)</h1>
+<div class="data_chart">
+ <dl><a class="combox"><dt><img src="../skin/images/combox_01.jpg" /></dt><dd>下拉树</dd><i>下拉、分组...</i></a></dl>
+ <dl><a class="combox2"><dt><img src="../skin/images/combox_02.jpg" /></dt><dd>下拉表格翻页</dd><i>下拉表格翻页...</i></a></dl>
+ <dl><a class="combox3"><dt><img src="../skin/images/combox_03.jpg" /></dt><dd>下拉复选框</dd><i>下拉复选框...</i></a></dl>
+ <div class="clearfix"></div>
+</div>
+</div>
+
+<div class="list_box" id="menu">
+<h1><span class="float_r">引用插件地址:http://www.ligerui.com/demo.html</span>菜单(menu)</h1>
+<div class="data_chart">
+ <dl><a class="me1"><dt><img src="../skin/images/menu_01.jpg" /></dt><dd>菜单</dd><i>系统左侧菜单、可分多级...</i></a></dl>
+ <div class="clearfix"></div>
+</div>
+</div>
+
+<div class="list_box" id="layout">
+<h1><span class="float_r">引用插件地址:http://www.ligerui.com/demo.html</span>布局(layout)</h1>
+<div class="data_chart">
+ <dl><a class="layout"><dt><img src="../skin/images/layout_01.jpg" /></dt><dd>系统界面布局</dd><i>系统界面布局...</i></a></dl>
+ <dl><a class="layout2"><dt><img src="../skin/images/layout_02.jpg" /></dt><dd>拖动</dd><i>区域可拉伸...</i></a></dl>
+ <div class="clearfix"></div>
+</div>
+</div>
+
+<div class="list_box" id="drag">
+<h1><span class="float_r">引用插件地址:http://www.ligerui.com/demo.html</span>拖动(drag)</h1>
+<div class="data_chart">
+ <dl><a class="drag"><dt><img src="../skin/images/drag_01.jpg" /></dt><dd>拖动</dd><i>区域内容拖动，支持图片拖动...</i></a></dl>
+ <div class="clearfix"></div>
+</div>
+</div>
+
+<div class="list_box" id="error">
+<h1><span class="float_r">引用插件地址:http://www.ligerui.com/demo.html</span>报错页面(error)</h1>
+<div class="data_chart">
+ <dl><a class="err"><dt><img src="../skin/images/error_01.jpg" /></dt><dd>报错页面</dd><i>页面出错，链接错误...</i></a></dl>
+ <div class="clearfix"></div>
+</div>
+</div>
+
+<div class="list_box" id="nav">
+<h1>导航图标</h1>
+<div class="data_chart">
+ <dl><a class="nav"><dt><img src="../skin/images/nav.png" /></dt><dd>导航图标</dd><i>系统左侧导航图标...</i></a></dl>
+ <div class="clearfix"></div>
+</div>
+</div>
+
+<div class="list_box" id="icon">
+<h1>功能图标</h1>
+<div class="data_chart">
+ <dl><a class="icon"><dt><img src="../skin/images/icon.png" /></dt><dd>功能图标</dd><i>列表常用的功能图标...</i></a></dl>
+ <dl><a class="icon1"><dt><img src="../skin/images/icon1.png" /></dt><dd>按钮图标</dd><i>系统按钮图标...</i></a></dl>
+ <div class="clearfix"></div>
+</div>
+</div>
+
+<div class="list_box" id="case">
+<h1>应用案例</h1>
+<div class="data_chart">
+ <dl><a href="../demo/login.html" class="case" target="_blank"><dt><img src="../skin/images/yyal.jpg" /></dt><dd>应用案例</dd><i>以“蓝盾互联网接入口保密检测器为模板”...</i></a></dl>
+ <div class="clearfix"></div>
+</div>
+</div>
+
+
+</body>
+</html>

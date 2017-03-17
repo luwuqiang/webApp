@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FW</title>
+<link href="../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../js/lib/jquery.min.js" type="text/javascript"></script>
+<!--check start-->
+<link rel="stylesheet" href="../js/lib/jQuery_check/css/validationEngine.jquery.css" type="text/css"/>
+<script src="../js/lib/jQuery_check/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/lib/jQuery_check/js/languages/jquery.validationEngine-zh_CN.js" type="text/javascript" charset="utf-8"></script>
+<!--check end-->
+<script type="text/javascript" src="../js/lib/dialog/jquery.artDialog.source.js"></script>
+<script type="text/javascript" src="../js/lib/dialog/iframeTools.source.js"></script>
+<script type="text/javascript" src="../js/lib/unit.js"></script>
+
+<script type="text/javascript">
+;(function ($) {
+    $(function ()
+    {   
+        var dialog =    top.getDialog();
+        dialog.DOM.wrap.on('ok', function (e) {
+            e.preventDefault();
+            $("#form_id").submit();
+        });
+        $("#form_id").validationEngine({
+			promptPosition:'centerRight: 0, -4',scroll: false , binded: false ,'custom_error_messages': {
+			// Custom Error Messages for Validation Types
+			'required': {
+				'message': '* 该项必须填写！'
+			}
+			},
+        });
+	        
+    }); 
+})(jQuery);
+</script>
+<!--check end-->
+<!--select start-->
+<link href="../js/lib/ligerUI/css/ligerui-all.css" rel="stylesheet" type="text/css" />    
+<script src="../../js/lib/ligerUI/js/base.js" type="text/javascript"></script>
+<script src="../../js/lib/ligerUI/js/CustomersData.js" type="text/javascript"></script>
+<script src="../../js/lib/ligerUI/js/ligerResizable.js" type="text/javascript"></script>
+<script src="../../js/lib/ligerUI/js/ligerGrid.js" type="text/javascript"></script>
+<script src="../../js/lib/ligerUI/js/ligerCheckBox.js" type="text/javascript"></script>
+<script src="../../js/lib/ligerUI/js/ligerComboBox.js" type="text/javascript"></script>    
+<script type="text/javascript">
+    function getGridOptions(checkbox)
+    {
+        var options = {
+            columns: [
+            { display: '顾客', name: 'username', width: 100, minWidth: 60 },
+            { display: '公司名', name: 'NewTime', minWidth: 120 },
+            { display: '联系名', name: 'Sex', minWidth: 140 },
+            { display: '电话', name: 'Orle' },
+            { display: '城市', name: 'username' },
+            { display: '国家', name: 'NewTime' }
+            ], switchPageSizeApplyComboBox: false,
+            data: $.extend({}, CustomersData),
+            pageSize: 30, 
+            checkbox: checkbox, 
+			rownumbers: false,
+			alternatingRow:true,
+			isScroll:false
+        };
+        return options;
+    }
+
+    $(function ()
+    {    $.ligerui.defaults.Grid.headerRowHeight = 28;
+	     $.ligerui.defaults.Grid.rowHeight = 28;
+		 $(".l-grid-row:odd").css("background-color","#f9f9f9");
+        $("#select").ligerComboBox({
+            width: 172,
+            slide: false,
+            selectBoxWidth: 380,
+            selectBoxHeight: 200, valueField: 'CustomerID', textField: 'CustomerID', 
+			grid: getGridOptions(true)
+        });
+    }); 
+</script>
+<!--select end-->
+<style type="text/css">
+html{height:100%;background:#fafafa;}
+</style>
+</head>
+
+<body>
+<div class="openWin">
+
+ <form action="" method="get" id="form_id">
+ <table width="100%" border="0" cellpadding="0" cellspacing="0" class="date_add_table">
+  <tr>
+    <td width="90" class="t_r">网口管理：</td>
+    <td ><input type="text" name="textfield" id="select" class="validate[required] text" /></td>
+  </tr>
+  <tr>
+    <td class="t_r">子网掩码：</td>
+    <td><input type="text" name="textfield2" id="textfield2" class="validate[required] text" /></td>
+  </tr>
+  <tr>
+    <td class="t_r">网关：</td>
+    <td><input type="text" name="textfield3" id="textfield3" class="validate[required] text" /></td>
+  </tr>
+  <tr>
+    <td class="t_r">详细描述：</td>
+    <td><textarea name="" cols="" rows="" class="text text_area"></textarea></td>
+  </tr>
+ </table>
+ </form>
+ 
+</div>
+</body>
+</html>

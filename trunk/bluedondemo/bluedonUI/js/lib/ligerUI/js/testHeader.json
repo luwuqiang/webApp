@@ -1,0 +1,11 @@
+﻿[
+	{"sTitle":"顾客","data":"CustomerID","bVisible":true},
+	{"sTitle":"公司名","data":"CompanyName"},
+	{"sTitle":"联系名","data":"ContactName"},
+	{"sTitle":"电话","data":"ContactTitle"},
+	{"sTitle":"城市","data":"City"},
+	{"sTitle":"国家","data":"Country"},
+	{"sClass":"btn_edit","bVisible":false,"data":""},
+	{"sClass":"btn_view","bVisible":false,"data":""},
+	{"sClass":"btn_del","bVisible":false,"data":""}
+]

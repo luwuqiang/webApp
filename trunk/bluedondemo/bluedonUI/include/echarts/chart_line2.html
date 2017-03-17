@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>蓝盾无线上网安全管理系统</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<link href="../../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../../js/lib/jquery.min.js"></script>
+<style type="text/css">
+body{_overflow:hidden}
+</style>
+</head>
+
+<body>
+
+<div id="chart_line" style="height:240px; width:90%; overflow:hidden; margin:0px auto 0px auto;"></div>
+
+<script type="text/javascript" src="../../js/lib/echarts/echarts-all.js"></script>
+<script type="text/javascript" src="../../js/lib/echarts/echarts.js"></script>
+<script src="../../js/bd/charts.js"></script>
+<script src="../../js/lib/echarts/echarts_list.js"></script>
+<script>
+$(document).ready(function(e) {
+	$("#chart_line").chartsObj({
+			typecharts:'line',                 //是什么类型的报表bar,line,pie等
+			jsonUrl:'../../js/data/line2.json',  //报表的JSON文件路径
+			tabID:'#chart_line',              //调用报表的ID
+			trigger:'axis',                   //报表的trigger类型
+			width:800,                      //报表显示宽度
+			height:240,                      //报表显示高度
+			openWin:false,                     //报表是否有弹出详情页面
+			openurl:'list_zjxw.html',		   //报表弹出详情页面地址
+			isWhat:'line1',                     //报表所用的格式
+			lineType:true,                      //判断是否有背景的线形图,true为有背景的，FALSE为无背景
+			echartsAdd:'../../js/lib/echarts'  //echarts文件路径
+		});
+});	
+</script>
+
+
+<div class="clearfix"></div>  
+<iframe src="add_chart_line2.html" name="wcontent"  frameborder="0" scrolling="auto" width="100%" height="345px"></iframe>   
+
+
+</body>
+</html>

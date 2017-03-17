@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>列表</title>
+<!--公共-->
+<link href="../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../js/lib/jquery.min.js" type="text/javascript"></script>
+<!--grid-->
+<link href="../js/lib/ligerUI/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+<script src="../js/lib/liger../js/lib/base.js" type="text/javascript"></script>
+<script src="../js/lib/liger../js/lib/ligerGrid.js" type="text/javascript"></script>
+<script src="../js/lib/liger../js/lib/CustomersData.js" type="text/javascript"></script>
+<script src="../js/lib/liger../js/lib/GridList.js" type="text/javascript"></script>
+
+<!--dialog-->
+<link href="../js/lib/dialog/dialog.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/lib/dialog/jquery.artDialog.source.js"></script>
+<script type="text/javascript" src="../js/lib/dialog/iframeTools.source.js"></script> 
+
+<!--弹出框封装和日历的扩展-->
+<script type="text/javascript" src="../js/lib/unit.js"></script>
+
+<script language="javascript"> 
+ ;(function ($) {
+   $(document).ready(function () { 
+	
+	$('.list_page').delegate('input.btn_add', 'click', function () { 
+		var dialog = $.Layer.iframe(
+			{
+				title: '增加信息',
+				url:'add_mb.html',
+				width: 450,
+				height: 300
+			});
+	});
+	 
+});
+
+})(jQuery);
+</script>
+<style type="text/css">
+html{overflow:hidden}
+</style>
+</head>
+
+<body>
+
+<div class="list_page">
+
+    <div class="btn_box">
+     <div class="btn_list">
+     <input type="button" class="btn c_g btn_add" value="增加"> 
+     </div>
+    </div>
+    
+
+</div>
+</body>
+</html>

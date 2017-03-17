@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>FW</title>
+<link href="../../skin/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../../js/lib/jquery.min.js" type="text/javascript"></script>
+
+<script src="../../js/lib/tab/tab.js" type="text/javascript"></script>
+<!--select end-->
+<script src="../../js/lib/form/form4.js" type="text/javascript"></script>
+
+<!--代码变色-->
+<script src="../../js/lib/vejis.js" type="text/javascript"></script>
+<script src="../../js/lib/vlight.js" type="text/javascript"></script>
+<style type="text/css">
+html{height:100%;background:#fafafa;}
+</style>
+</head>
+
+<body>
+<div class="openWin">
+<div style="height:220px;">
+<form action="" method="get" id="form_id" class="edit_form">
+
+        <table width="50%" border="0" cellpadding="0" cellspacing="0" class="date_add_table">
+            <tr>
+                <td align="right"><label><input name="name" type="checkbox"  value="1" />星期一</label></td>
+                <td width="10%" align="right" >时间段：</td>
+                <td >
+
+                    <div id="d_tab1"  style="float:left;">
+                        <select name="name" id="id" class=" hours" ></select>时
+                        <select name="name" id="id" class=" minutes" ></select>分
+                        <span class="gray" style="margin:5px;">-</span>
+                        <select name="name" id="id" class=" hours" ></select>时
+                        <select name="name" id="id" class=" minutes" ></select>分
+                    </div>
+                    <input type="button" id="b" value="+添加" onclick="addTime('tab1')" class="add_but"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="right"><label><input name="name" type="checkbox" style="border:0;"  value="1" />星期二</label></td>
+                <td width="10%" align="right" >时间段：</td>
+                <td >
+                    <div id="d_tab2"  style="float:left;">
+                       <select name="name" id="id" class=" hours" ></select>时
+                        <select name="name" id="id" class=" minutes" ></select>分
+                        <span class="gray" style="margin:5px;">-</span>
+                        <select name="name" id="id" class=" hours" ></select>时
+                        <select name="name" id="id" class=" minutes" ></select>分
+                    </div>
+                    <input type="button" id="c" value="+添加" onclick="addTime('tab2')" class="add_but"/></td>
+            </tr>
+            <tr>
+                <td align="right"><label><input name="name" type="checkbox"  style="border:0;" value="1" />星期三</label></td>
+                <td width="10%" align="right" >时间段：</td>
+                <td >
+                    <div id="d_tab3"  style="float:left;">
+                        <select name="name" id="id" class=" hours" ></select>时
+                        <select name="name" id="id" class=" minutes" ></select>分
+                        <span class="gray" style="margin:5px;">-</span>
+                        <select name="name" id="id" class=" hours" ></select>时
+                        <select name="name" id="id" class=" minutes" ></select>分
+                    </div>
+                    <input type="button" id="c" value="+添加" onclick="addTime('tab3')" class="add_but"/></td>
+            </tr>
+        </table>
+
+
+    </form>
+</div>
+
+
+<div class="clearfix"></div>    
+<div style="padding:0px 20px;">
+  <div class="list-data">
+        <div class="list-tab mar_top">
+            <ul>
+            <li class="listcurrent"><a href="#html">HTML代码</a></li>
+            <li><a href="#css">CSS代码</a></li>
+            <li><a href="#java">JAVASCRIPT代码(含数据交互)</a></li>
+            <li><a href="#date">使用说明</a></li>
+        </ul>
+        </div>
+    </div>
+     
+     <div class="clearfix"></div> 
+     <div class=" list-content">
+		
+<!--HTML代码-->
+<div id="html">
+<blockquote class="vlight">
+<p>
+<!--js文件--><br>
+&lt;script src="../js/lib/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;<br>
+&lt;script src="../js/lib/form/form4.js" type="text/javascript"&gt;&lt;/script&gt;<br><br>
+<!--内容显示--><br>
+&lt;form action="" method="get" id="form_id" class="edit_form"&gt;<br>
+        &lt;table width="50%" border="0" cellpadding="0" cellspacing="0" class="date_add_table"&gt;<br>
+            &lt;tr&gt;<br>
+                &lt;td align="right"&gt;&lt;label&gt;&lt;input name="name" type="checkbox"  value="1" /&gt;星期一&lt;/label&gt;&lt;/td&gt;<br>
+                &lt;td width="10%" align="right" &gt;时间段：&lt;/td&gt;<br>
+                &lt;td &gt;<br>
+
+                    &lt;div id="d_tab1"  style="float:left;"&gt;<br>
+                        &lt;select name="name" id="id" class=" hours" &gt;&lt;/select&gt;时<br>
+                        &lt;select name="name" id="id" class=" minutes" &gt;&lt;/select&gt;分<br>
+                        &lt;span class="gray" style="margin:5px;"&gt;-&lt;/span&gt;<br>
+                        &lt;select name="name" id="id" class=" hours" &gt;&lt;/select&gt;时<br>
+                        &lt;select name="name" id="id" class=" minutes" &gt;&lt;/select&gt;分<br>
+                    &lt;/div&gt;<br>
+                    &lt;input type="button" id="b" value="+添加" onclick="addTime('tab1')" class="add_but"/&gt;<br>
+                &lt;/td&gt;<br>
+            &lt;/tr&gt;<br>
+
+            &lt;tr&gt;<br>
+                &lt;td align="right"&gt;&lt;label&gt;&lt;input name="name" type="checkbox" style="border:0;"  value="1" /&gt;星期二&lt;/label&gt;&lt;/td&gt;<br>
+                &lt;td width="10%" align="right" &gt;时间段：&lt;/td&gt;<br>
+                &lt;td &gt;<br>
+                    &lt;div id="d_tab2"  style="float:left;"&gt;<br>
+                       &lt;select name="name" id="id" class=" hours" &gt;&lt;/select&gt;时<br>
+                        &lt;select name="name" id="id" class=" minutes" &gt;&lt;/select&gt;分<br>
+                        &lt;span class="gray" style="margin:5px;"&gt;-&lt;/span&gt;<br>
+                        &lt;select name="name" id="id" class=" hours" &gt;&lt;/select&gt;时<br>
+                        &lt;select name="name" id="id" class=" minutes" &gt;&lt;/select&gt;分<br>
+                    &lt;/div&gt;<br>
+                    &lt;input type="button" id="c" value="+添加" onclick="addTime('tab2')" class="add_but"/&gt;&lt;/td&gt;<br>
+            &lt;/tr&gt;<br>
+            &lt;tr&gt;<br>
+                &lt;td align="right"&gt;&lt;label&gt;&lt;input name="name" type="checkbox"  style="border:0;" value="1" /&gt;星期三&lt;/label&gt;&lt;/td&gt;<br>
+                &lt;td width="10%" align="right" &gt;时间段：&lt;/td&gt;<br>
+                &lt;td &gt;<br>
+                    &lt;div id="d_tab3"  style="float:left;"&gt;<br>
+                        &lt;select name="name" id="id" class=" hours" &gt;&lt;/select&gt;时<br>
+                        &lt;select name="name" id="id" class=" minutes" &gt;&lt;/select&gt;分<br>
+                        &lt;span class="gray" style="margin:5px;"&gt;-&lt;/span&gt;<br>
+                        &lt;select name="name" id="id" class=" hours" &gt;&lt;/select&gt;时<br>
+                        &lt;select name="name" id="id" class=" minutes" &gt;&lt;/select&gt;分<br>
+                    &lt;/div&gt;<br>
+                    &lt;input type="button" id="c" value="+添加" onclick="addTime('tab3')" class="add_but"/&gt;&lt;/td&gt;<br>
+            &lt;/tr&gt;<br>
+        &lt;/table&gt;<br>
+
+
+    &lt;/form&gt;<br>
+</p>    
+</blockquote>
+</div>
+        
+<!--CSS代码-->
+<div id="css">
+<blockquote class="vlight">
+<p>
+/**********新增添加按钮CSS*************/<br>
+.add_but{ margin:0px 0px 0px 8px;padding:0px 8px;line-height:24px;height:24px;border:1px solid<br> #a4c9e6;font-weight:bold;color:#4a9cdc; background-color:#ecf5fa; cursor:pointer;}<br><br>
+</p>
+</blockquote>
+</div>
+        
+<!--JAVASCRIPT代码-->
+<div id="java">
+<blockquote class="vlight">
+<p>
+// JavaScript Document<br>
+
+        var index=1;<br>
+        function addTime(id){<br>
+            var hours=$("#hours").html();<br>
+            var minutes=$("#minutes").html();<br>
+            var html='<div id="d_'+index+'" style="margin:5px 0px;">';<br>
+            html+='<select name="name" id="id" class=" hours" >'+hours+'</select>时 ';<br>
+            html+='<select name="name" id="id" class=" minutes" >'+minutes+'</select>分 ';<br>
+            html+='<span class="gray" style="margin:5px;">-</span> ';<br>
+            html+='<select name="name" id="id" class=" hours" >'+hours+'</select>时 ';<br>
+            html+='<select name="name" id="id" class=" minutes" >'+minutes+'</select>分 ';<br>
+            html+='<input type="button" class="add_but" value="- 删除" style="position: absolute;" onclick="delTime('+index+')">';<br>
+            html+='</div>';<br>
+            $("#d_"+id).append(html);<br>
+            index++;<br>
+        }<br>
+        function delTime(idx){<br>
+            $("#d_"+idx).remove();<br>
+        }<br>
+        $(document).ready(function(){<br>
+            var hours=$("#hours").html();<br>
+            var minutes=$("#minutes").html();<br>
+            $("#form_id .hours").html(hours);<br>
+            $("#form_id .minutes").html(minutes);<br>
+            var id=$("#id").val();<br>
+            if(id!=''){<br>
+                var dialog = top.getDialog();<br>
+                var data = dialog.hData;<br>
+                var days=['tab1','tab2','tab3'];<br>
+                for(var i=0;i<days.length;i++){<br>
+                    var sVal=data[days[i]];<br>
+                    if(sVal!='') {<br>
+                        var aVal=sVal.substr(1,sVal.length-2).split(",");<br>
+                        for(var m=0;m<aVal.length;m++){<br>
+                            var idx=0;<br>
+                            if(m>0){<br>
+                                addTime(days[i]);<br>
+                                idx=parseInt(index)-1;<br>
+                            }<br>
+                            var aTime= aVal[m].substr(1,aVal[m].length-2).split("-");<br>
+                            var aTimeS=aTime[0].split(":");<br>
+                            var aTimeE=aTime[1].split(":");<br>
+                            $("#"+days[i]+'_S_hours_'+idx).val(aTimeS[0]);<br>
+                            $("#"+days[i]+'_S_minutes_'+idx).val(aTimeS[1]);<br>
+                            $("#"+days[i]+'_E_hours_'+idx).val(aTimeE[0]);<br>
+                            $("#"+days[i]+'_E_minutes_'+idx).val(aTimeE[1]);<br>
+                        }<br>
+                    }<br>
+
+                }<br>
+            }<br>
+        });<br>
+</p>
+</blockquote>
+</div>
+        
+        
+<!--使用说明-->
+<div id="date">
+<blockquote class="vlight">
+<p>
+/* 数据等待添加 */
+
+</p>
+</blockquote>
+</div>
+
+        
+        
+    </div>
+
+</div>
+ 
+</div>
+</body>
+</html>

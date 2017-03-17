@@ -1,0 +1,9 @@
+[
+  {"display": "主键", "name": "CustomerID"},
+  {"display": "公司名", "name": "CompanyName"},
+  {"display": "联系名", "name": "ContactName"},
+  {"display": "增加","action_type":"add"},
+  {"display": "编辑", "action_type":"edit"},
+  {"display": "删除", "action_type":"del"},
+  {"display": "详情","action_type":"view"}
+]

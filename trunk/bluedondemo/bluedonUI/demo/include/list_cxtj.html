@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>列表</title>
+<!--公共-->
+<link href="../skin/blue/style/public.css" rel="stylesheet" type="text/css" />
+<link href="../skin/blue/style/style.css" rel="stylesheet" type="text/css" />
+<script src="../js/lib/jquery.min.js" type="text/javascript"></script>
+<!--[if lt IE 7]> 
+<script src="../js/lib/jqueryie6.min.js" type="text/javascript"></script>
+<![endif]-->
+<!--日历-->
+<script language="javascript" type="text/javascript" src="../js/lib/My97DatePicker/WdatePicker.js"></script>
+<!--dialog-->
+<link href="../js/lib/dialog/dialog.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../js/lib/dialog/jquery.artDialog.source.js"></script>
+<script type="text/javascript" src="../js/lib/dialog/iframeTools.source.js"></script> 
+
+<!--弹出框封装和日历的扩展-->
+<script type="text/javascript" src="../js/lib/unit.js"></script>
+<!--报表-->
+<script type="text/javascript" src="../js/lib/echarts/echarts-all.js"></script>
+<script type="text/javascript" src="../js/lib/echarts/echarts.js"></script>
+<script src="../js/bd/charts.js"></script>
+<script src="../js/lib/echarts/echarts_list.js"></script>
+<script>
+$(document).ready(function(e) {
+	$("#chart_pie1").chartsObj({
+			typecharts:'pie',                 //是什么类型的报表bar,line,pie等
+			jsonUrl:'../js/data/pie1.json',  //报表的JSON文件路径
+			tabID:'#chart_pie1',              //调用报表的ID
+			trigger:'item',                   //报表的trigger类型
+			width:'100%',                      //报表显示宽度
+			height:240,                      //报表显示高度
+			openWin:false,                     //报表是否有弹出详情页面
+			openurl:'list_zjxw.html',		   //报表弹出详情页面地址
+			isWhat:'pie1',                     //报表所用的格式
+			echartsAdd:'../../js/lib/echarts'  //echarts文件路径
+		});
+	$("#chart_pie2").chartsObj({
+			typecharts:'pie',                 //是什么类型的报表bar,line,pie等
+			jsonUrl:'../js/data/pie1.json',  //报表的JSON文件路径
+			tabID:'#chart_pie2',              //调用报表的ID
+			trigger:'item',                   //报表的trigger类型
+			width:'100%',                      //报表显示宽度
+			height:240,                      //报表显示高度
+			openWin:false,                     //报表是否有弹出详情页面
+			openurl:'list_zjxw.html',		   //报表弹出详情页面地址
+			isWhat:'pie1',                     //报表所用的格式
+			echartsAdd:'../../js/lib/echarts'  //echarts文件路径
+		});
+	$("#chart_bar1").chartsObj({
+			typecharts:'bar',                 //是什么类型的报表bar,line,pie等
+			jsonUrl:'../js/data/bar1.json',  //报表的JSON文件路径
+			tabID:'#chart_bar1',              //调用报表的ID
+			trigger:'axis',                   //报表的trigger类型
+			width:'100%',                      //报表显示宽度
+			height:240,                      //报表显示高度
+			openWin:false,                     //报表是否有弹出详情页面
+			openurl:'list_zjxw.html',		   //报表弹出详情页面地址
+			isWhat:'bar3',                     //报表所用的格式
+			echartsAdd:'../../js/lib/echarts'  //echarts文件路径
+		});
+	$("#chart_bar2").chartsObj({
+			typecharts:'bar',                 //是什么类型的报表bar,line,pie等
+			jsonUrl:'../js/data/bar2.json',  //报表的JSON文件路径
+			tabID:'#chart_bar2',              //调用报表的ID
+			trigger:'item',                   //报表的trigger类型
+			width:'100%',                      //报表显示宽度
+			height:240,                      //报表显示高度
+			openWin:false,                     //报表是否有弹出详情页面
+			openurl:'list_zjxw.html',		   //报表弹出详情页面地址
+			isWhat:'bar2',                     //报表所用的格式
+			echartsAdd:'../../js/lib/echarts'  //echarts文件路径
+		});
+	/*echartOption('pie','../js/data/pie1.json','#chart_pie1','','100%',240,false,'pie1');
+	echartOption('bar','../js/data/bar1.json','#chart_bar1','axis','100%',240,false,'bar3');
+	echartOption('bar','../js/data/bar2.json','#chart_bar2','item','100%',240,false,'bar2');
+	echartOption('pie','../js/data/pie1.json','#chart_pie2','','100%',240,false,'pie1');*/
+});	
+</script>
+
+
+
+<style type="text/css">
+html,body{*overflow:auto;_overflow-x:hidden}
+body{*overflow-x:auto}
+</style>
+</head>
+
+<body>
+ <div class="openWin cxtjall">         
+        <!-- report 报警类型统计分布 -->
+        <div id="bjlx">
+            <h1 style="padding-top:10px;">报警类型</h1>
+            <div class="jbxx">
+            	<div class="report_search" style="width:100%">
+                 <label>时间：</label>
+                 <input name="" type="text" class="text date_plug date_pos float_l" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="开始时间">
+                 <label>至</label>
+                 <input name="" type="text" class="text date_plug date_pos float_l" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="结束时间">
+               	 <label>设备编号：</label>
+                 <input type="text " name="" class="text float_l">
+                <label>姓名：</label>
+                <input type="text " name="" class="text float_l">
+                <input name="" type="submit" class="btn btn_search float_l" value="查询">
+
+                </div>
+                <div id="chart_pie1" class="chart"></div>
+            </div>
+         </div>
+
+        <!-- report 活跃主机统计 -->
+        <div id="mmgj">
+            <h1>木马攻击窃密统计</h1>
+            <div class="jbxx">
+            	<div class="report_search" style="width:100%">
+                 <label>时间：</label>
+                 <input name="" type="text" class="text date_plug date_pos float_l" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="开始时间">
+                 <label>至</label>
+                 <input name="" type="text" class="text date_plug date_pos float_l" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="结束时间">
+               	 <label>设备编号：</label>
+                 <input type="text " name="" class="text float_l">
+                <label>姓名：</label>
+                <input type="text " name="" class="text float_l">
+                <input name="" type="submit" class="btn btn_search float_l" value="查询">
+                 </div>
+        
+             	<div id="chart_bar2" class="chart"></div>
+             </div>
+        </div>
+
+
+        <!-- report 活跃主机统计 -->
+        <div id="hyzj">
+            <h1>活跃主机统计</h1>
+            <div class="jbxx">
+            	<div class="report_search" style="width:100%">
+                     <label>时间：</label>
+                     <input name="" type="text" class="text date_plug date_pos float_l" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="开始时间">
+                     <label>至</label>
+                     <input name="" type="text" class="text date_plug date_pos float_l" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="结束时间">
+                     <label>设备编号：</label>
+                     <input type="text " name="" class="text float_l">
+                     <label>统计方式：</label>
+                     <select class="text float_l" style="width:100px;">
+                      <option>按外联IP数</option>
+                      <option>按在线时间</option>
+                      <option>按总流量</option>
+                    </select>
+                     <input name="" type="submit" class="btn btn_search float_l" value="查询">
+                 </div>
+        
+             	<div id="chart_bar1" class="chart"></div>
+             </div>
+        </div>
+      
+        <!-- report 访问类型统计 -->
+    <div id="fwlx">
+        <h1>访问类型统计</h1>
+        <div class="jbxx">
+            <div class="report_search" style="width:100%">
+                 <label>时间：</label>
+                 <input name="" type="text" class="text date_plug date_pos float_l" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="开始时间">
+                 <label>至</label>
+                 <input name="" type="text" class="text date_plug date_pos float_l" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" placeholder="结束时间">
+                  <label>统计方式：</label>
+                     <select class="text float_l" style="width:100px;">
+                      <option>按访问流量</option>
+                      <option>按访问终端数量</option>
+                    </select>
+                 <label>姓名：</label>
+                 <input type="text" name="" class="text float_l">
+                 <input name="" type="submit" class="btn btn_search float_l" value="查询">
+             </div>
+    
+            <div id="chart_pie2" class="chart"></div>
+        </div>
+   </div>
+     
+</div>
+
+
+
+
+
+</body>
+</html>

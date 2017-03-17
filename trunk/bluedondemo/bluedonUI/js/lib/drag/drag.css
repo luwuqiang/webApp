@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+.item_content ul  {
+	list-style:none;
+}
+.item_content ul li {
+	width:200px;
+	height:100px;
+	float:left;
+	margin:5px
+}
+.item_content {
+	width:700px;
+	height:220px;
+	margin:5px 15px;
+}
+
+.item_content .item_drag {
+	width:200px;
+	height:100px;
+	text-align:center;
+	cursor:pointer;
+	background:#fff;
+	
+}

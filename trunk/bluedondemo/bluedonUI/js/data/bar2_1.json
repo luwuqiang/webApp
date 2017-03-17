@@ -1,0 +1,12 @@
+{ 
+	"seriesList": 
+		[  
+                {"name":"Windows XP","dataNumber":"100","color":"#87cefa","url":"list_zjxw.html"},
+				{"name":"Windows 7","dataNumber":"262", "color":"#ff7f50","url":"list_zjxw.html"},
+				{"name":"Windows 8","dataNumber":"320","color":"#da70d6","url":"list_zjxw.html"},
+				{"name":"Windows 9","dataNumber":"210","color":"#6495ed","url":"list_zjxw.html"},
+				{"name":"Windows 10","dataNumber":"50","color":"#87cefa","url":"list_zjxw.html"},
+				{"name":"Windows 11","dataNumber":"100","color":"#32cd32","url":"list_zjxw.html"}
+        ],
+	"title":["业务系统访问次数排名"]
+}  
