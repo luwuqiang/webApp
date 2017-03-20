@@ -29,10 +29,10 @@
                             <p>告警服务器设置</p></a></li>
                     </ul>
                 </li>
-                <li><a link="list_admin.html" rel="list_admin" target="right" class="select"><span
+                <li><a link="/sys/user/list" rel="list_admin" target="right" class="select"><span
                         class="menu_sicon menu_small_icon"></span>
                     <p>用户管理</p></a></li>
-                <li><a link="list_xtsj.html" rel="list_xtsj" target="right" class="select"><span
+                <li><a link="/sys/user/list" rel="list_xtsj" target="right" class="select"><span
                         class="menu_sicon menu_small_icon"></span>
                     <p>系统升级</p></a></li>
                 <li><a link="list_fwkz.html" rel="list_fwkz" target="right" class="select"><span

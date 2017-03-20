@@ -44,6 +44,15 @@
                 <!-- 执行时间分析，只在测试环境启用 -->
                 <bean class="com.bluedom.demo.modules.common.interceptor.PerformanceInterceptor"></bean>
                 <!--分页插件-->
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <value>
+                            helperDialect=postgresql
+                            reasonable=false
+                            pageSizeZero=true
+                        </value>
+                    </property>
+                </bean>
             </array>
         </property>
     </bean>
@@ -66,8 +75,17 @@
     </aop:config>
     <!--=============================================================================================-->
 
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+        <!--<property name="basePackage" value=""/>-->
+    <!--</bean>-->
+
+    <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.leederedu.educhat.modules.*.dao"/>
+        <property name="properties">
+            <value>
+                mappers=tk.mybatis.mapper.common.Mapper
+            </value>
+        </property>
     </bean>
 
 </beans>
